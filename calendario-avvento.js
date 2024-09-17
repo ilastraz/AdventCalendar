@@ -50,30 +50,39 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('Fetched data:', data);
         const dayData = data[day.toString()];
         if (dayData) {
-          document.querySelector('.popup-date').textContent = dayData.data;
-          document.querySelector('.popup-head').textContent = dayData.head;
-          document.querySelector('.popup-description').textContent = dayData.descrizione;
-          document.querySelector('.popup-cta1').href = dayData.cta1.link;
-          document.querySelector('.popup-cta1').textContent = dayData.cta1.testo;
-          document.querySelector('.popup-cta2').href = dayData.cta2.link;
-          document.querySelector('.popup-cta2').textContent = dayData.cta2.testo;
-          
-          const popupContent = document.querySelector('.popup-content');
-          if (window.innerWidth > 768) {
-            popupContent.style.backgroundImage = `url(${dayData.bgdesktop})`;
-          } else {
-            popupContent.style.backgroundImage = `url(${dayData.bgmobile})`;
-          }
+          try {
+            document.querySelector('.popup-date').textContent = dayData.data;
+            document.querySelector('.popup-head').textContent = dayData.head;
+            document.querySelector('.popup-description').textContent = dayData.descrizione;
+            document.querySelector('.popup-cta1').href = dayData.cta1.link;
+            document.querySelector('.popup-cta1').textContent = dayData.cta1.testo;
+            document.querySelector('.popup-cta2').href = dayData.cta2.link;
+            document.querySelector('.popup-cta2').textContent = dayData.cta2.testo;
+            
+            const popupContent = document.querySelector('.popup-content');
+            if (window.innerWidth > 768) {
+              popupContent.style.backgroundImage = `url(${dayData.bgdesktop})`;
+            } else {
+              popupContent.style.backgroundImage = `url(${dayData.bgmobile})`;
+            }
 
-          const popup = document.querySelector('.popup');
-          console.log('Popup element:', popup);
-          popup.style.display = 'flex';
-          console.log('Popup display style:', popup.style.display);
+            const popup = document.querySelector('.popup');
+            popup.style.display = 'none'; // Forza un reflow
+            void popup.offsetWidth; // Trigger reflow
+            popup.style.display = 'flex';
+            popup.style.setProperty('display', 'flex', 'important');
+            console.log('Popup display style:', popup.style.display);
+          } catch (error) {
+            console.error('Errore durante l\'assegnazione dei dati al popup:', error);
+          }
         } else {
           console.log('No data found for day:', day);
         }
       })
-      .catch(error => console.error('Errore nel caricamento dei dati:', error));
+      .catch(error => console.error('Errore nel caricamento dei dati:', error))
+      .finally(() => {
+        console.log('Tentativo di apertura del popup completato');
+      });
   }
 
   // Funzione per chiudere il popup
