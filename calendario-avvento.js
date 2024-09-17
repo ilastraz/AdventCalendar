@@ -2,16 +2,20 @@ document.addEventListener("DOMContentLoaded", function() {
   let currentDay;
 
   function updateCalendar(currentDay) {
+    console.log("Aggiornamento calendario per il giorno:", currentDay);
     const divs = document.querySelectorAll("div[data-day]");
     
     divs.forEach(div => {
       const day = parseInt(div.getAttribute("data-day") || "0");
       const status = div.getAttribute("data-status");
       
+      console.log(`Elemento giorno ${day}, status: ${status}`);
+      
       if (day === currentDay && status === "today") {
         div.style.display = "block";
         div.classList.add("clickable");
         div.style.cursor = "pointer";
+        console.log(`Giorno ${day} è cliccabile`);
       } else {
         div.style.display = "block";
         div.classList.remove("clickable");
@@ -22,13 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   async function fetchCurrentDay() {
     try {
-      const response = await fetch('https://ipapi.co/json/');
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
-      const currentDate = new Date();
-      currentDay = currentDate.getDate();
+      // Per scopi di test, impostiamo manualmente il giorno corrente
+      currentDay = new Date().getDate();
+      console.log("Giorno corrente impostato a:", currentDay);
       updateCalendar(currentDay);
       setupEventListeners();
     } catch (error) {
@@ -37,19 +37,27 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   fetchCurrentDay();
-  setInterval(fetchCurrentDay, 24 * 60 * 60 * 1000);
 
   async function loadPopupContent(day) {
+    console.log("Caricamento contenuto popup per il giorno:", day);
     try {
-      const response = await fetch('https://corsproxy.io/?https://raw.githubusercontent.com/ilastraz/AdventCalendar/main/calendario-contenuti.json');
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
-      const dayContent = data[day];
+      // Per scopi di test, usiamo dati di esempio invece di fare una richiesta fetch
+      const dayContent = {
+        data: `${day} Dicembre`,
+        head: `Titolo del Giorno ${day}`,
+        descrizione: `Descrizione per il giorno ${day}`,
+        cta1: { testo: "CTA 1", link: "#" },
+        cta2: { testo: "CTA 2", link: "#" },
+        bgdesktop: "url_immagine_desktop",
+        bgmobile: "url_immagine_mobile"
+      };
       
       if (dayContent) {
         const popup = document.getElementById('popup');
+        if (!popup) {
+          console.error("Elemento popup non trovato!");
+          return;
+        }
         popup.innerHTML = `
           <div class="popup-content" data-day="${day}">
             <button id="closePopup" class="close-popup-btn">&times;</button>
@@ -62,12 +70,11 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
         popup.style.display = 'block';
         
-        // Imposta lo sfondo in base alla dimensione dello schermo
         const bgImage = window.innerWidth > 768 ? dayContent.bgdesktop : dayContent.bgmobile;
         popup.style.backgroundImage = `url('${bgImage}')`;
         
-        // Aggiungi l'event listener per il pulsante di chiusura
         document.getElementById('closePopup').addEventListener('click', closePopup);
+        console.log("Popup caricato e visualizzato");
       }
     } catch (error) {
       console.error("Errore nel caricamento del contenuto del popup:", error);
@@ -76,12 +83,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function closePopup() {
     const popup = document.getElementById('popup');
-    popup.style.display = 'none';
+    if (popup) {
+      popup.style.display = 'none';
+      console.log("Popup chiuso");
+    }
   }
 
   function setupEventListeners() {
+    console.log("Impostazione event listeners");
     document.querySelectorAll("div[data-day]").forEach(div => {
-      div.removeEventListener('click', clickHandler); // Rimuove eventuali listener precedenti
+      div.removeEventListener('click', clickHandler);
       div.addEventListener('click', clickHandler);
     });
   }
@@ -91,16 +102,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const day = parseInt(div.getAttribute('data-day'));
     const status = div.getAttribute('data-status');
 
+    console.log(`Clic su giorno ${day}, status: ${status}`);
+
     if (day === currentDay && status === "today") {
       loadPopupContent(day.toString());
     }
   }
 
-  // Chiudi il popup quando si clicca fuori da esso
   document.addEventListener('click', function(event) {
     const popup = document.getElementById('popup');
-    if (event.target === popup) {
+    if (popup && event.target === popup) {
       closePopup();
     }
   });
+
+  console.log("Script calendario avvento caricato");
 });
