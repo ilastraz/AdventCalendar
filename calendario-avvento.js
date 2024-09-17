@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Funzione per aprire il popup
   function openPopup(day) {
     console.log('Opening popup for day:', day, 'Type:', typeof day);
-    fetch('https://corsproxy.io/?https://raw.githubusercontent.com/ilastraz/AdventCalendar/main/calendario-contenuti.json')
+    fetch('https://corsproxy.io/?https://gleeful-crepe-005071.netlify.app/calendario-contenuti.json')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
