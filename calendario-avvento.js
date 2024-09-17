@@ -40,15 +40,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Funzione per aprire il popup
   function openPopup(day) {
-    console.log('Opening popup for day:', day);
+    console.log('Opening popup for day:', day, 'Type:', typeof day);
     fetch('https://corsproxy.io/?https://raw.githubusercontent.com/ilastraz/AdventCalendar/main/calendario-contenuti.json')
       .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         console.log('Fetch response:', response);
         return response.json();
       })
       .then(data => {
-        console.log('Fetched data:', data);
+        console.log('Fetched data:', JSON.stringify(data, null, 2));
         const dayData = data[day.toString()];
+        console.log('Day data for', day, ':', dayData);
         if (dayData) {
           try {
             // Popola il contenuto del popup
@@ -79,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error('Errore durante l\'assegnazione dei dati al popup:', error);
           }
         } else {
-          console.log('No data found for day:', day);
+          console.log('Available days:', Object.keys(data));
           alert(`Nessun dato disponibile per il giorno ${day}`);
         }
       })
