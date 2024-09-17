@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const dayData = data[day.toString()];
         if (dayData) {
           try {
+            // Popola il contenuto del popup
             document.querySelector('.popup-date').textContent = dayData.data;
             document.querySelector('.popup-head').textContent = dayData.head;
             document.querySelector('.popup-description').textContent = dayData.descrizione;
@@ -66,20 +67,26 @@ document.addEventListener("DOMContentLoaded", function() {
               popupContent.style.backgroundImage = `url(${dayData.bgmobile})`;
             }
 
+            // Mostra il popup
             const popup = document.querySelector('.popup');
-            popup.style.display = 'none'; // Forza un reflow
-            void popup.offsetWidth; // Trigger reflow
-            popup.style.display = 'flex';
-            popup.style.setProperty('display', 'flex', 'important');
-            console.log('Popup display style:', popup.style.display);
+            if (popup) {
+              popup.style.display = 'flex';
+              console.log('Popup display style:', popup.style.display);
+            } else {
+              console.error('Elemento .popup non trovato');
+            }
           } catch (error) {
             console.error('Errore durante l\'assegnazione dei dati al popup:', error);
           }
         } else {
           console.log('No data found for day:', day);
+          alert(`Nessun dato disponibile per il giorno ${day}`);
         }
       })
-      .catch(error => console.error('Errore nel caricamento dei dati:', error))
+      .catch(error => {
+        console.error('Errore nel caricamento dei dati:', error);
+        alert('Si è verificato un errore nel caricamento dei dati. Riprova più tardi.');
+      })
       .finally(() => {
         console.log('Tentativo di apertura del popup completato');
       });
