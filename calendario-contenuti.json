@@ -1,0 +1,33 @@
+{
+  "1": {
+    "data": "1 Dicembre",
+    "head": "Titolo del Giorno 1",
+    "descrizione": "Descrizione dettagliata per il primo giorno dell'avvento.",
+    "cta1": {
+      "testo": "Scopri di più",
+      "link": "https://esempio.com/giorno1"
+    },
+    "cta2": {
+      "testo": "Partecipa ora",
+      "link": "https://esempio.com/partecipa1"
+    },
+    "bgdesktop": "/images/sfondo1-desktop.jpg",
+    "bgmobile": "/images/sfondo1-mobile.jpg"
+  },
+  "2": {
+    "data": "2 Dicembre",
+    "head": "Titolo del Giorno 2",
+    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
+    "cta1": {
+      "testo": "Leggi tutto",
+      "link": "https://esempio.com/giorno2"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "bgdesktop": "/images/sfondo2-desktop.jpg",
+    "bgmobile": "/images/sfondo2-mobile.jpg"
+  },
+
+}
