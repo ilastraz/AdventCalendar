@@ -54,34 +54,41 @@ document.addEventListener("DOMContentLoaded", function() {
         const dayData = data[day.toString()];
         console.log('Day data for', day, ':', dayData);
         if (dayData) {
-          try {
-            // Popola il contenuto del popup
-            document.querySelector('.popup-date').textContent = dayData.data;
-            document.querySelector('.popup-head').textContent = dayData.head;
-            document.querySelector('.popup-description').textContent = dayData.descrizione;
-            document.querySelector('.popup-cta1').href = dayData.cta1.link;
-            document.querySelector('.popup-cta1').textContent = dayData.cta1.testo;
-            document.querySelector('.popup-cta2').href = dayData.cta2.link;
-            document.querySelector('.popup-cta2').textContent = dayData.cta2.testo;
-            
-            const popupContent = document.querySelector('.popup-content');
-            if (window.innerWidth > 768) {
-              popupContent.style.backgroundImage = `url(${dayData.bgdesktop})`;
-            } else {
-              popupContent.style.backgroundImage = `url(${dayData.bgmobile})`;
-            }
-
-            // Mostra il popup
-            const popup = document.querySelector('.popup');
-            if (popup) {
-              popup.style.display = 'flex';
-              console.log('Popup display style:', popup.style.display);
-            } else {
-              console.error('Elemento .popup non trovato');
-            }
-          } catch (error) {
-            console.error('Errore durante l\'assegnazione dei dati al popup:', error);
+          const popup = document.querySelector('.popup');
+          if (!popup) {
+            console.error('Elemento .popup non trovato');
+            return;
           }
+
+          const elements = [
+            {selector: '.popup-date', property: 'textContent', value: dayData.data},
+            {selector: '.popup-head', property: 'textContent', value: dayData.head},
+            {selector: '.popup-description', property: 'textContent', value: dayData.descrizione},
+            {selector: '.popup-cta1', property: 'href', value: dayData.cta1.link},
+            {selector: '.popup-cta1', property: 'textContent', value: dayData.cta1.testo},
+            {selector: '.popup-cta2', property: 'href', value: dayData.cta2.link},
+            {selector: '.popup-cta2', property: 'textContent', value: dayData.cta2.testo}
+          ];
+
+          elements.forEach(({selector, property, value}) => {
+            const element = document.querySelector(selector);
+            if (element) {
+              element[property] = value;
+            } else {
+              console.error(`Elemento ${selector} non trovato`);
+            }
+          });
+
+          const popupContent = document.querySelector('.popup-content');
+          if (popupContent) {
+            popupContent.style.backgroundImage = `url(${window.innerWidth > 768 ? dayData.bgdesktop : dayData.bgmobile})`;
+          } else {
+            console.error('Elemento .popup-content non trovato');
+          }
+
+          popup.style.display = 'flex';
+          console.log('Popup display style:', popup.style.display);
+          console.log('Computed style:', window.getComputedStyle(popup).display);
         } else {
           console.log('Available days:', Object.keys(data));
           alert(`Nessun dato disponibile per il giorno ${day}`);
