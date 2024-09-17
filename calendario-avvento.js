@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
       } else if (day === currentDay && status === "today") {
         div.style.display = "block";
         div.style.cursor = "pointer";
-        div.addEventListener('click', () => openPopup(day));
+        div.addEventListener('click', () => {
+          console.log('Clicked on day:', day);
+          openPopup(day);
+        });
       } else if (day > currentDay && status === "future") {
         div.style.display = "block";
       } else {
@@ -37,9 +40,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Funzione per aprire il popup
   function openPopup(day) {
+    console.log('Opening popup for day:', day);
     fetch('https://corsproxy.io/?https://raw.githubusercontent.com/ilastraz/AdventCalendar/main/calendario-contenuti.json')
-      .then(response => response.json())
+      .then(response => {
+        console.log('Fetch response:', response);
+        return response.json();
+      })
       .then(data => {
+        console.log('Fetched data:', data);
         const dayData = data[day.toString()];
         if (dayData) {
           document.querySelector('.popup-date').textContent = dayData.data;
@@ -57,7 +65,12 @@ document.addEventListener("DOMContentLoaded", function() {
             popupContent.style.backgroundImage = `url(${dayData.bgmobile})`;
           }
 
-          document.querySelector('.popup').style.display = 'flex';
+          const popup = document.querySelector('.popup');
+          console.log('Popup element:', popup);
+          popup.style.display = 'flex';
+          console.log('Popup display style:', popup.style.display);
+        } else {
+          console.log('No data found for day:', day);
         }
       })
       .catch(error => console.error('Errore nel caricamento dei dati:', error));
