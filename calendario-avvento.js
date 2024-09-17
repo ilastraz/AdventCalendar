@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   async function loadPopupContent(day) {
     try {
-      const response = await fetch('https://infinity.gmgstatic.eu/Calendario/calendario-contenuti.json');
+      const response = await fetch('https://raw.githubusercontent.com/ilastraz/AdventCalendar/main/calendario-contenuti.json');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
