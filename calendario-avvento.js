@@ -8,18 +8,14 @@ document.addEventListener("DOMContentLoaded", function() {
       const day = parseInt(div.getAttribute("data-day") || "0");
       const status = div.getAttribute("data-status");
       
-      if (day < currentDay && status === "past") {
+      if (day === currentDay && status === "today") {
         div.style.display = "block";
         div.classList.add("clickable");
-      } else if (day === currentDay && status === "today") {
-        div.style.display = "block";
-        div.classList.add("clickable");
-      } else if (day > currentDay && status === "future") {
-        div.style.display = "block";
-        div.classList.remove("clickable");
+        div.style.cursor = "pointer";
       } else {
-        div.style.display = "none";
+        div.style.display = "block";
         div.classList.remove("clickable");
+        div.style.cursor = "default";
       }
     });
   }
@@ -56,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const popup = document.getElementById('popup');
         popup.innerHTML = `
           <div class="popup-content" data-day="${day}">
+            <button id="closePopup" class="close-popup-btn">&times;</button>
             <div class="popup-date">${dayContent.data}</div>
             <h2 class="popup-head">${dayContent.head}</h2>
             <p class="popup-description">${dayContent.descrizione}</p>
@@ -68,10 +65,18 @@ document.addEventListener("DOMContentLoaded", function() {
         // Imposta lo sfondo in base alla dimensione dello schermo
         const bgImage = window.innerWidth > 768 ? dayContent.bgdesktop : dayContent.bgmobile;
         popup.style.backgroundImage = `url('${bgImage}')`;
+        
+        // Aggiungi l'event listener per il pulsante di chiusura
+        document.getElementById('closePopup').addEventListener('click', closePopup);
       }
     } catch (error) {
       console.error("Errore nel caricamento del contenuto del popup:", error);
     }
+  }
+
+  function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
   }
 
   function setupEventListeners() {
@@ -86,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const day = parseInt(div.getAttribute('data-day'));
     const status = div.getAttribute('data-status');
 
-    if ((day <= currentDay && status === "past") || (day === currentDay && status === "today")) {
+    if (day === currentDay && status === "today") {
       loadPopupContent(day.toString());
     }
   }
@@ -94,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function() {
   // Chiudi il popup quando si clicca fuori da esso
   document.addEventListener('click', function(event) {
     const popup = document.getElementById('popup');
-    if (event.target !== popup && !popup.contains(event.target)) {
-      popup.style.display = 'none';
+    if (event.target === popup) {
+      closePopup();
     }
   });
 });
