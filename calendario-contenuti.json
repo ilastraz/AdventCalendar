@@ -65,6 +65,40 @@
     },
     "bgdesktop": "",
     "bgmobile": ""
+  },
+
+  "13": {
+    "data": "13 Dicembre",
+    "head": "2 mesi gratis di Dreamers&Love",
+    "descrizione": "Dreamers and Love è il Channel per chi ama le commedie rosa, i drammi sentimentali e le appassionanti storie d'amore. Nel suo catalogo troverai anche tutto il meglio delle amatissime serie Turche.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
+    "cta1": {
+      "testo": "ATTIVA IL CHANNEL",
+      "link": "https://mediasetinfinity.mediaset.it/dreamers-love"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "bgdesktop": "",
+    "bgmobile": ""
+  },
+
+  "14": {
+    "data": "14 Dicembre",
+    "head": "CATTIVISSIMO ME 4",
+    "descrizione": "Gru e Lucy danno il benvenuto a un nuovo membro della famiglia, il primo maschietto dopo Margot, Edith e Agnes. Si chiama Gru Jr., e sembra avere tutte le intenzioni di tormentare il padre dalla mattina alla sera.Non perdere il nuovo film a noleggio scontato a soli 0,99€ ",
+    "nota": "",
+    "cta1": {
+      "testo": "NOLEGGIA IL FILM",
+      "link": ""
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "bgdesktop": "",
+    "bgmobile": ""
   }
 
 }
