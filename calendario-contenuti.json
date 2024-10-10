@@ -48,6 +48,23 @@
     },
     "bgdesktop": "",
     "bgmobile": ""
+  },
+
+  "8": {
+    "data": "8 Dicembre",
+    "head": "UNO, DUE, TRE... QUATTRO",
+    "descrizione": "Se anche tu hai colto la citazione, allora questo è il regalo perfetto per te: guarda in anteprima il primo episodio del prequel di Paso Adelante Next, il reboot della serie cult di Italia 1 in arrivo su Mediaset Infinity dall'11 dicembre.",
+    "nota": "",
+    "cta1": {
+      "testo": "GUARDA L'EPISODIO",
+      "link": ""
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "bgdesktop": "",
+    "bgmobile": ""
   }
 
 }
