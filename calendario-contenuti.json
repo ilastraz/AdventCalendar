@@ -3,6 +3,7 @@
     "data": "1 Dicembre",
     "head": "Dove eravamo rimasti",
     "descrizione": "Dopo tanta attesa, torna Segreti di famiglia, la serie turca di successo ricca di intrecci e colpi di scena. Ma dove eravamo rimasti? Oggi, in esclusiva per te, un riassunto degli episodi precedenti.",
+    "nota": "",
     "cta1": {
       "testo": "Guarda il video",
       "link": "https://esempio.com/giorno1"
@@ -15,42 +16,11 @@
     "bgmobile": ""
   },
 
-"2": {
-    "data": "2 Dicembre",
-    "head": "da inserire",
-    "descrizione": "da inserire",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "cta2",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-  "3": {
-    "data": "3 Dicembre",
-    "head": "da inserire",
-    "descrizione": "da inserire",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"4": {
+  "4": {
     "data": "4 Dicembre",
     "head": "L'OCCHIO DEL GRANDE FRATELLO",
     "descrizione": "Un video inedito che ti farà vedere la casa più spiata d'Italia con occhi nuovi! E se non basta, partecipa come pubblico per vivere le più belle emozioni.",
+    "nota": "",
     "cta1": {
       "testo": "Guarda il video",
       "link": ""
@@ -59,345 +29,76 @@
       "testo": "PARTECIPA COME PUBBLICO",
       "link": ""
     },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
+    "bgdesktop": "",
+    "bgmobile": ""
   },
 
   "5": {
     "data": "5 Dicembre",
     "head": "2 mesi gratis di Infinity+",
     "descrizione": "Oggi per te 30 giorni gratis di Infinity+ con migliaia di film, serie tv e cartoni animati e ogni venerdì una grande Premiere. In più, solo con Infinity+ hai inclusa gratuitamente la GOLD Experience.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 7,99€ al mese. Disdici quando vuoi.",
     "cta1": {
       "testo": "ATTIVA IL CHANNEL",
-      "link": ""
+      "link": "https://mediasetinfinity.mediaset.it/infinity-plus"
     },
     "cta2": {
       "testo": "",
       "link": ""
     },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
+    "bgdesktop": "",
+    "bgmobile": ""
   },
 
-"6": {
-    "data": "6 Dicembre",
-    "head": "Titolo del Giorno 6",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"7": {
-    "data": "7 Dicembre",
-    "head": "Titolo del Giorno 7",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"8": {
+  "8": {
     "data": "8 Dicembre",
-    "head": "Titolo del Giorno 8",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
+    "head": "UNO, DUE, TRE... QUATTRO",
+    "descrizione": "Se anche tu hai colto la citazione, allora questo è il regalo perfetto per te: guarda in anteprima il primo episodio del prequel di Paso Adelante Next, il reboot della serie cult di Italia 1 in arrivo su Mediaset Infinity dall'11 dicembre.",
+    "nota": "",
     "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
+      "testo": "GUARDA L'EPISODIO",
+      "link": ""
     },
     "cta2": {
       "testo": "",
       "link": ""
     },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
+    "bgdesktop": "",
+    "bgmobile": ""
   },
 
-"9": {
-    "data": "9 Dicembre",
-    "head": "Titolo del Giorno 9",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"10": {
-    "data": "10 Dicembre",
-    "head": "Titolo del Giorno 10",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"11": {
-    "data": "11 Dicembre",
-    "head": "Titolo del Giorno 11",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"12": {
-    "data": "12 Dicembre",
-    "head": "Titolo del Giorno 12",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"13": {
+  "13": {
     "data": "13 Dicembre",
-    "head": "Titolo del Giorno 13",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
+    "head": "2 mesi gratis di Dreamers&Love",
+    "descrizione": "Dreamers and Love è il Channel per chi ama le commedie rosa, i drammi sentimentali e le appassionanti storie d'amore. Nel suo catalogo troverai anche tutto il meglio delle amatissime serie Turche.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
     "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
+      "testo": "ATTIVA IL CHANNEL",
+      "link": "https://mediasetinfinity.mediaset.it/dreamers-love"
     },
     "cta2": {
       "testo": "",
       "link": ""
     },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
+    "bgdesktop": "",
+    "bgmobile": ""
   },
 
-"14": {
+  "14": {
     "data": "14 Dicembre",
-    "head": "Titolo del Giorno 14",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
+    "head": "CATTIVISSIMO ME 4",
+    "descrizione": "Gru e Lucy danno il benvenuto a un nuovo membro della famiglia, il primo maschietto dopo Margot, Edith e Agnes. Si chiama Gru Jr., e sembra avere tutte le intenzioni di tormentare il padre dalla mattina alla sera.Non perdere il nuovo film a noleggio scontato a soli 0,99€ ",
+    "nota": "",
     "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
+      "testo": "NOLEGGIA IL FILM",
+      "link": ""
     },
     "cta2": {
       "testo": "",
       "link": ""
     },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"15": {
-    "data": "15 Dicembre",
-    "head": "Titolo del Giorno 15",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"16": {
-    "data": "16 Dicembre",
-    "head": "Titolo del Giorno 16",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-  "17": {
-    "data": "17 Dicembre",
-    "head": "Titolo del Giorno 2",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-
-  "18": {
-    "data": "18 Dicembre",
-    "head": "Titolo del Giorno 18",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno2"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-  "19": {
-    "data": "19 Dicembre",
-    "head": "Titolo del Giorno 19",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno19"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-  "20": {
-    "data": "20 Dicembre",
-    "head": "Titolo del Giorno 20",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno20"
-    },
-    "cta2": {
-      "testo": "cta2",
-      "link": "https://esempio.com/giorno20"
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-  "21": {
-    "data": "21 Dicembre",
-    "head": "Titolo del Giorno 21",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno21"
-    },
-    "cta2": {
-      "testo": "cta2",
-      "link": "https://esempio.com/giorno21"
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"22": {
-    "data": "22 Dicembre",
-    "head": "Titolo del Giorno 22",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno20"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-"23": {
-    "data": "23 Dicembre",
-    "head": "Titolo del Giorno 23",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno20"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-  "24": {
-    "data": "24 Dicembre",
-    "head": "Titolo del Giorno 24",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno20"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
-  },
-
-  "25": {
-    "data": "25 Dicembre",
-    "head": "Titolo del Giorno 25",
-    "descrizione": "Descrizione dettagliata per il secondo giorno dell'avvento.",
-    "cta1": {
-      "testo": "Leggi tutto",
-      "link": "https://esempio.com/giorno20"
-    },
-    "cta2": {
-      "testo": "",
-      "link": ""
-    },
-    "bgdesktop": "/images/sfondo2-desktop.jpg",
-    "bgmobile": "/images/sfondo2-mobile.jpg"
+    "bgdesktop": "",
+    "bgmobile": ""
   }
-}
 
+}
