@@ -3,6 +3,7 @@
     "data": "1 Dicembre",
     "head": "Dove eravamo rimasti",
     "descrizione": "Dopo tanta attesa, torna Segreti di famiglia, la serie turca di successo ricca di intrecci e colpi di scena. Ma dove eravamo rimasti? Oggi, in esclusiva per te, un riassunto degli episodi precedenti.",
+    "nota": "",
     "cta1": {
       "testo": "Guarda il video",
       "link": "https://esempio.com/giorno1"
@@ -13,4 +14,40 @@
     },
     "bgdesktop": "",
     "bgmobile": ""
+  },
+
+  "4": {
+    "data": "4 Dicembre",
+    "head": "L'OCCHIO DEL GRANDE FRATELLO",
+    "descrizione": "Un video inedito che ti farà vedere la casa più spiata d'Italia con occhi nuovi! E se non basta, partecipa come pubblico per vivere le più belle emozioni.",
+    "nota": "",
+    "cta1": {
+      "testo": "Guarda il video",
+      "link": ""
+    },
+    "cta2": {
+      "testo": "PARTECIPA COME PUBBLICO",
+      "link": ""
+    },
+    "bgdesktop": "",
+    "bgmobile": ""
+  },
+
+  "5": {
+    "data": "5 Dicembre",
+    "head": "2 mesi gratis di Infinity+",
+    "descrizione": "Oggi per te 30 giorni gratis di Infinity+ con migliaia di film, serie tv e cartoni animati e ogni venerdì una grande Premiere. In più, solo con Infinity+ hai inclusa gratuitamente la GOLD Experience.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 7,99€ al mese. Disdici quando vuoi.",
+    "cta1": {
+      "testo": "ATTIVA IL CHANNEL",
+      "link": "https://mediasetinfinity.mediaset.it/infinity-plus"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "bgdesktop": "",
+    "bgmobile": ""
   }
+
+}

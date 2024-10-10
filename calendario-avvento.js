@@ -67,7 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
             {selector: '.popup-cta1', property: 'href', value: dayData.cta1.link},
             {selector: '.popup-cta1', property: 'textContent', value: dayData.cta1.testo},
             {selector: '.popup-cta2', property: 'href', value: dayData.cta2.link},
-            {selector: '.popup-cta2', property: 'textContent', value: dayData.cta2.testo}
+            {selector: '.popup-cta2', property: 'textContent', value: dayData.cta2.testo},
+            {selector: '.popup-nota', property: 'textContent', value: dayData.cta2.nota}
           ];
 
           elements.forEach(({selector, property, value}) => {
