@@ -87,11 +87,62 @@
   "14": {
     "data": "14 Dicembre",
     "head": "CATTIVISSIMO ME 4",
-    "descrizione": "Gru e Lucy danno il benvenuto a un nuovo membro della famiglia, il primo maschietto dopo Margot, Edith e Agnes. Si chiama Gru Jr., e sembra avere tutte le intenzioni di tormentare il padre dalla mattina alla sera.Non perdere il nuovo film a noleggio scontato a soli 0,99€ ",
+    "descrizione": "Gru e Lucy danno il benvenuto a un nuovo membro della famiglia, il primo maschietto dopo Margot, Edith e Agnes. Si chiama Gru Jr., e sembra avere tutte le intenzioni di tormentare il padre dalla mattina alla sera.Non perdere il nuovo film a noleggio scontato a soli 0,99€.",
     "nota": "",
     "cta1": {
       "testo": "NOLEGGIA IL FILM",
       "link": ""
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "bgdesktop": "",
+    "bgmobile": ""
+  },
+
+  "16": {
+    "data": "16 Dicembre",
+    "head": "LE IENE",
+    "descrizione": "Inchieste, servizi e tutta l'irriverenza delle Iene: tutto il meglio è su Mediaset Infinity, guardalo ora e richiedi di partecipare come pubblico per vivere in studio tutte le emozioni del programma più chiacchierato di Italia 1.",
+    "nota": "",
+    "cta1": {
+      "testo": "Guarda il video",
+      "link": ""
+    },
+    "cta2": {
+      "testo": "PARTECIPA COME PUBBLICO",
+      "link": ""
+    },
+    "bgdesktop": "",
+    "bgmobile": ""
+  },
+
+  "18": {
+    "data": "18 Dicembre",
+    "head": "2 mesi gratis di CineComico",
+    "descrizione": "CineComico è il Channel che ti offre titoli indimenticabili del grande cinema dei Maestri della risata: Alberto Sordi, Totò, Paolo Villaggio, Renato Pozzetto, Diego Abatantuono e tanti altri. Questo Natale riscopri i film comici che hanno fatto la storia!",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese",
+    "cta1": {
+      "testo": "ATTIVA IL CHANNEL",
+      "link": "https://mediasetinfinity.mediaset.it/cinecomico"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "bgdesktop": "",
+    "bgmobile": ""
+  },
+
+  "22": {
+    "data": "22 Dicembre",
+    "head": "GOLD experience scontata",
+    "descrizione": "Con la GOLD experience puoi fruire dei contenuti gratuiti di Mediaset Infinity con tanti vantaggi in più: download, smart ADV, super restart e massima qualità video.Solo per oggi tutto questo per un anno intero a soli 19,90€ anzichè 39,99€.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato la GOLD experience. Al termine del primo anno il prezzo sarà di 39,99€ all'anno. Disdici quando vuoi.",
+    "cta1": {
+      "testo": "ATTIVA GOLD",
+      "link": "https://mediasetinfinity.mediaset.it/account/purchase/option/MediasetPlay_SVOD"
     },
     "cta2": {
       "testo": "",
