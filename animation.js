@@ -87,9 +87,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     Snowflake.prototype.reset = function () {
         this.x = Math.random() * width;
-        // Inizializza la posizione 'y' in modo che alcuni fiocchi siano già visibili
         this.y = Math.random() * height;
-        this.vy = 1 + Math.random() * 3;
+        this.vy = 0.5 + Math.random() * 1.5; // Riduci la velocità verticale per renderla più omogenea
         this.vx = 0.5 - Math.random();
         this.r = 1 + Math.random() * 2;
         this.o = 0.5 + Math.random() * 0.5;
@@ -117,6 +116,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
             snowflake.y += snowflake.vy;
             snowflake.x += snowflake.vx;
 
+            // Se il fiocco di neve esce dai lati, riportalo dall'altro lato
+            if (snowflake.x > width) {
+                snowflake.x = 0;
+            } else if (snowflake.x < 0) {
+                snowflake.x = width;
+            }
+
             ctx.globalAlpha = snowflake.o;
             ctx.beginPath();
             ctx.arc(snowflake.x, snowflake.y, snowflake.r, 0, Math.PI * 2, false);
@@ -125,6 +131,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
             if (snowflake.y > height) {
                 snowflake.reset();
+                snowflake.y = 0; // Riposiziona il fiocco di neve in cima quando raggiunge il fondo
             }
         }
 
