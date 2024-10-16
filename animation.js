@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   $("[words-slide-up]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
-    tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
+    tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.3, ease: "back.out(2)", stagger: { amount: 0.3 } });
     createScrollTrigger($(this), tl);
   });
 
@@ -47,15 +47,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
 });
-
-tl.from(target, {
-    duration: 0.4,
-    ease: 'sine.out',
-    y: '-100%',
-    opacity: 0,
-    stagger: { each: 0.13 },
-});
-
 
 let introTl = gsap.timeline();
 introTl.from(".intro-p", {
