@@ -6,24 +6,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     tagName: "span"
   });
 
-  // Link timelines to scroll position
-  function createScrollTrigger(triggerElement, timeline) {
-    // Reset tl when scroll out of view past bottom of screen
-    ScrollTrigger.create({
-      trigger: triggerElement,
-      start: "top bottom",
-      onLeaveBack: () => {
-        timeline.progress(0);
-        timeline.pause();
-      }
-    });
-    // Play tl when scrolled into view (60% from top of screen)
-    ScrollTrigger.create({
-      trigger: triggerElement,
-      start: "top 60%",
-      onEnter: () => timeline.play()
-    });
-  }
 
   $("[words-slide-up]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
