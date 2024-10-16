@@ -1,3 +1,4 @@
+  // INZIO TEXT SPLIT
 
 window.addEventListener("DOMContentLoaded", (event) => {
   // Split text into spans
@@ -31,43 +32,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     createScrollTrigger($(this), tl);
   });
 
-  $("[words-rotate-in]").each(function (index) {
-    let tl = gsap.timeline({ paused: true });
-    tl.set($(this).find(".word"), { transformPerspective: 1000 });
-    tl.from($(this).find(".word"), { rotationX: -90, duration: 0.6, ease: "power2.out", stagger: { amount: 0.6 } });
-    createScrollTrigger($(this), tl);
-  });
-
-  $("[words-slide-from-right]").each(function (index) {
-    let tl = gsap.timeline({ paused: true });
-    tl.from($(this).find(".word"), { opacity: 0, x: "1em", duration: 0.6, ease: "power2.out", stagger: { amount: 0.2 } });
-    createScrollTrigger($(this), tl);
-  });
-
-  $("[letters-slide-up]").each(function (index) {
-    let tl = gsap.timeline({ paused: true });
-    tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
-    createScrollTrigger($(this), tl);
-  });
-
-  $("[letters-slide-down]").each(function (index) {
-    let tl = gsap.timeline({ paused: true });
-    tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out", stagger: { amount: 0.7 } });
-    createScrollTrigger($(this), tl);
-  });
-
-  $("[letters-fade-in]").each(function (index) {
-    let tl = gsap.timeline({ paused: true });
-    tl.from($(this).find(".char"), { opacity: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.8 } });
-    createScrollTrigger($(this), tl);
-  });
-
-  $("[letters-fade-in-random]").each(function (index) {
-    let tl = gsap.timeline({ paused: true });
-    tl.from($(this).find(".char"), { opacity: 0, duration: 0.05, ease: "power1.out", stagger: { amount: 0.4, from: "random" } });
-    createScrollTrigger($(this), tl);
-  });
-
   $("[scrub-each-word]").each(function (index) {
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -83,3 +47,32 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
 });
+
+tl.from(target, {
+    duration: 0.4,
+    ease: 'sine.out',
+    y: '-100%',
+    opacity: 0,
+    stagger: { each: 0.13 },
+});
+
+
+let introTl = gsap.timeline();
+introTl.from(".intro-p", {
+  duration: 0.4,
+  ease: 'sine.out',
+  y: '-100%',
+  opacity: 0,
+  stagger: { each: 0.13 },
+});
+
+// Crea un trigger di scorrimento per l'animazione .intro-p
+ScrollTrigger.create({
+  trigger: ".intro-p",
+  start: "top 80%",
+  onEnter: () => introTl.play()
+});
+
+
+  // FINE TEXT SPLIT
+
