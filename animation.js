@@ -43,15 +43,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
 
-  // Creazione di un singolo ScrollTrigger per l'intera timeline
-  ScrollTrigger.create({
-    trigger: "body", // Puoi modificare questo selettore in base alle tue esigenze
-    start: "top top",
-    end: "bottom bottom",
-    animation: mainTimeline,
-    scrub: 1, // Regola questo valore per controllare la velocità di scrubbing
-    // markers: true, // Utile per il debug, rimuovi in produzione
-  });
+  // Avvia la timeline immediatamente
+  mainTimeline.play();
 });
 
 // FINE TEXT SPLIT
