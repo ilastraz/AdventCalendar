@@ -107,6 +107,8 @@
 
 
 // INTRO
+gsap.set([".intro-slitta", ".intro-albero1", ".intro-albero2", ".intro-albero3", ".intro-albero4", ".intro-neve", ".intro-fondo"], { opacity: 0 });
+
 
 window.addEventListener("load", function() {
   let IntroTl = gsap.timeline();
