@@ -107,6 +107,8 @@
 
 
 // INTRO
+// Creazione dell'animazione con GSAP utilizzando le classi fornite
+
 // Timeline principale
 const tl = gsap.timeline();
 
@@ -127,7 +129,7 @@ tl.to(".intro-slitta", {
   }
 });
 
-// Spostamento della "camera" e rivelazione del fondo e degli alberi
+// Spostamento della "camera" e rivelazione del fondo e degli alberi con movimento parallax
 // Quando la slitta è quasi alla fine, muoviamo la camera e mostriamo gli altri elementi
 tl.to(".intro-section", {
   x: "-30%", // Simula un movimento della camera
@@ -135,7 +137,7 @@ tl.to(".intro-section", {
   ease: "power2.inOut"
 }, "-=2"); // L'animazione inizia leggermente prima che la slitta finisca
 
-// Appaiono il fondo, gli alberi e la neve
+// Appaiono il fondo, gli alberi e la neve con effetto parallax
 // I vari elementi compaiono in sequenza per creare l'effetto parallax
 tl.to([".intro-fondo", ".intro-albero1", ".intro-albero2", ".intro-albero3", ".intro-albero4", ".intro-neve"], {
   autoAlpha: 1,
