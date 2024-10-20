@@ -107,12 +107,22 @@
 
 
 // INTRO
-gsap.set([".intro-slitta", ".intro-albero1", ".intro-albero2", ".intro-albero3", ".intro-albero4", ".intro-neve", ".intro-fondo"], { opacity: 0 });
-
-
 window.addEventListener("load", function() {
-  let IntroTl = gsap.timeline();
-  IntroTl.to(".intro-slitta", { opacity: 0, duration: 4, ease: "power2.out", stagger: { each: 0.3 } });
-  IntroTl.to(".intro-logo", { opacity: 0, duration: 4, ease: "power2.out", stagger: { each: 0.3 } });
-  IntroTl.from(".intro-fondo", { opacity: 0, y: "-100vh", duration: 0.5, ease: "power2.out", stagger: { each: 0.3 } });
-});
+    let tl = gsap.timeline();
+  
+    // Anima la slitta (più veloce)
+    tl.from(".intro-slitta", { y: "-100vh", duration: 1.5, ease: "power2.out" });
+  
+    // Anima il logo (più lento rispetto alla slitta)
+    tl.from(".intro-logo", { y: "-80vh", opacity: 0, duration: 1.8, ease: "power2.out" }, "<");
+  
+    // Anima gli alberi con movimenti più lenti per simulare la profondità
+    tl.from(".intro-albero4", { y: "-50vh", opacity: 0, duration: 2.5, ease: "power2.out" }, "<0.2");
+    tl.from(".intro-albero2", { y: "-45vh", opacity: 0, duration: 2.7, ease: "power2.out" }, "<0.2");
+    tl.from(".intro-albero3", { y: "-40vh", opacity: 0, duration: 2.9, ease: "power2.out" }, "<0.2");
+    tl.from(".intro-albero1", { y: "-35vh", opacity: 0, duration: 3, ease: "power2.out" }, "<0.2");
+  
+    // Anima il fondo e la neve in modo più lento per dare profondità
+    tl.from(".intro-fondo", { y: "-20vh", opacity: 0, duration: 3.2, ease: "power2.out" }, "<0.2");
+    tl.from(".intro-neve", { y: "-15vh", opacity: 0, duration: 3.5, ease: "power2.out" }, "<0.2");
+  });
