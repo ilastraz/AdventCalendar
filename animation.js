@@ -105,29 +105,3 @@
 
 // END SNOW
 
-
-// INTRO
-window.addEventListener("load", function() {
-    let tl = gsap.timeline();
-  
-    // Fase 1: Mostra il logo al centro (si ingrandisce)
-    tl.from(".intro-logo", { opacity: 1, scale: 1, duration: 1.5, ease: "power2.out", z: 0 })
-  
-      // Fase 2: Passa la slitta (velocemente, per dare l'effetto di movimento in primo piano)
-      .to(".intro-slitta", { x: "100vw", duration: 2, ease: "power1.inOut" }, "-=0.5")
-  
-      // Fase 3: Poco prima che la slitta finisca, inizia a far comparire il fondo dal basso con un effetto "da dietro lo schermo" (asse z)
-      .from(".intro-fondo", { opacity: 0, z: -1000, scale: 0.8, duration: 1.5, ease: "power2.out" }, "-=1.5")
-  
-      // Fase 4: Fa scomparire il logo mentre il fondo compare
-      .to(".intro-logo", { opacity: 0, scale: 0.5, duration: 0.8, ease: "power2.in" }, "-=1")
-  
-      // Fase 5: Fa comparire velocemente gli alberi, dando l'impressione che vengano da lontano (asse z) verso lo schermo
-      .from(".intro-albero4", { opacity: 0, z: -800, scale: 0.9, duration: 1, ease: "power2.out" }, "-=1")
-      .from(".intro-albero2", { opacity: 0, z: -600, scale: 0.95, duration: 1, ease: "power2.out" }, "-=0.8")
-      .from(".intro-albero3", { opacity: 0, z: -400, scale: 1, duration: 1, ease: "power2.out" }, "-=0.6")
-      .from(".intro-albero1", { opacity: 0, z: -200, scale: 1.05, duration: 1, ease: "power2.out" }, "-=0.4")
-  
-      // Fase 6: Fa entrare la neve, anche lei come se venisse da dietro lo schermo
-      .from(".intro-neve", { opacity: 0, z: -500, duration: 1.2, ease: "power2.out" }, "-=0.5");
-  });
