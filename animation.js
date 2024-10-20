@@ -115,7 +115,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   
     // Creazione della timeline principale
-    let mainTimeline = gsap.timeline();
+    let mainTimeline = gsap.timeline({ paused: true }); // La timeline è in pausa
   
     // Animazione per [words-slide-up]
     $("[words-slide-up]").each(function (index) {
@@ -152,7 +152,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   
     // Ritarda l'avvio della timeline di 4 secondi
     setTimeout(() => {
-      mainTimeline.play();
+      mainTimeline.play(); // Avvia la timeline dopo 4 secondi
     }, 4000);
   });
   
