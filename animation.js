@@ -107,3 +107,10 @@
 
 
 // INTRO
+
+window.addEventListener("load", function() {
+  let IntroTl = gsap.timeline();
+  IntroTl.to(".intro-slitta", { opacity: 0, duration: 4, ease: "power2.out", stagger: { each: 0.3 } });
+  IntroTl.from(".intro-logo", { opacity: 0, duration: 4, ease: "power2.out", stagger: { each: 0.3 } });
+  IntroTl.from(".intro-fondo", { opacity: 0, y: "-100vh", duration: 0.5, ease: "power2.out", stagger: { each: 0.3 } });
+});
