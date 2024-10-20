@@ -108,21 +108,23 @@
 
 // INTRO
 window.addEventListener("load", function() {
-    let tl = gsap.timeline();
-  
-    // Anima la slitta (più veloce)
-    tl.from(".intro-slitta", { y: "-100vh", duration: 1.5, ease: "power2.out" });
-  
-    // Anima il logo (più lento rispetto alla slitta)
-    tl.from(".intro-logo", { y: "-80vh", opacity: 0, duration: 1.8, ease: "power2.out" }, "<");
-  
-    // Anima gli alberi con movimenti più lenti per simulare la profondità
-    tl.from(".intro-albero4", { y: "-50vh", opacity: 0, duration: 2.5, ease: "power2.out" }, "<0.2");
-    tl.from(".intro-albero2", { y: "-45vh", opacity: 0, duration: 2.7, ease: "power2.out" }, "<0.2");
-    tl.from(".intro-albero3", { y: "-40vh", opacity: 0, duration: 2.9, ease: "power2.out" }, "<0.2");
-    tl.from(".intro-albero1", { y: "-35vh", opacity: 0, duration: 3, ease: "power2.out" }, "<0.2");
-  
-    // Anima il fondo e la neve in modo più lento per dare profondità
-    tl.from(".intro-fondo", { y: "-20vh", opacity: 0, duration: 3.2, ease: "power2.out" }, "<0.2");
-    tl.from(".intro-neve", { y: "-15vh", opacity: 0, duration: 3.5, ease: "power2.out" }, "<0.2");
-  });
+  let tl = gsap.timeline();
+
+  // Fase 1: Mostra il logo al centro
+  tl.from(".intro-logo", { opacity: 0, scale: 0.5, duration: 1.5, ease: "power2.out", z: 0 })
+    
+    // Fase 2: Passa la slitta sopra il logo
+    .to(".intro-slitta", { x: "100vw", duration: 2, ease: "power1.inOut" }, "-=0.5")
+    
+    // Fase 3: Poco prima che la slitta finisca, inizia a far comparire il fondo
+    .from(".intro-fondo", { y: "100vh", scale: 0.8, opacity: 0, duration: 1.5, ease: "power2.out", z: -200 }, "-=1")
+
+    // Fase 4: Fa comparire gli alberi con profondità diversa
+    .from(".intro-albero4", { y: "100vh", scale: 0.9, opacity: 0, duration: 2, ease: "power2.out", z: -150 }, "-=1")
+    .from(".intro-albero2", { y: "100vh", scale: 0.95, opacity: 0, duration: 2.2, ease: "power2.out", z: -100 }, "-=1.8")
+    .from(".intro-albero3", { y: "100vh", scale: 1, opacity: 0, duration: 2.4, ease: "power2.out", z: -50 }, "-=2.0")
+    .from(".intro-albero1", { y: "100vh", scale: 1.05, opacity: 0, duration: 2.5, ease: "power2.out", z: 0 }, "-=2.2")
+    
+    // Fase 5: Aggiungi l'effetto della neve che entra in scena
+    .from(".intro-neve", { y: "100vh", opacity: 0, duration: 3, ease: "power2.out", z: 50 }, "-=2.5");
+});
