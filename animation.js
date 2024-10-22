@@ -104,3 +104,35 @@
 })();
 
 // END SNOW
+
+
+// HOVER BACK
+
+  // Inizializzazione dell'animazione Lottie per tutti gli elementi con la classe .lottieback-animation
+  document.querySelectorAll('.lottieback-animation').forEach(function (element) {
+    let lottieAnimation = lottie.loadAnimation({
+      container: element, // l'elemento in cui caricare l'animazione
+      renderer: 'svg',
+      loop: false,  // Non fare il loop per permettere di controllare avanti/indietro
+      autoplay: false, // Non avviare automaticamente
+      path: 'path_to_your_lottie_file.json' // Sostituisci con il path del tuo file Lottie
+    });
+
+    // Avvia l'animazione al mouse hover
+    element.addEventListener('mouseenter', function () {
+      lottieAnimation.setDirection(1); // Direzione avanti
+      lottieAnimation.play(); // Avvia l'animazione
+    });
+
+    // Torna indietro al mouse out
+    element.addEventListener('mouseleave', function () {
+      lottieAnimation.setDirection(-1); // Direzione inversa
+      lottieAnimation.play(); // Riproduci l'animazione al contrario
+    });
+
+    // Alternativa per il tap su dispositivi touch
+    element.addEventListener('click', function () {
+      lottieAnimation.setDirection(1); // Direzione avanti
+      lottieAnimation.play(); // Avvia l'animazione
+    });
+  });
