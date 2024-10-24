@@ -113,22 +113,22 @@ window.addEventListener("load", function() {
   
     // Anima intro-fondo da transform: translateZ(200rem)
     tl.from(".intro-fondo", 
-      { z: "200rem", duration: 1, ease: "power2.out" }
+      { z: "200rem", duration: 0.5, ease: "power2.out" }
     );
   
     // Anima intro-albero1 e intro-albero4 da transform: translateZ(205rem)
     tl.from([".intro-albero1", ".intro-albero4"], 
-      { z: "205rem", duration: 1, ease: "power2.out" }
+      { z: "205rem", duration: 0.5, ease: "power2.out" }
     );
   
     // Anima intro-albero2 e intro-albero3 da transform: translateZ(210rem)
     tl.from([".intro-albero2", ".intro-albero3"], 
-      { z: "210rem", duration: 1, ease: "power2.out" }
+      { z: "210rem", duration: 0.5, ease: "power2.out" }
     );
   
     // Anima intro-neve da transform: translateZ(220rem)
     tl.from(".intro-neve", 
-      { z: "220rem", duration: 1, ease: "power2.out" }
+      { z: "220rem", duration: 0.5, ease: "power2.out" }
     );
   });
   
