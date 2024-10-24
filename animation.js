@@ -118,10 +118,11 @@ window.addEventListener("load", function() {
     IntroTl.from(".intro-neve", { z: "220rem", duration: 1, ease: "expo.out" }, 0.1);
 
     // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
-    IntroTl.to({}, { duration: 1, onComplete: function() {
+    IntroTl.call(function() {
         document.querySelector(".caselle-section").style.display = "block";
-    }});
+    });
 });
+
 
 
 
