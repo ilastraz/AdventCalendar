@@ -106,33 +106,28 @@
 // END SNOW
 
 
-// HOVER BACK
+//INTRO
+  window.addEventListener("load", function() {
+    // Creazione di una timeline per sincronizzare tutte le animazioni
+    let tl = gsap.timeline();
 
-  // Inizializzazione dell'animazione Lottie per tutti gli elementi con la classe .lottieback-animation
-  document.querySelectorAll('.lottieback-animation').forEach(function (element) {
-    let lottieAnimation = lottie.loadAnimation({
-      container: element, // l'elemento in cui caricare l'animazione
-      renderer: 'svg',
-      loop: false,  // Non fare il loop per permettere di controllare avanti/indietro
-      autoplay: false, // Non avviare automaticamente
-      path: 'path_to_your_lottie_file.json' // Sostituisci con il path del tuo file Lottie
-    });
+    // Anima intro-fondo da transform: translateZ(200rem)
+    tl.from(".intro-fondo", 
+      { z: 200, duration: 1, ease: "power2.out" }
+    );
 
-    // Avvia l'animazione al mouse hover
-    element.addEventListener('mouseenter', function () {
-      lottieAnimation.setDirection(1); // Direzione avanti
-      lottieAnimation.play(); // Avvia l'animazione
-    });
+    // Anima intro-albero1 e intro-albero4 da transform: translateZ(205rem)
+    tl.from([".intro-albero1", ".intro-albero4"], 
+      { z: 205, duration: 1, ease: "power2.out" }, "<"
+    );
 
-    // Torna indietro al mouse out
-    element.addEventListener('mouseleave', function () {
-      lottieAnimation.setDirection(-1); // Direzione inversa
-      lottieAnimation.play(); // Riproduci l'animazione al contrario
-    });
+    // Anima intro-albero2 e intro-albero3 da transform: translateZ(210rem)
+    tl.from([".intro-albero2", ".intro-albero3"], 
+      { z: 210, duration: 1, ease: "power2.out" }, "<"
+    );
 
-    // Alternativa per il tap su dispositivi touch
-    element.addEventListener('click', function () {
-      lottieAnimation.setDirection(1); // Direzione avanti
-      lottieAnimation.play(); // Avvia l'animazione
-    });
+    // Anima intro-neve da transform: translateZ(220rem)
+    tl.from(".intro-neve", 
+      { z: 220, duration: 1, ease: "power2.out" }, "<"
+    );
   });
