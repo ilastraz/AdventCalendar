@@ -109,14 +109,20 @@
 //INTRO
 window.addEventListener("load", function() {
     // Creazione di una timeline per sincronizzare tutte le animazioni
-    let tl = gsap.timeline();
+    let IntroTl = gsap.timeline();
   
     // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
-    tl.from(".intro-fondo", { z: "200rem", duration: 1, ease: "power4.out" }, 0);
-    tl.from([".intro-albero1", ".intro-albero4"], { z: "205rem", scale: 1.2, duration: 1, ease: "expo.in" }, 0);
-    tl.from([".intro-albero2", ".intro-albero3"], { z: "210rem", scale: 1.2, duration: 1, ease: "expo.in" }, 0);
-    tl.from(".intro-neve", { z: "220rem", duration: 1, ease: "expo.out" }, 0.1);
-  });
+    IntroTl.from(".intro-fondo", { z: "200rem", duration: 1, ease: "power4.out" }, 0);
+    IntroTl.from([".intro-albero1", ".intro-albero4"], { z: "205rem", scale: 1.2, duration: 1, ease: "expo.in" }, 0);
+    IntroTl.from([".intro-albero2", ".intro-albero3"], { z: "210rem", scale: 1.2, duration: 1, ease: "expo.in" }, 0);
+    IntroTl.from(".intro-neve", { z: "220rem", duration: 1, ease: "expo.out" }, 0.1);
+
+    // Al termine della IntroTl, mostra la sezione caselle
+    IntroTl.call(function() {
+      document.querySelector(".caselle-section").style.display = "block";
+    });
+});
+
   
   
   
