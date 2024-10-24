@@ -107,27 +107,28 @@
 
 
 //INTRO
-  window.addEventListener("load", function() {
+window.addEventListener("load", function() {
     // Creazione di una timeline per sincronizzare tutte le animazioni
     let tl = gsap.timeline();
-
-    // Anima intro-fondo da transform: translateZ(200rem)
+  
+    // Anima intro-fondo da transform: translateZ(200rem) con leggero ritardo
     tl.from(".intro-fondo", 
-      { z: 200, duration: 1, ease: "power2.out" }
+      { z: "200rem", duration: 1, ease: "power2.out", delay: 0.1 }
     );
-
-    // Anima intro-albero1 e intro-albero4 da transform: translateZ(205rem)
+  
+    // Anima intro-albero1 e intro-albero4 da transform: translateZ(205rem) con leggero ritardo
     tl.from([".intro-albero1", ".intro-albero4"], 
-      { z: 205, duration: 1, ease: "power2.out" }, "<"
+      { z: "205rem", duration: 1, ease: "power2.out", delay: 0.2 }
     );
-
-    // Anima intro-albero2 e intro-albero3 da transform: translateZ(210rem)
+  
+    // Anima intro-albero2 e intro-albero3 da transform: translateZ(210rem) con leggero ritardo
     tl.from([".intro-albero2", ".intro-albero3"], 
-      { z: 210, duration: 1, ease: "power2.out" }, "<"
+      { z: "210rem", duration: 1, ease: "power2.out", delay: 0.3 }
     );
-
-    // Anima intro-neve da transform: translateZ(220rem)
+  
+    // Anima intro-neve da transform: translateZ(220rem) con leggero ritardo
     tl.from(".intro-neve", 
-      { z: 220, duration: 1, ease: "power2.out" }, "<"
+      { z: "220rem", duration: 1, ease: "power2.out", delay: 0.4 }
     );
   });
+  
