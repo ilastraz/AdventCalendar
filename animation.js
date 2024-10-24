@@ -113,9 +113,9 @@ window.addEventListener("load", function() {
   
     // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
     tl.from(".intro-fondo", { z: "200rem", duration: 0.5, ease: "power4.out" }, 0);
-    tl.from([".intro-albero1", ".intro-albero4"], { z: "205rem", scale: 1.2, duration: 0.4, ease: "power1.out" }, 0);
-    tl.from([".intro-albero2", ".intro-albero3"], { z: "210rem", scale: 1.2, duration: 0.4, ease: "power1.inOut" }, 0);
-    tl.from(".intro-neve", { z: "220rem", duration: 0.5, ease: "power3.out" }, 0);
+    tl.from([".intro-albero1", ".intro-albero4"], { z: "205rem", scale: 1.2, duration: 0.4, ease: "power3.out" }, 0);
+    tl.from([".intro-albero2", ".intro-albero3"], { z: "210rem", scale: 1.2, duration: 0.4, ease: "power3.inOut" }, 0);
+    tl.from(".intro-neve", { z: "220rem", duration: 0.5, ease: "power1.out" }, 0);
   });
   
   
