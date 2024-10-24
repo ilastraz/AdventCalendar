@@ -152,6 +152,9 @@ window.addEventListener("load", function() {
             if (isPlaying) {
                 animation.setDirection(-1);
                 animation.play();
+                animation.addEventListener('complete', function() {
+                    animation.goToAndStop(0, true);
+                });
                 isPlaying = false;
             }
         });
@@ -163,11 +166,15 @@ window.addEventListener("load", function() {
             } else {
                 animation.setDirection(-1);
                 animation.play();
+                animation.addEventListener('complete', function() {
+                    animation.goToAndStop(0, true);
+                });
                 isPlaying = false;
             }
         });
     });
 });
+
 
 
 
