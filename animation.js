@@ -117,9 +117,12 @@ window.addEventListener("load", function() {
     IntroTl.from([".intro-albero2", ".intro-albero3"], { z: "210rem", scale: 1.2, duration: 1, ease: "expo.in" }, 0);
     IntroTl.from(".intro-neve", { z: "220rem", duration: 1, ease: "expo.out" }, 0.1);
 
-    // Al termine della IntroTl, mostra la sezione caselle
-    IntroTl.set(".caselle-section", { display: "block" }, "+=0");
+    // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
+    IntroTl.to({}, { duration: 1, onComplete: function() {
+        document.querySelector(".caselle-section").style.display = "block";
+    }});
 });
+
 
 
   
