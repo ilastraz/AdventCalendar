@@ -126,54 +126,6 @@ window.addEventListener("load", function() {
     });
 });
 
-// Animazioni Lottie
-window.addEventListener("load", function() {
-    // Aggiungi animazioni Lottie con hover e tap
-    let lottieAnimations = document.querySelectorAll(".lottieback-animation");
-    lottieAnimations.forEach(function(animationEl) {
-        let animation = lottie.loadAnimation({
-            container: animationEl,
-            renderer: 'svg',
-            loop: false,
-            autoplay: false,
-            path: animationEl.getAttribute('data-lottie-path')
-        });
-
-        let isPlaying = false;
-
-        animationEl.addEventListener("mouseenter", function() {
-            if (!isPlaying) {
-                animation.play();
-                isPlaying = true;
-            }
-        });
-
-        animationEl.addEventListener("mouseleave", function() {
-            if (isPlaying) {
-                animation.setDirection(-1);
-                animation.play();
-                animation.addEventListener('complete', function() {
-                    animation.goToAndStop(0, true);
-                });
-                isPlaying = false;
-            }
-        });
-
-        animationEl.addEventListener("click", function() {
-            if (!isPlaying) {
-                animation.play();
-                isPlaying = true;
-            } else {
-                animation.setDirection(-1);
-                animation.play();
-                animation.addEventListener('complete', function() {
-                    animation.goToAndStop(0, true);
-                });
-                isPlaying = false;
-            }
-        });
-    });
-});
 
 
 
