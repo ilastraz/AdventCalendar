@@ -113,24 +113,25 @@ window.addEventListener("load", function() {
   
     // Anima intro-fondo da transform: translateZ(200rem)
     tl.from(".intro-fondo", 
-      { z: "200rem", duration: 0.5, ease: "expo.inOut" }, ">"
+      { z: "200rem", duration: 0.5, ease: "power2.out" }
     );
   
     // Anima intro-albero1 e intro-albero4 da transform: translateZ(205rem) e scala leggermente
     tl.from([".intro-albero1", ".intro-albero4"], 
-      { z: "205rem", scale: 1.2, duration: 0.5, ease: "expo.inOut" }, ">"
+      { z: "205rem", scale: 1.2, duration: 0.5, ease: "power1.out", delay: 0.1 }
     );
   
     // Anima intro-albero2 e intro-albero3 da transform: translateZ(210rem) e scala leggermente
     tl.from([".intro-albero2", ".intro-albero3"], 
-      { z: "210rem", scale: 1.2, duration: 0.5, ease: "expo.inOut"}, ">"
+      { z: "210rem", scale: 1.2, duration: 0.5, ease: "power1.inOut", delay: 0.2 }
     );
   
     // Anima intro-neve da transform: translateZ(220rem)
     tl.from(".intro-neve", 
-      { z: "220rem", duration: 0.5, ease: "expo.inOut" }, ">"
+      { z: "220rem", duration: 0.5, ease: "power4.out", delay: 0.3 }
     );
   });
+  
   
   
   
