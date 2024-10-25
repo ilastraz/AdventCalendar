@@ -108,7 +108,6 @@
 
 //INTRO
 // GSAP Animazioni
-// GSAP Animazioni
 window.addEventListener("load", function() {
     // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
     gsap.set([".intro-fondo", ".intro-albero1", ".intro-albero4", ".intro-albero2", ".intro-albero3", ".intro-neve"], { z: "100rem", autoAlpha: 1 });
@@ -122,11 +121,48 @@ window.addEventListener("load", function() {
     IntroTl.to([".intro-albero2", ".intro-albero3"], { z: "0rem", scale: 1, duration: 2.1, ease: "expo.out" }, 0);
     IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
 
+    // Poco prima di terminare l'animazione principale, avvia anche l'animazione del testo
+    IntroTl.call(function() {
+        window.addEventListener("DOMContentLoaded", (event) => {
+            // Split text into spans
+            let typeSplit = new SplitType("[text-split]", {
+                types: "words, chars",
+                tagName: "span"
+            });
+
+            // Link timelines to scroll position
+            function createScrollTrigger(triggerElement, timeline) {
+                // Reset tl when scroll out of view past bottom of screen
+                ScrollTrigger.create({
+                    trigger: triggerElement,
+                    start: "top bottom",
+                    onLeaveBack: () => {
+                        timeline.progress(0);
+                        timeline.pause();
+                    }
+                });
+                // Play tl when scrolled into view (60% from top of screen)
+                ScrollTrigger.create({
+                    trigger: triggerElement,
+                    start: "top 60%",
+                    onEnter: () => timeline.play()
+                });
+            }
+
+            $("[words-slide-up]").each(function (index) {
+                let tl = gsap.timeline({ paused: true });
+                tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
+                createScrollTrigger($(this), tl);
+            });
+        });
+    });
+
     // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
     IntroTl.call(function() {
         document.querySelector(".caselle-section").style.display = "block";
     });
 });
+
 
 
 
