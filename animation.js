@@ -207,43 +207,6 @@ window.addEventListener("load", function () {
   gsap.set("[text-split]", { opacity: 1 });
 });
 
-//LOTTIE
-// Controlla le animazioni Lottie con hover e tap
-window.addEventListener("load", function() {
-    // Seleziona tutte le animazioni Lottie con la classe ".LottieAnimation"
-    let lottieAnimations = document.querySelectorAll(".LottieAnimation");
-
-    lottieAnimations.forEach(function(animationEl) {
-        let src = animationEl.getAttribute('data-lottie-path');
-
-        let player = document.createElement('lottie-player');
-
-        animationEl.appendChild(player);
-
-        // Imposta l'animazione al 10% all'inizio
-        
-
-        // Aggiungi l'evento di hover per il desktop
-        animationEl.addEventListener("mouseenter", function() {
-            player.playSegments([0.1, 0.98], true);
-        });
-
-        animationEl.addEventListener("mouseleave", function() {
-            player.playSegments([0.98, 0.1], true);
-        });
-
-        // Aggiungi l'evento di tap per i dispositivi mobili
-        animationEl.addEventListener("click", function() {
-            if (player.isPlaying) {
-                player.playSegments([0.98, 0.1], true);
-                player.isPlaying = false;
-            } else {
-                player.playSegments([0.1, 0.98], true);
-                player.isPlaying = true;
-            }
-        });
-    });
-});
 
 
 
