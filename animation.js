@@ -108,6 +108,7 @@
 
 //INTRO
 // GSAP Animazioni
+// GSAP Animazioni
 window.addEventListener("load", function() {
     // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
     gsap.set([".intro-fondo", ".intro-albero1", ".intro-albero4", ".intro-albero2", ".intro-albero3", ".intro-neve"], { z: "100rem", autoAlpha: 1 });
@@ -128,7 +129,7 @@ window.addEventListener("load", function() {
     IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
 
     // Aggiungi animazione SplitType durante la timeline principale
-    IntroTl.from("[text-split] .char", { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } }, "+=1");
+    IntroTl.from("[text-split] .char", { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } }, "1");
 
     // Anima parole con scroll
     $("[scrub-each-word]").each(function (index) {
@@ -151,3 +152,4 @@ window.addEventListener("load", function() {
     // Avoid flash of unstyled content
     gsap.set("[text-split]", { opacity: 1 });
 });
+
