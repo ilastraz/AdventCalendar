@@ -108,8 +108,6 @@
 
 //INTRO
 // GSAP Animazioni
-
-// GSAP Animazioni
 window.addEventListener("load", function() {
     // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
     gsap.set([".intro-fondo", ".intro-albero1", ".intro-albero4", ".intro-albero2", ".intro-albero3", ".intro-neve"], { z: "100rem", autoAlpha: 1 });
@@ -130,6 +128,9 @@ window.addEventListener("load", function() {
             types: "words, chars",
             tagName: "span"
         });
+
+        // Rendi invisibile il testo inizialmente
+        gsap.set("[text-split] .char", { autoAlpha: 0 });
 
         // Link timelines to scroll position
         function createScrollTrigger(triggerElement, timeline) {
@@ -152,7 +153,7 @@ window.addEventListener("load", function() {
 
         $("[words-slide-up]").each(function (index) {
             let tl = gsap.timeline({ paused: true });
-            tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
+            tl.from($(this).find(".word"), { autoAlpha: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
             createScrollTrigger($(this), tl);
         });
     });
@@ -162,6 +163,7 @@ window.addEventListener("load", function() {
         document.querySelector(".caselle-section").style.display = "block";
     });
 });
+
 
 
 
