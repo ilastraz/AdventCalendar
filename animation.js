@@ -108,10 +108,9 @@
 
 //INTRO
 // GSAP Animazioni
+// GSAP Animazioni
 window.addEventListener("load", function() {
     // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
-    gsap.set(".intro-h1", { autoAlpha: 0 });
-    gsap.set(".intro-h1 .word", { yPercent: 100, autoAlpha: 0 });
     gsap.set([".intro-fondo", ".intro-albero1", ".intro-albero4", ".intro-albero2", ".intro-albero3", ".intro-neve"], { z: "100rem", autoAlpha: 1 });
   
     // Creazione di una timeline per sincronizzare tutte le animazioni
@@ -119,19 +118,16 @@ window.addEventListener("load", function() {
   
     // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
     IntroTl.to(".intro-fondo", { z: "0rem", duration: 2, ease: "power4.out" }, 0);
-    IntroTl.to([".intro-albero1", ".intro-albero4"], { z: "0rem", scale: 2.2, duration: 1.1, ease: "expo.out" }, 0);
-    IntroTl.to([".intro-albero2", ".intro-albero3"], { z: "0rem", scale: 2.2, duration: 1.1, ease: "expo.out" }, 0);
+    IntroTl.to([".intro-albero1", ".intro-albero4"], { z: "0rem", scale: 1, duration: 2.1, ease: "expo.out" }, 0);
+    IntroTl.to([".intro-albero2", ".intro-albero3"], { z: "0rem", scale: 1, duration: 2.1, ease: "expo.out" }, 0);
     IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
-
-    // Anima l'intro-h1 poco prima di terminare l'animazione principale
-    IntroTl.to(".intro-h1", { autoAlpha: 1, duration: 0.5, ease: "power2.out" }, "-=0.5");
-    IntroTl.to(".intro-h1 .word", { yPercent: 0, autoAlpha: 1, duration: 0.5, ease: "back.out(2)", stagger: 0.1 }, "-=0.5");
 
     // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
     IntroTl.call(function() {
         document.querySelector(".caselle-section").style.display = "block";
     });
 });
+
 
 
 
