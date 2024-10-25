@@ -107,6 +107,7 @@
 
 
 //INTRO
+// GSAP Animazioni
 window.addEventListener("load", function() {
     // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
     gsap.set([".intro-fondo", ".intro-albero1", ".intro-albero4", ".intro-albero2", ".intro-albero3", ".intro-neve"], { z: "100rem", autoAlpha: 1 });
@@ -148,6 +149,9 @@ window.addEventListener("load", function() {
         createScrollTrigger($(this), tl);
     });
 
+    // Aggiungi animazione letters-slide-up come ultima animazione
+    IntroTl.from("[letters-slide-up] .char", { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } }, "+=0.5");
+
     // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
     IntroTl.call(function() {
         document.querySelector(".caselle-section").style.display = "block";
@@ -156,5 +160,6 @@ window.addEventListener("load", function() {
     // Avoid flash of unstyled content
     gsap.set("[text-split]", { opacity: 1 });
 });
+
 
 
