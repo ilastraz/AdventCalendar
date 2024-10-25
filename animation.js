@@ -143,6 +143,7 @@ window.addEventListener("load", function() {
         });
     });
     // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili visibili
+    gsap.set(".intro-h1", { autoAlpha: 0 });
     gsap.set([".intro-fondo", ".intro-albero1", ".intro-albero4", ".intro-albero2", ".intro-albero3", ".intro-neve"], { z: "100rem", autoAlpha: 1 });
   
     // Creazione di una timeline per sincronizzare tutte le animazioni
@@ -155,6 +156,7 @@ window.addEventListener("load", function() {
     IntroTl.to(".intro-neve", { z: "0rem", duration: 1, ease: "expo.out" }, 0.1);
 
     // Poco prima di terminare l'animazione principale, avvia anche l'animazione del testo
+    IntroTl.to(".intro-h1", { autoAlpha: 1, duration: 0.5, ease: "power2.out" }, "-=0.5");
     IntroTl.call(function() {
         let typeSplit = new SplitType("[text-split]", {
             types: "words, chars",
