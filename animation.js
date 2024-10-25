@@ -118,7 +118,7 @@ window.addEventListener("load", function() {
     IntroTl.to(".intro-fondo", { z: "0rem", duration: 1, ease: "power4.out" }, 0);
     IntroTl.to([".intro-albero1", ".intro-albero4"], { z: "0rem", scale: 1.2, duration: 1, ease: "expo.out" }, 0);
     IntroTl.to([".intro-albero2", ".intro-albero3"], { z: "0rem", scale: 1.2, duration: 1, ease: "expo.out" }, 0);
-    IntroTl.to(".intro-neve", { z: "0rem", duration: 1, ease: "expo.out" }, 0.1);
+    IntroTl.to(".intro-neve", { z: "0rem", duration: 1, ease: "expo.in" }, 0.1);
 
     // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
     IntroTl.call(function() {
