@@ -162,6 +162,17 @@ window.addEventListener("load", function() {
 });
 
 //LOTTIE
+let player = document.getElementById("LottieAnimation");
+
+player.addEventListener("ready", () => {
+LottieInteractivity.create({
+    player: "#LottieAnimation",
+    mode:"cursor", 
+    actions: [ { type: "hover", forceFlag: false, repeat: 3 } ]
+});
+});
+
+
 // Controlla le animazioni Lottie con hover e tap
 window.addEventListener("load", function() {
     // Includi la libreria Lottie
