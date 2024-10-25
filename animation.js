@@ -130,7 +130,7 @@ window.addEventListener("load", function() {
         });
 
         // Rendi invisibile il testo inizialmente
-        gsap.set("[text-split] .char", { autoAlpha: 0 });
+        gsap.set("[text-split] .char", { opacity: 0, yPercent: 100 });
 
         // Link timelines to scroll position
         function createScrollTrigger(triggerElement, timeline) {
@@ -153,7 +153,7 @@ window.addEventListener("load", function() {
 
         $("[words-slide-up]").each(function (index) {
             let tl = gsap.timeline({ paused: true });
-            tl.from($(this).find(".word"), { autoAlpha: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
+            tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
             createScrollTrigger($(this), tl);
         });
     });
@@ -163,6 +163,7 @@ window.addEventListener("load", function() {
         document.querySelector(".caselle-section").style.display = "block";
     });
 });
+
 
 
 
