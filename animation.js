@@ -222,6 +222,7 @@ window.addEventListener("load", function() {
         player.setAttribute('speed', '1');
         player.setAttribute('direction', '1');
         player.setAttribute('mode', 'normal');
+        // Imposta autoplay su false per evitare l'avvio automatico
         player.setAttribute('autoplay', 'false');
         player.classList.add('LottieAnimationPlayer');
 
@@ -230,10 +231,12 @@ window.addEventListener("load", function() {
         // Aggiungi l'evento di hover per il desktop
         animationEl.addEventListener("mouseenter", function() {
             player.play();
+            player.isPlaying = true;
         });
 
         animationEl.addEventListener("mouseleave", function() {
             player.stop();
+            player.isPlaying = false;
         });
 
         // Aggiungi l'evento di tap per i dispositivi mobili
