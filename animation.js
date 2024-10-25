@@ -108,6 +108,7 @@
 
 //INTRO
 // GSAP Animazioni
+// GSAP Animazioni
 window.addEventListener("load", function() {
     // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
     gsap.set([".intro-fondo", ".intro-albero1", ".intro-albero4", ".intro-albero2", ".intro-albero3", ".intro-neve"], { z: "100rem", autoAlpha: 1 });
@@ -117,7 +118,7 @@ window.addEventListener("load", function() {
 
     // Split text into spans a metà dell'animazione principale
     let typeSplit = new SplitType("[text-split]", {
-        types: "lines, words, chars",
+        types: "words, chars",
         tagName: "span"
     });
 
@@ -128,8 +129,7 @@ window.addEventListener("load", function() {
     IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
 
     // Aggiungi animazione SplitType durante la timeline principale
-    IntroTl.from("[text-split] .line", { opacity: 0, y: 50, duration: 0.6, ease: "power2.out", stagger: 0.2 }, "1");
-    IntroTl.from("[text-split] .char", { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } }, "1.5");
+    IntroTl.from("[text-split] .char", { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } }, "1");
 
     // Anima parole con scroll
     $("[scrub-each-word]").each(function (index) {
@@ -144,9 +144,6 @@ window.addEventListener("load", function() {
         tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
     });
 
-    // Anima le linee di .intro-p come ultima animazione
-    IntroTl.from(".intro-p .line", { opacity: 0, y: 50, duration: 0.6, ease: "power2.out", stagger: 0.2 }, "+=0.5");
-
     // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
     IntroTl.call(function() {
         document.querySelector(".caselle-section").style.display = "block";
@@ -155,5 +152,4 @@ window.addEventListener("load", function() {
     // Avoid flash of unstyled content
     gsap.set("[text-split]", { opacity: 1 });
 });
-
 
