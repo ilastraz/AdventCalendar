@@ -217,13 +217,6 @@ window.addEventListener("load", function() {
         let src = animationEl.getAttribute('data-lottie-path');
 
         let player = document.createElement('lottie-player');
-        player.setAttribute('src', src);
-        player.setAttribute('background', 'transparent');
-        player.setAttribute('speed', '1');
-        player.setAttribute('autoplay', 'false');
-        player.pause();
-        player.setAttribute('loop', 'false');
-        player.style.pointerEvents = 'none';
 
         animationEl.appendChild(player);
 
