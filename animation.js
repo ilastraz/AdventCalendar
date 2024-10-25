@@ -164,9 +164,15 @@ window.addEventListener("load", function() {
 //LOTTIE
 // Controlla le animazioni Lottie con hover e tap
 window.addEventListener("load", function() {
+    // Includi la libreria Lottie
+    if (typeof lottie === 'undefined') {
+        console.error("Libreria Lottie non trovata. Assicurati di includere la libreria Lottie nella tua pagina HTML.");
+        return;
+    }
+
     // Seleziona tutte le animazioni Lottie con la classe ".LottieAnimation"
     let lottieAnimations = document.querySelectorAll(".LottieAnimation");
-  
+
     lottieAnimations.forEach(function(animationEl) {
         let animation = lottie.loadAnimation({
             container: animationEl,
@@ -175,9 +181,9 @@ window.addEventListener("load", function() {
             autoplay: false,
             path: animationEl.getAttribute('data-lottie-path') // Supponendo che il percorso del file JSON sia specificato in un attributo data-lottie-path
         });
-  
+
         let isPlaying = false;
-  
+
         // Aggiungi l'evento di hover per il desktop
         animationEl.addEventListener("mouseenter", function() {
             if (!isPlaying) {
@@ -186,7 +192,7 @@ window.addEventListener("load", function() {
                 isPlaying = true;
             }
         });
-  
+
         animationEl.addEventListener("mouseleave", function() {
             if (isPlaying) {
                 animation.setDirection(-1); // Direzione indietro
@@ -194,7 +200,7 @@ window.addEventListener("load", function() {
                 isPlaying = false;
             }
         });
-  
+
         // Aggiungi l'evento di tap per i dispositivi mobili
         animationEl.addEventListener("click", function() {
             if (!isPlaying) {
@@ -208,6 +214,7 @@ window.addEventListener("load", function() {
             }
         });
     });
-  });
+});
+
   
 
