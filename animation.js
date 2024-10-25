@@ -228,24 +228,30 @@ window.addEventListener("load", function() {
 
         animationEl.appendChild(player);
 
+        // Imposta l'animazione al 10% all'inizio
+        player.addEventListener('load', function() {
+            player.goToAndStop(10, true);
+        });
+
         // Aggiungi l'evento di hover per il desktop
         animationEl.addEventListener("mouseenter", function() {
-            player.play();
-            player.isPlaying = true;
+            player.playSegments([10, 98], true);
         });
 
         animationEl.addEventListener("mouseleave", function() {
-            player.stop();
-            player.isPlaying = false;
+            player.playSegments([98, 10], true);
         });
 
         // Aggiungi l'evento di tap per i dispositivi mobili
         animationEl.addEventListener("click", function() {
             if (player.isPlaying) {
-                player.stop();
+                player.playSegments([98, 10], true);
+                player.isPlaying = false;
             } else {
-                player.play();
+                player.playSegments([10, 98], true);
+                player.isPlaying = true;
             }
         });
     });
 });
+
