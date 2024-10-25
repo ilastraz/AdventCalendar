@@ -121,7 +121,7 @@ window.addEventListener("load", function() {
     IntroTl.to([".intro-albero2", ".intro-albero3"], { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" }, 0);
     IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
 
-    // Poco prima di terminare l'animazione principale, avvia anche l'animazione del testo
+    // Poco prima di terminare l'animazione principale, avvia anche l'animazione del testo e del paragrafo
     IntroTl.call(function() {
         // Split text into spans poco prima che finisca l'animazione principale
         let typeSplit = new SplitType("[text-split]", {
@@ -156,6 +156,17 @@ window.addEventListener("load", function() {
             tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
             createScrollTrigger($(this), tl);
         });
+
+        // Aggiungi animazione per .intro-p
+        let tlIntroP = gsap.timeline();
+        tlIntroP.from(".intro-p", {
+            duration: 0.4,
+            ease: 'power4.out',
+            y: '100%',
+            opacity: 0,
+            stagger: { each: 0.1 },
+        });
+        IntroTl.add(tlIntroP, "-=0.5");
     });
 
     // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
@@ -163,6 +174,7 @@ window.addEventListener("load", function() {
         document.querySelector(".caselle-section").style.display = "block";
     });
 });
+
 
 
 
