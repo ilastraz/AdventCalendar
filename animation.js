@@ -162,12 +162,21 @@ window.addEventListener("load", function() {
 });
 
 //LOTTIE
-let player = document.getElementById("LottieAnimation");
 
-player.addEventListener("ready", () => {
-LottieInteractivity.create({
-    player: "#LottieAnimation",
-    mode:"cursor", 
-    actions: [ { type: "hover", forceFlag: false, repeat: 3 } ]
-});
-});
+    var animation = lottie.loadAnimation({
+      container: document.getElementById('LottieAnimation'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      path: animationEl.getAttribute('data-lottie-path') // Supponendo che il percorso del file JSON sia specificato in un attributo data-lottie-path
+    });
+
+    
+    // Play the animation once when the button is hovered over
+    function playAnimation(buttonNumber) {
+      if (buttonNumber === 1) {
+        animation1.playSegments([0, animation.totalFrames], true);
+      } else if (buttonNumber === 2) {
+        animation2.playSegments([0, animation.totalFrames], true);
+      }
+    }
