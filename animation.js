@@ -220,38 +220,37 @@ window.addEventListener("load", function() {
         player.setAttribute('src', src);
         player.setAttribute('background', 'transparent');
         player.setAttribute('speed', '1');
-        player.setAttribute('direction', '1');
-        player.setAttribute('mode', 'normal');
-        // Imposta autoplay su false per evitare l'avvio automatico
         player.setAttribute('autoplay', 'false');
-        player.classList.add('LottieAnimationPlayer');
+        player.setAttribute('loop', 'false');
+        player.style.pointerEvents = 'none';
 
         animationEl.appendChild(player);
 
         // Imposta l'animazione al 10% all'inizio
         player.addEventListener('load', function() {
-            player.goToAndStop(10, true);
+            player.seek(0.1);
         });
 
         // Aggiungi l'evento di hover per il desktop
         animationEl.addEventListener("mouseenter", function() {
-            player.playSegments([10, 98], true);
+            player.playSegments([0.1, 0.98], true);
         });
 
         animationEl.addEventListener("mouseleave", function() {
-            player.playSegments([98, 10], true);
+            player.playSegments([0.98, 0.1], true);
         });
 
         // Aggiungi l'evento di tap per i dispositivi mobili
         animationEl.addEventListener("click", function() {
             if (player.isPlaying) {
-                player.playSegments([98, 10], true);
+                player.playSegments([0.98, 0.1], true);
                 player.isPlaying = false;
             } else {
-                player.playSegments([10, 98], true);
+                player.playSegments([0.1, 0.98], true);
                 player.isPlaying = true;
             }
         });
     });
 });
+
 
