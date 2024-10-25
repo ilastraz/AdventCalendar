@@ -119,3 +119,51 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelector('.popup-close').addEventListener('click', closePopup);
 });
 
+//LOTTIE
+// Controlla le animazioni Lottie con hover e tap
+window.addEventListener("load", function() {
+  // Seleziona tutte le animazioni Lottie con la classe ".LottieAnimation"
+  let lottieAnimations = document.querySelectorAll(".LottieAnimation");
+
+  lottieAnimations.forEach(function(animationEl) {
+      let animation = lottie.loadAnimation({
+          container: animationEl,
+          renderer: 'svg',
+          loop: false,
+          autoplay: false,
+          path: animationEl.getAttribute('data-lottie-path') // Supponendo che il percorso del file JSON sia specificato in un attributo data-lottie-path
+      });
+
+      let isPlaying = false;
+
+      // Aggiungi l'evento di hover per il desktop
+      animationEl.addEventListener("mouseenter", function() {
+          if (!isPlaying) {
+              animation.setDirection(1); // Direzione avanti
+              animation.play();
+              isPlaying = true;
+          }
+      });
+
+      animationEl.addEventListener("mouseleave", function() {
+          if (isPlaying) {
+              animation.setDirection(-1); // Direzione indietro
+              animation.play();
+              isPlaying = false;
+          }
+      });
+
+      // Aggiungi l'evento di tap per i dispositivi mobili
+      animationEl.addEventListener("click", function() {
+          if (!isPlaying) {
+              animation.setDirection(1); // Direzione avanti
+              animation.play();
+              isPlaying = true;
+          } else {
+              animation.setDirection(-1); // Direzione indietro
+              animation.play();
+              isPlaying = false;
+          }
+      });
+  });
+});
