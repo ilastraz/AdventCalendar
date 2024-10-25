@@ -150,10 +150,10 @@ window.addEventListener("load", function() {
     let IntroTl = gsap.timeline();
   
     // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
-    IntroTl.to(".intro-fondo", { z: "0rem", duration: 1, ease: "power4.out" }, 0);
-    IntroTl.to([".intro-albero1", ".intro-albero4"], { z: "0rem", scale: 1.2, duration: 1.1, ease: "expo.out" }, 0);
-    IntroTl.to([".intro-albero2", ".intro-albero3"], { z: "0rem", scale: 1.2, duration: 1.1, ease: "expo.out" }, 0);
-    IntroTl.to(".intro-neve", { z: "0rem", duration: 1, ease: "expo.out" }, 0.1);
+    IntroTl.to(".intro-fondo", { z: "0rem", duration: 2, ease: "power4.out" }, 0);
+    IntroTl.to([".intro-albero1", ".intro-albero4"], { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" }, 0);
+    IntroTl.to([".intro-albero2", ".intro-albero3"], { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" }, 0);
+    IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
 
     // Poco prima di terminare l'animazione principale, avvia anche l'animazione del testo
     IntroTl.to(".intro-h1", { visibility: "visible", autoAlpha: 1, duration: 0.5, ease: "power2.out" }, "-=0.5");
