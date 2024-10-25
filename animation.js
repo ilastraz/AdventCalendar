@@ -221,15 +221,14 @@ window.addEventListener("load", function() {
         player.setAttribute('background', 'transparent');
         player.setAttribute('speed', '1');
         player.setAttribute('autoplay', 'false');
+        player.pause();
         player.setAttribute('loop', 'false');
         player.style.pointerEvents = 'none';
 
         animationEl.appendChild(player);
 
         // Imposta l'animazione al 10% all'inizio
-        player.addEventListener('load', function() {
-            player.seek(0.1);
-        });
+        
 
         // Aggiungi l'evento di hover per il desktop
         animationEl.addEventListener("mouseenter", function() {
@@ -252,5 +251,6 @@ window.addEventListener("load", function() {
         });
     });
 });
+
 
 
