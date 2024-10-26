@@ -23,14 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  async function fetchCurrentDay() {
+  function fetchCurrentDay() {
     try {
-      const response = await fetch('https://ipapi.co/json/');
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
       const currentDate = new Date();
+      console.log('Data corrente dal browser:', currentDate);
       const currentDay = currentDate.getDate();
       updateCalendar(currentDay);
     } catch (error) {
@@ -118,4 +114,3 @@ document.addEventListener("DOMContentLoaded", function() {
   // Aggiungi l'event listener per chiudere il popup
   document.querySelector('.popup-close').addEventListener('click', closePopup);
 });
-
