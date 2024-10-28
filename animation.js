@@ -131,12 +131,6 @@ window.addEventListener("load", function () {
   // Creazione di una timeline per sincronizzare tutte le animazioni
   let IntroTl = gsap.timeline();
 
-  // Split text into spans a metà dell'animazione principale
-  let typeSplit = new SplitType("[text-split]", {
-    types: "words, chars",
-    tagName: "span",
-  });
-
   // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
   IntroTl.to(".intro-fondo", { z: "0rem", duration: 2, ease: "power4.out" }, 0);
   IntroTl.to(
@@ -151,63 +145,54 @@ window.addEventListener("load", function () {
   );
   IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
 
-  // Aggiungi animazione SplitType durante la timeline principale
-  IntroTl.from(
-    "[text-split] .char",
-    {
-      opacity: 0,
-      yPercent: 100,
-      duration: 0.5,
-      ease: "back.out(2)",
-    },
-    "1.5"
-  );
+  // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
+  IntroTl.call(function () {
+    document.querySelector(".caselle-section").style.display = "block";
+  });
 
-  // Anima parole con scroll
+  // Split text into spans
+  let typeSplit = new SplitType("[text-split]", {
+    types: "words, chars",
+    tagName: "span"
+  });
+
+  // Link timelines to scroll position
+  function createScrollTrigger(triggerElement, timeline) {
+    // Reset tl when scroll out of view past bottom of screen
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: "top bottom",
+      onLeaveBack: () => {
+        timeline.progress(0);
+        timeline.pause();
+      }
+    });
+    // Play tl when scrolled into view (60% from top of screen)
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: "top 60%",
+      onEnter: () => timeline.play()
+    });
+  }
+
+  // Anima lettere con slide up dopo 1 secondo
+  setTimeout(function () {
+    $("[letters-slide-up]").each(function (index) {
+      let tl = gsap.timeline({ paused: false });
+      tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+    });
+  }, 1000);
+
   $("[scrub-each-word]").each(function (index) {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: $(this),
         start: "top 90%",
         end: "top center",
-        scrub: true,
-      },
+        scrub: true
+      }
     });
-    tl.from($(this).find(".word"), {
-      opacity: 0.2,
-      duration: 0.2,
-      ease: "power1.out",
-      stagger: { each: 0.4 },
-    });
-  });
-
-  $("[letters-slide-up]").each(function (index) {
-    let tl = gsap.timeline({ paused: true });
-    // Modifica per animare le righe invece delle lettere
-    tl.from($(this).find(".word"), {
-      yPercent: 100,
-      duration: 0.4,
-      ease: "power1.out",
-      stagger: { each: 0.2 }, // Modifica per animare ogni parola
-    });
-    createScrollTrigger($(this), tl);
-  });
-
-  // Aggiungi animazione letters-slide-up come ultima animazione
-  IntroTl.from(
-    "[letters-slide-up] .word", // Modifica per animare le parole
-    {
-      yPercent: 100,
-      duration: 0.4,
-      ease: "power1.out",
-      stagger: { each: 0.2 }, // Modifica per animare ogni parola
-    },
-    "+=0.5"
-  );
-
-  // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
-  IntroTl.call(function () {
-    document.querySelector(".caselle-section").style.display = "block";
+    tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
   });
 
   // Avoid flash of unstyled content
@@ -238,3 +223,7 @@ window.addEventListener("load", function () {
     IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
   }
 });
+
+
+
+
