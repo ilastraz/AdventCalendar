@@ -188,7 +188,6 @@ window.addEventListener("load", function () {
       yPercent: 100,
       duration: 0.2,
       ease: "power1.out",
-      stagger: { amount: 0.6 },
     });
     createScrollTrigger($(this), tl);
   });
