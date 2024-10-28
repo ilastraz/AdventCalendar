@@ -83,6 +83,9 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error('Elemento .popup-content non trovato');
           }
 
+          // Disattiva lo scroll della pagina
+          document.body.style.overflow = 'hidden';
+
           popup.style.display = 'flex';
           console.log('Popup display style:', popup.style.display);
           console.log('Computed style:', window.getComputedStyle(popup).display);
@@ -103,6 +106,8 @@ document.addEventListener("DOMContentLoaded", function() {
   // Funzione per chiudere il popup
   function closePopup() {
     document.querySelector('.popup').style.display = 'none';
+    // Riattiva lo scroll della pagina
+    document.body.style.overflow = 'auto';
   }
 
   // Esegui l'aggiornamento all'avvio
