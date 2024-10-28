@@ -179,7 +179,7 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     $("[letters-slide-up]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
-      tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+      tl.from($(this).find(".char"), { opacity: 0, yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
     });
   }, 1000);
 
@@ -187,7 +187,7 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     $("[letters-slide-down]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
-      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out" });
+      tl.from($(this).find(".char"), { opacity: 0, yPercent: -120, duration: 0.3, ease: "power1.out" });
     });
   }, 1500);
 
