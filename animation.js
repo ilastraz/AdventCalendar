@@ -128,6 +128,9 @@ window.addEventListener("load", function () {
     { z: "100rem", autoAlpha: 1 }
   );
 
+  // Nascondi il testo prima che inizi l'animazione
+  gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
+
   // Creazione di una timeline per sincronizzare tutte le animazioni
   let IntroTl = gsap.timeline();
 
@@ -156,11 +159,11 @@ window.addEventListener("load", function () {
     tagName: "span"
   });
 
-
   // Anima lettere con slide up dopo 1 secondo
   setTimeout(function () {
     $("[letters-slide-up]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
+      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
       tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
     });
   }, 1000);
@@ -169,6 +172,7 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     $("[letters-slide-down]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
+      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
       tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out" });
     });
   }, 1500);
@@ -213,5 +217,4 @@ window.addEventListener("load", function () {
     IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
   }
 });
-
 
