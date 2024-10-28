@@ -184,12 +184,12 @@ window.addEventListener("load", function () {
 
   $("[letters-slide-up]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
-    // Modifica per animare le parole invece delle lettere
+    // Modifica per animare le righe invece delle lettere
     tl.from($(this).find(".word"), {
       yPercent: 100,
       duration: 0.4,
       ease: "power1.out",
-      stagger: { amount: 0.6 }, // Modifica per animare ogni parola
+      stagger: { each: 0.2 }, // Modifica per animare ogni parola
     });
     createScrollTrigger($(this), tl);
   });
@@ -201,7 +201,7 @@ window.addEventListener("load", function () {
       yPercent: 100,
       duration: 0.4,
       ease: "power1.out",
-      stagger: { amount: 0.6 }, // Modifica per animare ogni parola
+      stagger: { each: 0.2 }, // Modifica per animare ogni parola
     },
     "+=0.5"
   );
