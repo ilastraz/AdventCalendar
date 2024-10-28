@@ -35,9 +35,9 @@
   Snowflake.prototype.reset = function () {
     this.x = Math.random() * width;
     this.y = Math.random() * height;
-    this.vy = 0.5 + Math.random() * 1.5; // Riduci la velocità verticale per renderla più omogenea
+    this.vy = 1 + Math.random() * 2; // Riduci la velocità verticale per renderla più omogenea
     this.vx = 0.5 - Math.random();
-    this.r = 1 + Math.random() * 2;
+    this.r = 1 + Math.random() * 3;
     this.o = 0.5 + Math.random() * 0.5;
   };
 
@@ -108,6 +108,7 @@
 })();
 
 // END SNOW
+
 
 
 //INTRO
