@@ -237,17 +237,4 @@ window.addEventListener("load", function () {
     );
     IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
   }
-
-  // Aggiungi effetto di parallax allo scroll
-  gsap.utils.toArray([".intro-albero1", ".intro-albero2", ".intro-albero3", ".intro-albero4", ".intro-neve"]).forEach((el, index) => {
-    gsap.to(el, {
-      yPercent: () => (index % 2 === 0 ? -10 : -5), // Elementi davanti si muovono più in alto
-      scrollTrigger: {
-        trigger: el,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true, // Sincronizza l'animazione con lo scroll
-      },
-    });
-  });
 });
