@@ -151,6 +151,7 @@ window.addEventListener("load", function () {
   // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
   IntroTl.call(function () {
     document.querySelector(".caselle-section").style.display = "block";
+    document.querySelector(".footer-box").style.display = "block";
   });
 
   // Split text into spans
