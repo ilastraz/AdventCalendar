@@ -84,11 +84,18 @@ document.addEventListener("DOMContentLoaded", function() {
             }
           });
 
-          const popupContent = document.querySelector('.popup-content');
-          if (popupContent) {
-            popupContent.style.backgroundImage = `url(${window.innerWidth > 991 ? dayData.bgdesktop : dayData.bgmobile})`;
-          } else {
-            console.error('Elemento .popup-content non trovato');
+          // Aggiorna le immagini popup-image-desktop e popup-image-mobile
+          const imgDesktop = document.querySelector('.popup-image-desktop');
+          const imgMobile = document.querySelector('.popup-image-mobile');
+          if (imgDesktop && dayData.imgDesktop) {
+            imgDesktop.src = dayData.imgDesktop;
+          } else if (!imgDesktop) {
+            console.error('Elemento .popup-image-desktop non trovato');
+          }
+          if (imgMobile && dayData.imgMobile) {
+            imgMobile.src = dayData.imgMobile;
+          } else if (!imgMobile) {
+            console.error('Elemento .popup-image-mobile non trovato');
           }
 
           // Disattiva lo scroll della pagina
