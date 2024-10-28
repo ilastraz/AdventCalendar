@@ -6,13 +6,13 @@
     "nota": "",
     "cta1": {
       "testo": "GUARDA IL RIASSUNTO",
-      "link": "https://esempio.com/giorno1"
+      "link": "https://mediasetinfinity.mediaset.it/"
     },
     "cta2": {
       "testo": "",
       "link": ""
     },
     "bgdesktop": "https://infinity.gmgstatic.eu//Calendario/Popup-1-Desktop.jpg",
-    "bgmobile": ""
+    "bgmobile": "https://infinity.gmgstatic.eu//Calendario/Popup-1-Mobile.jpg"
   }
 }
