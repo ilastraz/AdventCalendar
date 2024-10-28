@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
           const popupContent = document.querySelector('.popup-content');
           if (popupContent) {
-            popupContent.style.backgroundImage = `url(${window.innerWidth > 768 ? dayData.bgdesktop : dayData.bgmobile})`;
+            popupContent.style.backgroundImage = `url(${window.innerWidth > 991 ? dayData.bgdesktop : dayData.bgmobile})`;
           } else {
             console.error('Elemento .popup-content non trovato');
           }
