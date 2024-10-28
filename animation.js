@@ -161,7 +161,7 @@ window.addEventListener("load", function () {
       ease: "back.out(2)",
       stagger: { amount: 0.5 },
     },
-    "1.5"
+    "1"
   );
 
   // Anima parole con scroll
