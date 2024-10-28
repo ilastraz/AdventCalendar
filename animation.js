@@ -183,6 +183,14 @@ window.addEventListener("load", function () {
     });
   }, 1000);
 
+  // Anima lettere con slide down poco dopo slide up
+  setTimeout(function () {
+    $("[letters-slide-down]").each(function (index) {
+      let tl = gsap.timeline({ paused: false });
+      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out", stagger: { amount: 0.7 } });
+    });
+  }, 1500);
+
   $("[scrub-each-word]").each(function (index) {
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -223,7 +231,5 @@ window.addEventListener("load", function () {
     IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
   }
 });
-
-
 
 
