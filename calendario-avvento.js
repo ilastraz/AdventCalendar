@@ -86,17 +86,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
           // Aggiorna le immagini popup-image-desktop e popup-image-mobile
           const imgDesktop = document.querySelector('.popup-image-desktop');
-          const imgMobile = document.querySelector('.popup-image-mobile');
-          if (imgDesktop && dayData.imgDesktop) {
-            imgDesktop.src = dayData.imgDesktop;
-          } else if (!imgDesktop) {
-            console.error('Elemento .popup-image-desktop non trovato');
-          }
-          if (imgMobile && dayData.imgMobile) {
-            imgMobile.src = dayData.imgMobile;
-          } else if (!imgMobile) {
-            console.error('Elemento .popup-image-mobile non trovato');
-          }
+const imgMobile = document.querySelector('.popup-image-mobile');
+if (imgDesktop && dayData.imgDesktop) {
+  imgDesktop.src = dayData.imgDesktop;
+  imgDesktop.removeAttribute('srcset');
+  imgDesktop.removeAttribute('sizes');
+} else if (!imgDesktop) {
+  console.error('Elemento .popup-image-desktop non trovato');
+}
+if (imgMobile && dayData.imgMobile) {
+  imgMobile.src = dayData.imgMobile;
+  imgMobile.removeAttribute('srcset');
+  imgMobile.removeAttribute('sizes');
+} else if (!imgMobile) {
+  console.error('Elemento .popup-image-mobile non trovato');
+}
 
           // Disattiva lo scroll della pagina
           document.body.style.overflow = 'hidden';
