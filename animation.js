@@ -165,7 +165,7 @@ window.addEventListener("load", function () {
   );
 
   // Anima parole con scroll
-  $("[scrub-each-word]").each(function (index) {
+  $("[words-slide-up]").each(function (index) {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: $(this),
