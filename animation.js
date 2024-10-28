@@ -173,7 +173,7 @@ window.addEventListener("load", function () {
     $("[letters-slide-down]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
       tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
-      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out" });
+      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out" }, 0.1);
     });
   }, 1500);
 
