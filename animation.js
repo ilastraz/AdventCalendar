@@ -226,6 +226,16 @@ window.addEventListener("load", function () {
     );
 
     // Creazione di una timeline per le animazioni mobile
+    let IntroMobileTl = gsap.timeline({ defaults: { ease: "expo.out", duration: 2 } });
+
+    // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
+    IntroMobileTl.to(".intro-fondo-mobile", { z: "0rem" }, 0);
+    IntroMobileTl.to(".intro-alberi-mobile", { z: "0rem", scale: 1.2 }, 0);
+    IntroMobileTl.to(".intro-neve-mobile", { z: "0rem" }, 0.1);
+  }
+    );
+
+    // Creazione di una timeline per le animazioni mobile
     let IntroMobileTl = gsap.timeline();
 
     // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
@@ -238,5 +248,4 @@ window.addEventListener("load", function () {
     IntroMobileTl.to(".intro-neve-mobile", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
   }
 });
-
 
