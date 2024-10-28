@@ -153,3 +153,22 @@
   }
 
 }
+
+"28": {
+  "data": "28 Dicembre",
+  "head": "GOLD experience scontata",
+  "descrizione": "Con la GOLD experience puoi fruire dei contenuti gratuiti di Mediaset Infinity con tanti vantaggi in più: download, smart ADV, super restart e massima qualità video.Solo per oggi tutto questo per un anno intero a soli 19,90€ anzichè 39,99€.",
+  "nota": "*Offerta valida solo per utenti che non hanno mai attivato la GOLD experience. Al termine del primo anno il prezzo sarà di 39,99€ all'anno. Disdici quando vuoi.",
+  "cta1": {
+    "testo": "ATTIVA GOLD",
+    "link": "https://mediasetinfinity.mediaset.it/account/purchase/option/MediasetPlay_SVOD"
+  },
+  "cta2": {
+    "testo": "",
+    "link": ""
+  },
+  "bgdesktop": "",
+  "bgmobile": ""
+}
+
+}
