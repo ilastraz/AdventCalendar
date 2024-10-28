@@ -75,6 +75,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 element.style.display = 'none';
               } else if (selector === '.popup-cta1' || selector === '.popup-cta2') {
                 element.setAttribute('target', '_blank');
+                element.addEventListener('click', event => {
+                  event.stopPropagation(); // Evita che il click si propaghi e interferisca
+                });
               }
             } else {
               console.error(`Elemento ${selector} non trovato`);
