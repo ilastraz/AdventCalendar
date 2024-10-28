@@ -71,6 +71,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const element = document.querySelector(selector);
             if (element) {
               element[property] = value;
+              if (value === "" && (selector === '.popup-cta1' || selector === '.popup-cta2')) {
+                element.style.display = 'none';
+              }
             } else {
               console.error(`Elemento ${selector} non trovato`);
             }
