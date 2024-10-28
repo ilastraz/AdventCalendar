@@ -184,23 +184,24 @@ window.addEventListener("load", function () {
 
   $("[letters-slide-up]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
-    tl.from($(this).find(".char"), {
+    // Modifica per animare le parole invece delle lettere
+    tl.from($(this).find(".word"), {
       yPercent: 100,
-      duration: 0.2,
+      duration: 0.4,
       ease: "power1.out",
-      stagger: { amount: 0.6 },
+      stagger: { amount: 0.6 }, // Modifica per animare ogni parola
     });
     createScrollTrigger($(this), tl);
   });
 
   // Aggiungi animazione letters-slide-up come ultima animazione
   IntroTl.from(
-    "[letters-slide-up] .char",
+    "[letters-slide-up] .word", // Modifica per animare le parole
     {
       yPercent: 100,
-      duration: 0.2,
+      duration: 0.4,
       ease: "power1.out",
-      stagger: { amount: 0.6 },
+      stagger: { amount: 0.6 }, // Modifica per animare ogni parola
     },
     "+=0.5"
   );
