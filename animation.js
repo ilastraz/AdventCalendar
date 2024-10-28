@@ -112,7 +112,7 @@
 
 
 
-//INTRO
+// INTRO
 // GSAP Animazioni
 window.addEventListener("load", function () {
   // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
@@ -212,4 +212,29 @@ window.addEventListener("load", function () {
 
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
+
+  // GSAP Animazioni per Mobile
+  if (window.innerWidth <= 768) {
+    // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili (versione mobile)
+    gsap.set(
+      [
+        ".intro-fondo-mobile",
+        ".intro-alberi-mobile",
+        ".intro-neve-mobile",
+      ],
+      { y: "100%", autoAlpha: 1 } // Sposta gli elementi inizialmente fuori dallo schermo sull'asse Y e rendili invisibili
+    );
+
+    // Creazione di una timeline per le animazioni mobile
+    let IntroMobileTl = gsap.timeline();
+
+    // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
+    IntroMobileTl.to(".intro-fondo-mobile", { y: "0%", duration: 2, ease: "power4.out" }, 0);
+    IntroMobileTl.to(
+      ".intro-alberi-mobile",
+      { y: "0%", scale: 1.2, duration: 2.1, ease: "expo.out" },
+      0
+    );
+    IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
+  }
 });
