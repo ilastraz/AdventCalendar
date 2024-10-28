@@ -159,7 +159,6 @@ window.addEventListener("load", function () {
       yPercent: 100,
       duration: 0.5,
       ease: "back.out(2)",
-      stagger: 0.05, // Aggiunge un ritardo tra ogni lettera per animarle una alla volta
     },
     "1.5"
   );
