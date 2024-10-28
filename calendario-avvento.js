@@ -73,6 +73,8 @@ document.addEventListener("DOMContentLoaded", function() {
               element[property] = value;
               if (value === "" && (selector === '.popup-cta1' || selector === '.popup-cta2')) {
                 element.style.display = 'none';
+              } else if (selector === '.popup-cta1' || selector === '.popup-cta2') {
+                element.setAttribute('target', '_blank');
               }
             } else {
               console.error(`Elemento ${selector} non trovato`);
