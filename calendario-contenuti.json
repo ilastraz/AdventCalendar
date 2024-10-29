@@ -15,9 +15,6 @@
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-1-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-1-Mobile.jpg"
   },
-
-
-
   "2": {
     "data": "2 Dicembre",
     "head": "UN MESSAGGIO PER TE",
@@ -34,8 +31,6 @@
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-2-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-2-Mobile.jpg"
   },
-
-
   "3": {
     "data": "3 Dicembre",
     "head": "UNO, DUE, TRE... QUATTRO",
@@ -52,27 +47,22 @@
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-3-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-3-Mobile.jpg"
   },
-
-
-
-"4": {
-  "data": "4 Dicembre",
-  "head": "VIENI IN CONFESSIONALE",
-  "descrizione": "Nel famoso confessionale del Grande Fratello i concorrenti ridono, piangono, si confidano e si emozionano... Ora corri, ti aspetta un messaggio direttamente dalla Casa più spiata d'Italia.",
-  "nota": "",
-  "cta1": {
-    "testo": "APRI LA PORTA ROSSA",
-    "link": "https://mediasetinfinity.mediaset.it/"
+  "4": {
+    "data": "4 Dicembre",
+    "head": "VIENI IN CONFESSIONALE",
+    "descrizione": "Nel famoso confessionale del Grande Fratello i concorrenti ridono, piangono, si confidano e si emozionano... Ora corri, ti aspetta un messaggio direttamente dalla Casa più spiata d'Italia.",
+    "nota": "",
+    "cta1": {
+      "testo": "APRI LA PORTA ROSSA",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Mobile.jpg"
   },
-  "cta2": {
-    "testo": "",
-    "link": ""
-  },
-  "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Desktop.jpg",
-  "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Mobile.jpg"
-  },
-
-
   "5": {
     "data": "5 Dicembre",
     "head": "PREPARA I POP CORN",
@@ -88,225 +78,197 @@
     },
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-5-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-5-Mobile.jpg"
+  },
+  "6": {
+    "data": "6 Dicembre",
+    "head": "BENVENUTI NEL MIO CAMERINO",
+    "descrizione": "Ricordi, esperienze, persone ed emozioni: questo e molto altro nel docu-concerto di Laura Pausini in esclusiva su Mediaset Infinity!",
+    "nota": "",
+    "cta1": {
+      "testo": "GUARDA IL CONCERTO",
+      "link": "https://mediasetinfinity.mediaset.it/"
     },
-
-
-  
-    "6": {
-      "data": "6 Dicembre",
-      "head": "BENVENUTI NEL MIO CAMERINO",
-      "descrizione": "Ricordi, esperienze, persone ed emozioni: questo e molto altro nel docu-concerto di Laura Pausini in esclusiva su Mediaset Infinity!",
-      "nota": "",
-      "cta1": {
-        "testo": "GUARDA IL CONCERTO",
-        "link": "https://mediasetinfinity.mediaset.it/"
-      },
-      "cta2": {
-        "testo": "LAURA TI FA GLI AUGURI",
-        "link": "https://mediasetinfinity.mediaset.it/"
-      },
-      "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Desktop.jpg",
-      "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Mobile.jpg"
-      },
-
-
-   
-      "7": {
-        "data": "7 Dicembre",
-        "head": "A LEZIONE DI KUNG FU",
-        "descrizione": "Da Guerriero Dragone a guida spirituale. Si prevedono grandi cambiamenti per Po, costretto a dedicarsi alla spiritualità e vedersela con una perfida maga che semina il panico tra i maestri kung fu. Non perdere Kung Fu Panda 4 per te a soli 0,99€!",
-        "nota": "",
-        "cta1": {
-          "testo": "GUARDA IL TRAILER",
-          "link": "https://mediasetinfinity.mediaset.it/video/kungfupanda4/trailer-kung-fu-panda-4_F313211401003701"
-        },
-        "cta2": {
-          "testo": "NOLEGGIA IL FILM",
-          "link": "https://mediasetinfinity.mediaset.it/movie/kungfupanda4/kung-fu-panda-4_F313004801000103"
-        },
-        "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Desktop.jpg",
-        "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Mobile.jpg"
-        },
-
-
-   
-        "8": {
-          "data": "8 Dicembre",
-          "head": "CASA E LAVORO... PER DUE!",
-          "descrizione": "Passare le feste a casa con i parenti, ti sembra complicato? Pensa doverlo fare con uno sconosciuto... Selin e Demir si troveranno costretti a condividere sia la casa che il lavoro. Tra scontri, imprevisti, equivoci e batticuori, riusciranno a convivere? Non ti resta che scoprirlo…",
-          "nota": "",
-          "cta1": {
-            "testo": "GUARDA LA SERIE COMPLETA",
-            "link": "https://mediasetinfinity.mediaset.it/fiction/everywhereigo-coincidenzedamore_SE000000002214"
-          },
-          "cta2": {
-            "testo": "",
-            "link": ""
-          },
-          "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Desktop.jpg",
-          "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Mobile.jpg"
-          },
-
-
-    
-          "9": {
-            "data": "9 Dicembre",
-            "head": "CI METTIAMO LA FIRMA",
-            "descrizione": "Complimenti, sei appena entrato nella casa del grande cinema italiano! Per te 2 mesi gratis di CineAutore, il channel dedicato ai film d'essai e ai capolavori dei migliori registi della storia.",
-            "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
-            "cta1": {
-              "testo": "ATTIVA IL CHANNEL",
-              "link": "https://mediasetinfinity.mediaset.it/cineautore"
-            },
-            "cta2": {
-              "testo": "",
-              "link": ""
-            },
-            "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Desktop.jpg",
-            "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Mobile.jpg"
-            },
- 
-
-       
-            "10": {
-              "data": "10 Dicembre",
-              "head": "IN TANTI SI STA BENE",
-              "descrizione": "Le feste sono il periodo perfetto per stare in famiglia... e noi abbiamo la famiglia più amata del piccolo schermo a portata di clic: tutte le avventure de 'I Cesaroni' ti aspettano per un imperdibile rewatch!",
-              "nota": "",
-              "cta1": {
-                "testo": "FAI IL PIENO DELLA SERIE",
-                "link": "https://mediasetinfinity.mediaset.it/fiction/icesaroni_SE000000000304"
-              },
-              "cta2": {
-                "testo": "",
-                "link": ""
-              },
-              "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Desktop.jpg",
-              "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Mobile.jpg"
-              },
-
-
-          
-              "11": {
-                "data": "11 Dicembre",
-                "head": "SEI UN AMANTE DELLA NATURA?",
-                "descrizione": "Dalla cima del Monte Everest ad un infuocato vulcano russo, da un deserto mediorientale sabbiato fino alle terre dei fiordi norvegesi: se ami la natura non puoi perdere il documentario Natura fantastica (e dove trovarla) completamente gratuito!",
-                "nota": "",
-                "cta1": {
-                  "testo": "ZAINO IN SPALLA!",
-                  "link": "https://mediasetinfinity.mediaset.it/documentari/naturafantasticaedovetrovarla_SE000000002199"
-                },
-                "cta2": {
-                  "testo": "",
-                  "link": ""
-                },
-                "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Desktop.jpg",
-                "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Mobile.jpg"
-                },
-    
-
-              
-                "12": {
-                  "data": "12 Dicembre",
-                  "head": "MESSAGGIO IN ARRIVO!",
-                  "descrizione": "Oggi per te abbiamo una missione possibile: farti arrivare un messaggio speciale da parte di un personaggio speciale... Qualche indizio, lei è biondissima e simpaticissima. Scopri chi è!",
-                  "nota": "",
-                  "cta1": {
-                    "testo": "METTI IN PLAY IL MESSAGGIO",
-                    "link": "https://mediasetinfinity.mediaset.it/"
-                  },
-                  "cta2": {
-                    "testo": "",
-                    "link": ""
-                  },
-                  "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Desktop.jpg",
-                  "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Mobile.jpg"
-                  },
-
-                  "13": {
-                    "data": "13 Dicembre",
-                    "head": "DUE MESI DI PASSIONE",
-                    "descrizione": "Dreamers and Love è il Channel per chi ama le commedie rosa, i drammi sentimentali e le appassionanti storie d'amore. Nel suo catalogo troverai anche tutto il meglio delle amatissime serie Turche.",
-                    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
-                    "cta1": {
-                      "testo": "ATTIVA IL CHANNEL",
-                      "link": "https://mediasetinfinity.mediaset.it/dreamers-love"
-                    },
-                    "cta2": {
-                      "testo": "",
-                      "link": ""
-                    },
-                    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-13-Desktop.jpg",
-                    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-13-Mobile.jpg"
-                    },
-
-                    "14": {
-                      "data": "14 Dicembre",
-                      "head": "CREDI ANCORA AI FANTASMI?",
-                      "descrizione": "Uno sconto speciale per un titolo imperdibile: il film a noleggio Ghostbusters - Minaccia glaciale per oggi a soli 0,99€. Nel sequel dell’iconico film sugli acchiappafantasmi l'umanità è in pericolo: un esercito di fantasmi minaccia di causare una seconda era glaciale. Non perderti il bellissimo film che ti farà venire i brividi.",
-                      "nota": "",
-                      "cta1": {
-                        "testo": "GUARDA IL TRAILER",
-                        "link": "https://mediasetinfinity.mediaset.it/video/ghostbustersminacciaglaciale/trailer-ghostbusters-minaccia-glaciale_F313211401004901"
-                      },
-                      "cta2": {
-                        "testo": "NOLEGGIA IL FILM",
-                        "link": "https://mediasetinfinity.mediaset.it/movie/ghostbustersminacciaglaciale/ghostbusters-minaccia-glaciale_F313004901000103"
-                      },
-                      "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Desktop.jpg",
-                      "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Mobile.jpg"
-                      },
-
-                      "15": {
-                        "data": "15 Dicembre",
-                        "head": "PER I PIÚ CURIOSI...",
-                        "descrizione": "La curiosità di sapere come continua la storia tra Esra e Ozan è troppo forte? Un odio-amore a cui è impossibile resistere! Non aspettare, goditi in anteprima l’episodio 26 di Love, Reason, Get even.",
-                        "nota": "",
-                        "cta1": {
-                          "testo": "GUARDO L'EPISODIO",
-                          "link": "https://mediasetinfinity.mediaset.it/"
-                        },
-                        "cta2": {
-                          "testo": "GUARDO TUTTA LA SERIE",
-                          "link": "https://mediasetinfinity.mediaset.it/"
-                        },
-                        "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Desktop.jpg",
-                        "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Mobile.jpg"
-                        },
-
-                        "16": {
-                          "data": "16 Dicembre",
-                          "head": "SI PARTE PER PARIGI!",
-                          "descrizione": "La città dell'amore è lo sfondo perfetto per le avvincenti storie di cinque donne parigine molto diverse tra loro ma con la stessa voglia di essere felici. Goditi gratis tutti gli episodi della serie con Valeria Bruni Tedeschi.",
-                          "nota": "",
-                          "cta1": {
-                            "testo": "QUI LA SERIE COMPLETA",
-                            "link": "https://mediasetinfinity.mediaset.it/fiction/parisetc_SE000000002275"
-                          },
-                          "cta2": {
-                            "testo": "",
-                            "link": ""
-                          },
-                          "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-16-Desktop.jpg",
-                          "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-16-Mobile.jpg"
-                          },
-
-                          "17": {
-                            "data": "17 Dicembre",
-                            "head": "INTERVISTA A SORPRESA",
-                            "descrizione": "A Verissimo ti aspettano le interviste più belle di Silvia Toffanin con tantissimi ospiti. Ma sai qual è l'intervista che ha avuto più successo dall'inizio del 2024? Solo per oggi ti sveliamo noi questo segreto, mettiti comodo e guarda la clip.",
-                            "nota": "",
-                            "cta1": {
-                              "testo": "SCOPRI L'INTERVISTA",
-                              "link": "https://mediasetinfinity.mediaset.it/"
-                            },
-                            "cta2": {
-                              "testo": "",
-                              "link": ""
-                            },
-                            "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Desktop.jpg",
-                            "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Mobile.jpg"
-                            }
-                }
-  
-
+    "cta2": {
+      "testo": "LAURA TI FA GLI AUGURI",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Mobile.jpg"
+  },
+  "7": {
+    "data": "7 Dicembre",
+    "head": "A LEZIONE DI KUNG FU",
+    "descrizione": "Da Guerriero Dragone a guida spirituale. Si prevedono grandi cambiamenti per Po, costretto a dedicarsi alla spiritualità e vedersela con una perfida maga che semina il panico tra i maestri kung fu. Non perdere Kung Fu Panda 4 per te a soli 0,99€!",
+    "nota": "",
+    "cta1": {
+      "testo": "GUARDA IL TRAILER",
+      "link": "https://mediasetinfinity.mediaset.it/video/kungfupanda4/trailer-kung-fu-panda-4_F313211401003701"
+    },
+    "cta2": {
+      "testo": "NOLEGGIA IL FILM",
+      "link": "https://mediasetinfinity.mediaset.it/movie/kungfupanda4/kung-fu-panda-4_F313004801000103"
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Mobile.jpg"
+  },
+  "8": {
+    "data": "8 Dicembre",
+    "head": "CASA E LAVORO... PER DUE!",
+    "descrizione": "Passare le feste a casa con i parenti, ti sembra complicato? Pensa doverlo fare con uno sconosciuto... Selin e Demir si troveranno costretti a condividere sia la casa che il lavoro. Tra scontri, imprevisti, equivoci e batticuori, riusciranno a convivere? Non ti resta che scoprirlo…",
+    "nota": "",
+    "cta1": {
+      "testo": "GUARDA LA SERIE COMPLETA",
+      "link": "https://mediasetinfinity.mediaset.it/fiction/everywhereigo-coincidenzedamore_SE000000002214"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Mobile.jpg"
+  },
+  "9": {
+    "data": "9 Dicembre",
+    "head": "CI METTIAMO LA FIRMA",
+    "descrizione": "Complimenti, sei appena entrato nella casa del grande cinema italiano! Per te 2 mesi gratis di CineAutore, il channel dedicato ai film d'essai e ai capolavori dei migliori registi della storia.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
+    "cta1": {
+      "testo": "ATTIVA IL CHANNEL",
+      "link": "https://mediasetinfinity.mediaset.it/cineautore"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Mobile.jpg"
+  },
+  "10": {
+    "data": "10 Dicembre",
+    "head": "IN TANTI SI STA BENE",
+    "descrizione": "Le feste sono il periodo perfetto per stare in famiglia... e noi abbiamo la famiglia più amata del piccolo schermo a portata di clic: tutte le avventure de 'I Cesaroni' ti aspettano per un imperdibile rewatch!",
+    "nota": "",
+    "cta1": {
+      "testo": "FAI IL PIENO DELLA SERIE",
+      "link": "https://mediasetinfinity.mediaset.it/fiction/icesaroni_SE000000000304"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Mobile.jpg"
+  },
+  "11": {
+    "data": "11 Dicembre",
+    "head": "SEI UN AMANTE DELLA NATURA?",
+    "descrizione": "Dalla cima del Monte Everest ad un infuocato vulcano russo, da un deserto mediorientale sabbiato fino alle terre dei fiordi norvegesi: se ami la natura non puoi perdere il documentario Natura fantastica (e dove trovarla) completamente gratuito!",
+    "nota": "",
+    "cta1": {
+      "testo": "ZAINO IN SPALLA!",
+      "link": "https://mediasetinfinity.mediaset.it/documentari/naturafantasticaedovetrovarla_SE000000002199"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Mobile.jpg"
+  },
+  "12": {
+    "data": "12 Dicembre",
+    "head": "MESSAGGIO IN ARRIVO!",
+    "descrizione": "Oggi per te abbiamo una missione possibile: farti arrivare un messaggio speciale da parte di un personaggio speciale... Qualche indizio, lei è biondissima e simpaticissima. Scopri chi è!",
+    "nota": "",
+    "cta1": {
+      "testo": "METTI IN PLAY IL MESSAGGIO",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Mobile.jpg"
+  },
+  "13": {
+    "data": "13 Dicembre",
+    "head": "DUE MESI DI PASSIONE",
+    "descrizione": "Dreamers and Love è il Channel per chi ama le commedie rosa, i drammi sentimentali e le appassionanti storie d'amore. Nel suo catalogo troverai anche tutto il meglio delle amatissime serie Turche.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
+    "cta1": {
+      "testo": "ATTIVA IL CHANNEL",
+      "link": "https://mediasetinfinity.mediaset.it/dreamers-love"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-13-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-13-Mobile.jpg"
+  },
+  "14": {
+    "data": "14 Dicembre",
+    "head": "CREDI ANCORA AI FANTASMI?",
+    "descrizione": "Uno sconto speciale per un titolo imperdibile: il film a noleggio Ghostbusters - Minaccia glaciale per oggi a soli 0,99€. Nel sequel dell’iconico film sugli acchiappafantasmi l'umanità è in pericolo: un esercito di fantasmi minaccia di causare una seconda era glaciale. Non perderti il bellissimo film che ti farà venire i brividi.",
+    "nota": "",
+    "cta1": {
+      "testo": "GUARDA IL TRAILER",
+      "link": "https://mediasetinfinity.mediaset.it/video/ghostbustersminacciaglaciale/trailer-ghostbusters-minaccia-glaciale_F313211401004901"
+    },
+    "cta2": {
+      "testo": "NOLEGGIA IL FILM",
+      "link": "https://mediasetinfinity.mediaset.it/movie/ghostbustersminacciaglaciale/ghostbusters-minaccia-glaciale_F313004901000103"
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Mobile.jpg"
+  },
+  "15": {
+    "data": "15 Dicembre",
+    "head": "PER I PIÚ CURIOSI...",
+    "descrizione": "La curiosità di sapere come continua la storia tra Esra e Ozan è troppo forte? Un odio-amore a cui è impossibile resistere! Non aspettare, goditi in anteprima l’episodio 26 di Love, Reason, Get even.",
+    "nota": "",
+    "cta1": {
+      "testo": "GUARDO L'EPISODIO",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "GUARDO TUTTA LA SERIE",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Mobile.jpg"
+  },
+  "16": {
+    "data": "16 Dicembre",
+    "head": "SI PARTE PER PARIGI!",
+    "descrizione": "La città dell'amore è lo sfondo perfetto per le avvincenti storie di cinque donne parigine molto diverse tra loro ma con la stessa voglia di essere felici. Goditi gratis tutti gli episodi della serie con Valeria Bruni Tedeschi.",
+    "nota": "",
+    "cta1": {
+      "testo": "QUI LA SERIE COMPLETA",
+      "link": "https://mediasetinfinity.mediaset.it/fiction/parisetc_SE000000002275"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-16-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-16-Mobile.jpg"
+  },
+  "17": {
+    "data": "17 Dicembre",
+    "head": "INTERVISTA A SORPRESA",
+    "descrizione": "A Verissimo ti aspettano le interviste più belle di Silvia Toffanin con tantissimi ospiti. Ma sai qual è l'intervista che ha avuto più successo dall'inizio del 2024? Solo per oggi ti sveliamo noi questo segreto, mettiti comodo e guarda la clip.",
+    "nota": "",
+    "cta1": {
+      "testo": "SCOPRI L'INTERVISTA",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Mobile.jpg"
+  }
+}
