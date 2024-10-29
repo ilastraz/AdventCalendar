@@ -14,10 +14,10 @@
     },
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-1-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-1-Mobile.jpg"
-  }
-},
+  },
 
-{
+
+
   "2": {
     "data": "2 Dicembre",
     "head": "UN MESSAGGIO PER TE",
@@ -33,10 +33,9 @@
     },
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-2-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-2-Mobile.jpg"
-  }
-},
+  },
 
-{
+
   "3": {
     "data": "3 Dicembre",
     "head": "UNO, DUE, TRE... QUATTRO",
@@ -52,10 +51,10 @@
     },
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-3-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-3-Mobile.jpg"
-  }
-},
+  },
 
-{
+
+
 "4": {
   "data": "4 Dicembre",
   "head": "VIENI IN CONFESSIONALE",
@@ -71,10 +70,9 @@
   },
   "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Desktop.jpg",
   "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Mobile.jpg"
-  }
-},
+  },
 
-{
+
   "5": {
     "data": "5 Dicembre",
     "head": "PREPARA I POP CORN",
@@ -90,10 +88,10 @@
     },
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-5-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-5-Mobile.jpg"
-    }
-  },
+    },
 
-  {
+
+  
     "6": {
       "data": "6 Dicembre",
       "head": "BENVENUTI NEL MIO CAMERINO",
@@ -109,10 +107,10 @@
       },
       "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Desktop.jpg",
       "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Mobile.jpg"
-      }
-    },
+      },
 
-    {
+
+   
       "7": {
         "data": "7 Dicembre",
         "head": "A LEZIONE DI KUNG FU",
@@ -128,10 +126,10 @@
         },
         "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Desktop.jpg",
         "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Mobile.jpg"
-        }
-      },
+        },
 
-      {
+
+   
         "8": {
           "data": "8 Dicembre",
           "head": "CASA E LAVORO... PER DUE!",
@@ -147,10 +145,10 @@
           },
           "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Desktop.jpg",
           "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Mobile.jpg"
-          }
-        },
+          },
 
-        {
+
+    
           "9": {
             "data": "9 Dicembre",
             "head": "CI METTIAMO LA FIRMA",
@@ -166,10 +164,10 @@
             },
             "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Desktop.jpg",
             "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Mobile.jpg"
-            }
-          },
+            },
+ 
 
-          {
+       
             "10": {
               "data": "10 Dicembre",
               "head": "IN TANTI SI STA BENE",
@@ -185,10 +183,10 @@
               },
               "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Desktop.jpg",
               "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Mobile.jpg"
-              }
-            },
+              },
 
-            {
+
+          
               "11": {
                 "data": "11 Dicembre",
                 "head": "SEI UN AMANTE DELLA NATURA?",
@@ -204,10 +202,10 @@
                 },
                 "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Desktop.jpg",
                 "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Mobile.jpg"
-                }
-              },
+                },
+    
 
-              {
+              
                 "12": {
                   "data": "12 Dicembre",
                   "head": "MESSAGGIO IN ARRIVO!",
