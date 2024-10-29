@@ -221,7 +221,92 @@
                   },
                   "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Desktop.jpg",
                   "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Mobile.jpg"
-                  }
+                  },
+
+                  "13": {
+                    "data": "13 Dicembre",
+                    "head": "DUE MESI DI PASSIONE",
+                    "descrizione": "Dreamers and Love è il Channel per chi ama le commedie rosa, i drammi sentimentali e le appassionanti storie d'amore. Nel suo catalogo troverai anche tutto il meglio delle amatissime serie Turche.",
+                    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
+                    "cta1": {
+                      "testo": "ATTIVA IL CHANNEL",
+                      "link": "https://mediasetinfinity.mediaset.it/dreamers-love"
+                    },
+                    "cta2": {
+                      "testo": "",
+                      "link": ""
+                    },
+                    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-13-Desktop.jpg",
+                    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-13-Mobile.jpg"
+                    },
+
+                    "14": {
+                      "data": "14 Dicembre",
+                      "head": "CREDI ANCORA AI FANTASMI?",
+                      "descrizione": "Uno sconto speciale per un titolo imperdibile: il film a noleggio Ghostbusters - Minaccia glaciale per oggi a soli 0,99€. Nel sequel dell’iconico film sugli acchiappafantasmi l'umanità è in pericolo: un esercito di fantasmi minaccia di causare una seconda era glaciale. Non perderti il bellissimo film che ti farà venire i brividi.",
+                      "nota": "",
+                      "cta1": {
+                        "testo": "GUARDA IL TRAILER",
+                        "link": "https://mediasetinfinity.mediaset.it/video/ghostbustersminacciaglaciale/trailer-ghostbusters-minaccia-glaciale_F313211401004901"
+                      },
+                      "cta2": {
+                        "testo": "NOLEGGIA IL FILM",
+                        "link": "https://mediasetinfinity.mediaset.it/movie/ghostbustersminacciaglaciale/ghostbusters-minaccia-glaciale_F313004901000103"
+                      },
+                      "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Desktop.jpg",
+                      "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Mobile.jpg"
+                      },
+
+                      "15": {
+                        "data": "15 Dicembre",
+                        "head": "PER I PIÚ CURIOSI...",
+                        "descrizione": "La curiosità di sapere come continua la storia tra Esra e Ozan è troppo forte? Un odio-amore a cui è impossibile resistere! Non aspettare, goditi in anteprima l’episodio 26 di Love, Reason, Get even.",
+                        "nota": "",
+                        "cta1": {
+                          "testo": "GUARDO L'EPISODIO",
+                          "link": "https://mediasetinfinity.mediaset.it/"
+                        },
+                        "cta2": {
+                          "testo": "GUARDO TUTTA LA SERIE",
+                          "link": "https://mediasetinfinity.mediaset.it/"
+                        },
+                        "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Desktop.jpg",
+                        "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Mobile.jpg"
+                        },
+
+                        "16": {
+                          "data": "16 Dicembre",
+                          "head": "SI PARTE PER PARIGI!",
+                          "descrizione": "La città dell'amore è lo sfondo perfetto per le avvincenti storie di cinque donne parigine molto diverse tra loro ma con la stessa voglia di essere felici. Goditi gratis tutti gli episodi della serie con Valeria Bruni Tedeschi.",
+                          "nota": "",
+                          "cta1": {
+                            "testo": "QUI LA SERIE COMPLETA",
+                            "link": "https://mediasetinfinity.mediaset.it/fiction/parisetc_SE000000002275"
+                          },
+                          "cta2": {
+                            "testo": "",
+                            "link": ""
+                          },
+                          "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-16-Desktop.jpg",
+                          "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-16-Mobile.jpg"
+                          },
+
+                          "17": {
+                            "data": "17 Dicembre",
+                            "head": "INTERVISTA A SORPRESA",
+                            "descrizione": "A Verissimo ti aspettano le interviste più belle di Silvia Toffanin con tantissimi ospiti. Ma sai qual è l'intervista che ha avuto più successo dall'inizio del 2024? Solo per oggi ti sveliamo noi questo segreto, mettiti comodo e guarda la clip.",
+                            "nota": "",
+                            "cta1": {
+                              "testo": "SCOPRI L'INTERVISTA",
+                              "link": "https://mediasetinfinity.mediaset.it/"
+                            },
+                            "cta2": {
+                              "testo": "",
+                              "link": ""
+                            },
+                            "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Desktop.jpg",
+                            "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Mobile.jpg"
+                            }
                 }
   
 
