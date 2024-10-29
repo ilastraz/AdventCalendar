@@ -1,6 +1,6 @@
 // SNOW
 (function () {
-  var COUNT = 300;
+  var COUNT = 250;
   var masthead = document.querySelector("body");
   var canvas = document.createElement("canvas");
   var ctx = canvas.getContext("2d");
