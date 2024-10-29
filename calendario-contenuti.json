@@ -1,6 +1,6 @@
 {
-  "29": {
-    "data": "29 Dicembre",
+  "1": {
+    "data": "1 Dicembre",
     "head": "Dove eravamo rimasti",
     "descrizione": "Dopo tanta attesa finalmente torna Segreti di famiglia, la serie turca di successo ricca di intrecci e colpi di scena. Ma dove eravamo rimasti? Oggi, in esclusiva per te, un riassunto degli episodi precedenti.",
     "nota": "",
@@ -12,7 +12,218 @@
       "testo": "",
       "link": ""
     },
-    "imgDesktop": "https://ilariostrazzullo.com/testdesk.jpg",
-    "imgMobile": "https://ilariostrazzullo.com/testmob.jpg"
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-1-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-1-Mobile.jpg"
   }
-}
+},
+
+{
+  "2": {
+    "data": "2 Dicembre",
+    "head": "UN MESSAGGIO PER TE",
+    "descrizione": "Siete pronti? Sì, proprio voi, gli investigatori più temuti della TV! No, non c'è nessun mistero da risolvere (per questa volta), ma un messaggio speciale da parte di qualcuno…",
+    "nota": "",
+    "cta1": {
+      "testo": "METTI IN PLAY IL MESSAGGIO",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-2-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-2-Mobile.jpg"
+  }
+},
+
+{
+  "3": {
+    "data": "3 Dicembre",
+    "head": "UNO, DUE, TRE... QUATTRO",
+    "descrizione": "Se anche tu hai colto la citazione, allora questo è il regalo perfetto per te: guarda in anteprima i primi minuti della prossima puntata di 'Un Paso Adelante Next', il reboot della serie cult di Italia 1 disponibile gratis su Mediaset Infinity.",
+    "nota": "",
+    "cta1": {
+      "testo": "ECCO I PRIMI MINUTI",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-3-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-3-Mobile.jpg"
+  }
+},
+
+{
+"4": {
+  "data": "4 Dicembre",
+  "head": "VIENI IN CONFESSIONALE",
+  "descrizione": "Nel famoso confessionale del Grande Fratello i concorrenti ridono, piangono, si confidano e si emozionano... Ora corri, ti aspetta un messaggio direttamente dalla Casa più spiata d'Italia.",
+  "nota": "",
+  "cta1": {
+    "testo": "APRI LA PORTA ROSSA",
+    "link": "https://mediasetinfinity.mediaset.it/"
+  },
+  "cta2": {
+    "testo": "",
+    "link": ""
+  },
+  "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Desktop.jpg",
+  "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Mobile.jpg"
+  }
+},
+
+{
+  "5": {
+    "data": "5 Dicembre",
+    "head": "PREPARA I POP CORN",
+    "descrizione": "Oggi per te 2 mesi gratis di Infinity+ con migliaia di film, serie tv e cartoni animati e ogni venerdì una grande Premiere. In più, solo con Infinity+ hai inclusa gratuitamente la GOLD Experience.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 7,99€ al mese. Disdici quando vuoi.",
+    "cta1": {
+      "testo": "ATTIVA IL CHANNEL",
+      "link": "https://mediasetinfinity.mediaset.it/infinity-plus"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-5-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-5-Mobile.jpg"
+    }
+  },
+
+  {
+    "6": {
+      "data": "6 Dicembre",
+      "head": "BENVENUTI NEL MIO CAMERINO",
+      "descrizione": "Ricordi, esperienze, persone ed emozioni: questo e molto altro nel docu-concerto di Laura Pausini in esclusiva su Mediaset Infinity!",
+      "nota": "",
+      "cta1": {
+        "testo": "GUARDA IL CONCERTO",
+        "link": "https://mediasetinfinity.mediaset.it/"
+      },
+      "cta2": {
+        "testo": "LAURA TI FA GLI AUGURI",
+        "link": "https://mediasetinfinity.mediaset.it/"
+      },
+      "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Desktop.jpg",
+      "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Mobile.jpg"
+      }
+    },
+
+    {
+      "7": {
+        "data": "7 Dicembre",
+        "head": "A LEZIONE DI KUNG FU",
+        "descrizione": "Da Guerriero Dragone a guida spirituale. Si prevedono grandi cambiamenti per Po, costretto a dedicarsi alla spiritualità e vedersela con una perfida maga che semina il panico tra i maestri kung fu. Non perdere Kung Fu Panda 4 per te a soli 0,99€!",
+        "nota": "",
+        "cta1": {
+          "testo": "GUARDA IL TRAILER",
+          "link": "https://mediasetinfinity.mediaset.it/video/kungfupanda4/trailer-kung-fu-panda-4_F313211401003701"
+        },
+        "cta2": {
+          "testo": "NOLEGGIA IL FILM",
+          "link": "https://mediasetinfinity.mediaset.it/movie/kungfupanda4/kung-fu-panda-4_F313004801000103"
+        },
+        "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Desktop.jpg",
+        "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Mobile.jpg"
+        }
+      },
+
+      {
+        "8": {
+          "data": "8 Dicembre",
+          "head": "CASA E LAVORO... PER DUE!",
+          "descrizione": "Passare le feste a casa con i parenti, ti sembra complicato? Pensa doverlo fare con uno sconosciuto... Selin e Demir si troveranno costretti a condividere sia la casa che il lavoro. Tra scontri, imprevisti, equivoci e batticuori, riusciranno a convivere? Non ti resta che scoprirlo…",
+          "nota": "",
+          "cta1": {
+            "testo": "GUARDA LA SERIE COMPLETA",
+            "link": "https://mediasetinfinity.mediaset.it/fiction/everywhereigo-coincidenzedamore_SE000000002214"
+          },
+          "cta2": {
+            "testo": "",
+            "link": ""
+          },
+          "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Desktop.jpg",
+          "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Mobile.jpg"
+          }
+        },
+
+        {
+          "9": {
+            "data": "9 Dicembre",
+            "head": "CI METTIAMO LA FIRMA",
+            "descrizione": "Complimenti, sei appena entrato nella casa del grande cinema italiano! Per te 2 mesi gratis di CineAutore, il channel dedicato ai film d'essai e ai capolavori dei migliori registi della storia.",
+            "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
+            "cta1": {
+              "testo": "ATTIVA IL CHANNEL",
+              "link": "https://mediasetinfinity.mediaset.it/cineautore"
+            },
+            "cta2": {
+              "testo": "",
+              "link": ""
+            },
+            "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Desktop.jpg",
+            "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Mobile.jpg"
+            }
+          },
+
+          {
+            "10": {
+              "data": "10 Dicembre",
+              "head": "IN TANTI SI STA BENE",
+              "descrizione": "Le feste sono il periodo perfetto per stare in famiglia... e noi abbiamo la famiglia più amata del piccolo schermo a portata di clic: tutte le avventure de 'I Cesaroni' ti aspettano per un imperdibile rewatch!",
+              "nota": "",
+              "cta1": {
+                "testo": "FAI IL PIENO DELLA SERIE",
+                "link": "https://mediasetinfinity.mediaset.it/fiction/icesaroni_SE000000000304"
+              },
+              "cta2": {
+                "testo": "",
+                "link": ""
+              },
+              "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Desktop.jpg",
+              "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Mobile.jpg"
+              }
+            },
+
+            {
+              "11": {
+                "data": "11 Dicembre",
+                "head": "SEI UN AMANTE DELLA NATURA?",
+                "descrizione": "Dalla cima del Monte Everest ad un infuocato vulcano russo, da un deserto mediorientale sabbiato fino alle terre dei fiordi norvegesi: se ami la natura non puoi perdere il documentario Natura fantastica (e dove trovarla) completamente gratuito!",
+                "nota": "",
+                "cta1": {
+                  "testo": "ZAINO IN SPALLA!",
+                  "link": "https://mediasetinfinity.mediaset.it/documentari/naturafantasticaedovetrovarla_SE000000002199"
+                },
+                "cta2": {
+                  "testo": "",
+                  "link": ""
+                },
+                "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Desktop.jpg",
+                "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Mobile.jpg"
+                }
+              },
+
+              {
+                "12": {
+                  "data": "12 Dicembre",
+                  "head": "MESSAGGIO IN ARRIVO!",
+                  "descrizione": "Oggi per te abbiamo una missione possibile: farti arrivare un messaggio speciale da parte di un personaggio speciale... Qualche indizio, lei è biondissima e simpaticissima. Scopri chi è!",
+                  "nota": "",
+                  "cta1": {
+                    "testo": "METTI IN PLAY IL MESSAGGIO",
+                    "link": "https://mediasetinfinity.mediaset.it/"
+                  },
+                  "cta2": {
+                    "testo": "",
+                    "link": ""
+                  },
+                  "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Desktop.jpg",
+                  "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Mobile.jpg"
+                  }
+                }
+  
+
