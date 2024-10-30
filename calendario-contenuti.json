@@ -270,5 +270,142 @@
     },
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Mobile.jpg"
+  },
+
+  "18": {
+    "data": "18 Dicembre",
+    "head": "TI VERRÀ DA RIDERE",
+    "descrizione": "CineComico è il Channel che ti offre titoli indimenticabili del grande cinema dei Maestri della risata: Alberto Sordi, Totò, Paolo Villaggio, Renato Pozzetto, Diego Abatantuono e tanti altri. Questo Natale riscopri i film comici che hanno fatto la storia!",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese",
+    "cta1": {
+      "testo": "ATTIVA IL CHANNEL",
+      "link": "https://mediasetinfinity.mediaset.it/cinecomico"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-18-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-18-Mobile.jpg"
+  },
+
+  "19": {
+    "data": "19 Dicembre",
+    "head": "UN MESSAGGIO PER TE",
+    "descrizione": "Lorem Ipsum",
+    "nota": "",
+    "cta1": {
+      "testo": "METTI IN PLAY IL MESSAGGIO",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-19-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-19-Mobile.jpg"
+  },
+
+  "20": {
+    "data": "20 Dicembre",
+    "head": "TI PIACCIONO I ROMANZI?",
+    "descrizione": "Lily, arrivata a Boston per aprire un negozio di fiori, s'innamora del neurochirurgo Ryle. Ma qual è il limite non accettabile in una relazione? Guarda il trailer del nuovo appassionante It Ends With Us. Oggi per te il film a noleggio è a soli 0,99€!",
+    "nota": "",
+    "cta1": {
+      "testo": "GUARDA IL TRAILER",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "NOLEGGIA IL FILM",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-20-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-20-Mobile.jpg"
+  },
+
+  "21": {
+    "data": "21 Dicembre",
+    "head": "PARIS HAS FALLEN",
+    "descrizione": "Intrighi politici, spie senza scrupoli, oscuri complotti… il tutto in un mix esplosivo che movimenterà le tue feste.",
+    "nota": "",
+    "cta1": {
+      "testo": "GUARDA IL TRAILER IN ANTEPRIMA",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-21-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-21-Mobile.jpg"
+  },
+
+  "22": {
+    "data": "22 Dicembre",
+    "head": "PER TE CHE VUOI DI PIÚ",
+    "descrizione": "Con la GOLD Experience puoi fruire dei contenuti gratuiti di Mediaset Infinity con tanti vantaggi in più: download, smart ADV, super restart e massima qualità video.Solo per oggi tutto questo per un anno intero a soli 19,90€ anziché 39,99€",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato la GOLD experience. Al termine del primo anno il prezzo sarà di 39,99€ all'anno. Disdici quando vuoi.",
+    "cta1": {
+      "testo": "ATTIVA GOLD",
+      "link": "https://mediasetinfinity.mediaset.it/account/purchase/option/MediasetPlay_SVOD"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-22-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-22-Mobile.jpg"
+  },
+
+  "23": {
+    "data": "23 Dicembre",
+    "head": "TI INVITIAMO A NOZZE",
+    "descrizione": "Alice e François, prossimi alle nozze, fanno ai loro genitori un regalo originale: un test del DNA affinché ognuno possa scoprire le origini dei suoi antenati. Sarà una buona idea? Non perdere il nuovo film a noleggio Matrimonio con sorpresa scontato a soli 0,99€.",
+    "nota": "",
+    "cta1": {
+      "testo": "GUARDA IL TRAILER",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "NOLEGGIA IL FILM",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-23-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-23-Mobile.jpg"
+  },
+
+  "24": {
+    "data": "24 Dicembre",
+    "head": "VIDEO BEST 2024",
+    "descrizione": "Per dodici mesi ti abbiamo fatto compagnia con i nostri programmi e ora vogliamo farti rivivere le emozioni del 2024 attraverso i video più belli da vedere e rivedere, quando vuoi.",
+    "nota": "",
+    "cta1": {
+      "testo": "EMOZIONATI CON NOI",
+      "link": "https://mediasetinfinity.mediaset.it/browse/best-of-2024_eqmNadLxduBg0d2OgqPvTL"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-24-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-24-Mobile.jpg"
+  },
+
+  "25": {
+    "data": "25 Dicembre",
+    "head": "UN MAGICO NATALE",
+    "descrizione": "Auguri per un felice Natale da Mediaset a voi che ci seguite dalle vostre case. Grazie per aver condiviso con noi momenti di emozioni e storie indimenticabili. Tutto questo è speciale perché lo viviamo insieme, ogni giorno.",
+    "nota": "",
+    "cta1": {
+      "testo": "NOI SIAMO PRONTI!",
+      "link": "https://mediasetinfinity.mediaset.it/"
+    },
+    "cta2": {
+      "testo": "",
+      "link": ""
+    },
+    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-25-Desktop.jpg",
+    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-25-Mobile.jpg"
   }
+
 }
