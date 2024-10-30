@@ -1,7 +1,9 @@
 // SNOW
 (function () {
-  var width = window.innerWidth;
-  var COUNT = width > 768 ? 300 : 150; // Riduci il numero di fiocchi di neve su schermi piccoli
+  var masthead = document.querySelector("body");
+  var width = masthead.clientWidth;
+  var height = masthead.clientHeight;
+  var COUNT = Math.floor((width * height) / 15000); // Numero di fiocchi di neve proporzionale all'area del canvas  
   var masthead = document.querySelector("body");
   var canvas = document.createElement("canvas");
   var ctx = canvas.getContext("2d");
@@ -26,7 +28,7 @@
   var Snowflake = function () {
     this.x = 0;
     this.y = 0;
-    this.vy = width > 768 ? 0.5 + Math.random() * 1.5 : 0.3 + Math.random() * 1.0; // Riduci la velocità su schermi piccoli
+    this.vy = 0.3 + Math.random() * (width > 768 ? 1.5 : 1.0); // Riduci la velocità per schermi piccoli
     this.vx = 0;
     this.r = 0;
 
