@@ -118,10 +118,7 @@
 // INTRO
 // GSAP Animazioni
 window.addEventListener("load", function () {
-  // Creazione di una timeline per sincronizzare tutte le animazioni
-  let IntroTl = gsap.timeline();
-
-  // Posiziona inizialmente tutti gli elementi fuori dallo schermo e rendili invisibili
+  // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
   gsap.set(
     [
       ".intro-fondo",
@@ -131,22 +128,28 @@ window.addEventListener("load", function () {
       ".intro-albero3",
       ".intro-neve",
     ],
-    { transform: "translateZ(100rem)", autoAlpha: 0 }
+    { z: "100rem", autoAlpha: 1 }
   );
 
+  // Nascondi il testo prima che inizi l'animazione
+  gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
+
+  // Creazione di una timeline per sincronizzare tutte le animazioni
+  let IntroTl = gsap.timeline();
+
   // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
-  IntroTl.to(".intro-fondo", { transform: "translateZ(0rem)", autoAlpha: 1, duration: 2, ease: "power4.out" }, 0);
+  IntroTl.to(".intro-fondo", { z: "0rem", duration: 2, ease: "power4.out" }, 0);
   IntroTl.to(
     [".intro-albero1", ".intro-albero4"],
-    { transform: "translateZ(0rem) scale(1.2)", autoAlpha: 1, duration: 2.1, ease: "expo.out" },
+    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
     0
   );
   IntroTl.to(
     [".intro-albero2", ".intro-albero3"],
-    { transform: "translateZ(0rem) scale(1.2)", autoAlpha: 1, duration: 2.1, ease: "expo.out" },
+    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
     0
   );
-  IntroTl.to(".intro-neve", { transform: "translateZ(0rem)", autoAlpha: 1, duration: 2, ease: "expo.out" }, 0.1);
+  IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
 
   // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
   IntroTl.call(function () {
@@ -195,26 +198,26 @@ window.addEventListener("load", function () {
 
   // GSAP Animazioni per Mobile
   if (window.innerWidth <= 768) {
-    // Posiziona inizialmente tutti gli elementi fuori dallo schermo e rendili invisibili (versione mobile)
+    // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili (versione mobile)
     gsap.set(
       [
         ".intro-fondo-mobile",
         ".intro-alberi-mobile",
         ".intro-neve-mobile",
       ],
-      { transform: "translateY(100%)", autoAlpha: 0 }
+      { y: "100%", autoAlpha: 1 } // Sposta gli elementi inizialmente fuori dallo schermo sull'asse Y e rendili invisibili
     );
 
     // Creazione di una timeline per le animazioni mobile
     let IntroMobileTl = gsap.timeline();
 
     // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
-    IntroMobileTl.to(".intro-fondo-mobile", { transform: "translateY(0%)", autoAlpha: 1, duration: 2, ease: "power4.out" }, 0);
+    IntroMobileTl.to(".intro-fondo-mobile", { y: "0%", duration: 2, ease: "power4.out" }, 0);
     IntroMobileTl.to(
       ".intro-alberi-mobile",
-      { transform: "translateY(0%) scale(1.2)", autoAlpha: 1, duration: 2.1, ease: "expo.out" },
+      { y: "0%", scale: 1.2, duration: 2.1, ease: "expo.out" },
       0
     );
-    IntroMobileTl.to(".intro-neve-mobile", { transform: "translateY(0%)", autoAlpha: 1, duration: 2, ease: "expo.out" }, 0.1);
+    IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
   }
 });
