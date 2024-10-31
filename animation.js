@@ -153,10 +153,10 @@ window.addEventListener("load", function() {
   });
 
   $("[letters-slide-up]").each(function (index) {
-      let tl = gsap.timeline({ paused: true });
-      tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
-      createScrollTrigger($(this), tl);
-  });
+  let tl = gsap.timeline({ paused: true });
+  tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+  tl.play(); // Rimuove createScrollTrigger e avvia direttamente l'animazione
+});
 
   // Aggiungi animazione letters-slide-up come ultima animazione
   IntroTl.from("[letters-slide-up] .char", { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } }, "+=0.5");
@@ -169,5 +169,4 @@ window.addEventListener("load", function() {
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
 });
-
 
