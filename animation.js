@@ -117,7 +117,7 @@
 // INTRO
 // GSAP Animazioni
 window.addEventListener("load", function () {
-  // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
+  // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili, usando pixel invece di rem
   gsap.set(
     [
       ".intro-fondo",
@@ -127,28 +127,48 @@ window.addEventListener("load", function () {
       ".intro-albero3",
       ".intro-neve",
     ],
-    { z: "100rem", autoAlpha: 1 }
+    { z: "1000px", autoAlpha: 1 }
   );
 
-  // Nascondi il testo prima che inizi l'animazione
+  // Nascondi il testo prima che inizi l'animazione (lasciato invariato)
   gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
 
   // Creazione di una timeline per sincronizzare tutte le animazioni
   let IntroTl = gsap.timeline();
 
-  // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
-  IntroTl.to(".intro-fondo", { z: "0rem", duration: 2, ease: "power4.out" }, 0);
+  // Anima gli elementi con force3D abilitato e unità in pixel
+  IntroTl.to(
+    ".intro-fondo",
+    { z: "0px", duration: 2, ease: "power4.out", force3D: true },
+    0
+  );
   IntroTl.to(
     [".intro-albero1", ".intro-albero4"],
-    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
+    {
+      z: "0px",
+      scale: 1.2,
+      duration: 2.1,
+      ease: "expo.out",
+      force3D: true,
+    },
     0
   );
   IntroTl.to(
     [".intro-albero2", ".intro-albero3"],
-    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
+    {
+      z: "0px",
+      scale: 1.2,
+      duration: 2.1,
+      ease: "expo.out",
+      force3D: true,
+    },
     0
   );
-  IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
+  IntroTl.to(
+    ".intro-neve",
+    { z: "0px", duration: 2, ease: "expo.out", force3D: true },
+    0.1
+  );
 
   // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
   IntroTl.call(function () {
@@ -156,27 +176,36 @@ window.addEventListener("load", function () {
     document.querySelector(".footer-box").style.display = "flex";
   });
 
-  // Split text into spans
+  // Split text into spans (lasciato invariato)
   let typeSplit = new SplitType("[text-split]", {
     types: "words, chars",
-    tagName: "span"
+    tagName: "span",
   });
 
-  // Anima lettere con slide up dopo 1 secondo
+  // Anima lettere con slide up dopo 1 secondo (lasciato invariato)
   setTimeout(function () {
     $("[letters-slide-up]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
       tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
-      tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+      tl.from($(this).find(".char"), {
+        yPercent: 100,
+        duration: 0.2,
+        ease: "power1.out",
+        stagger: { amount: 0.6 },
+      });
     });
   }, 1000);
 
-  // Anima lettere con slide down poco dopo slide up
+  // Anima lettere con slide down poco dopo slide up (lasciato invariato)
   setTimeout(function () {
     $("[letters-slide-down]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
       tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
-      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out" }, 0.1);
+      tl.from($(this).find(".char"), {
+        yPercent: -120,
+        duration: 0.3,
+        ease: "power1.out",
+      }, 0.1);
     });
   }, 1500);
 
@@ -186,37 +215,52 @@ window.addEventListener("load", function () {
         trigger: $(this),
         start: "top 90%",
         end: "top center",
-        scrub: true
-      }
+        scrub: true,
+      },
     });
-    tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
+    tl.from($(this).find(".word"), {
+      opacity: 0.2,
+      duration: 0.2,
+      ease: "power1.out",
+      stagger: { each: 0.4 },
+    });
   });
 
-  // Avoid flash of unstyled content
+  // Evita il flash di contenuto non stilizzato
   gsap.set("[text-split]", { opacity: 1 });
 
   // GSAP Animazioni per Mobile
   if (window.innerWidth <= 768) {
     // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili (versione mobile)
     gsap.set(
-      [
-        ".intro-fondo-mobile",
-        ".intro-alberi-mobile",
-        ".intro-neve-mobile",
-      ],
-      { y: "100%", autoAlpha: 1 } // Sposta gli elementi inizialmente fuori dallo schermo sull'asse Y e rendili invisibili
+      [".intro-fondo-mobile", ".intro-alberi-mobile", ".intro-neve-mobile"],
+      { y: "100%", autoAlpha: 1 }
     );
 
     // Creazione di una timeline per le animazioni mobile
     let IntroMobileTl = gsap.timeline();
 
-    // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
-    IntroMobileTl.to(".intro-fondo-mobile", { y: "0%", duration: 2, ease: "power4.out" }, 0);
+    // Anima gli elementi mobile con force3D abilitato
     IntroMobileTl.to(
-      ".intro-alberi-mobile",
-      { y: "0%", scale: 1.2, duration: 2.1, ease: "expo.out" },
+      ".intro-fondo-mobile",
+      { y: "0%", duration: 2, ease: "power4.out", force3D: true },
       0
     );
-    IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
+    IntroMobileTl.to(
+      ".intro-alberi-mobile",
+      {
+        y: "0%",
+        scale: 1.2,
+        duration: 2.1,
+        ease: "expo.out",
+        force3D: true,
+      },
+      0
+    );
+    IntroMobileTl.to(
+      ".intro-neve-mobile",
+      { y: "0%", duration: 2, ease: "expo.out", force3D: true },
+      0.1
+    );
   }
 });
