@@ -114,56 +114,47 @@
 
 
 
-
+// INTRO
+// GSAP Animazioni
 window.addEventListener("load", function () {
-  // Nascondi inizialmente tutti gli elementi animati
-  document.querySelectorAll(
-    ".intro-fondo, .intro-albero1, .intro-albero4, .intro-albero2, .intro-albero3, .intro-neve, .intro-fondo-mobile, .intro-alberi-mobile, .intro-neve-mobile"
-  ).forEach(element => {
-    element.style.opacity = 0;
-  });
+  // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
+  gsap.set(
+    [
+      ".intro-fondo",
+      ".intro-albero1",
+      ".intro-albero4",
+      ".intro-albero2",
+      ".intro-albero3",
+      ".intro-neve",
+    ],
+    { z: "100rem", autoAlpha: 1 }
+  );
 
   // Nascondi il testo prima che inizi l'animazione
-  document.querySelectorAll("[letters-slide-up], [letters-slide-down]").forEach(element => {
-    element.style.opacity = 0;
-  });
+  gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
 
-  // Creazione di una timeline per le animazioni CSS
-  let IntroTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".intro-section",
-      start: "top center",
-      end: "bottom center",
-      scrub: true
-    }
-  });
+  // Creazione di una timeline per sincronizzare tutte le animazioni
+  let IntroTl = gsap.timeline();
 
   // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
-  IntroTl.to(".intro-fondo", { opacity: 1, y: 0, duration: 2, ease: "power4.out" }, 0);
-  IntroTl.to([".intro-albero1", ".intro-albero4"], { opacity: 1, y: 0, scale: 1.2, duration: 2.1, ease: "expo.out" }, 0);
-  IntroTl.to([".intro-albero2", ".intro-albero3"], { opacity: 1, y: 0, scale: 1.2, duration: 2.1, ease: "expo.out" }, 0);
-  IntroTl.to(".intro-neve", { opacity: 1, y: 0, duration: 2, ease: "expo.out" }, 0.1);
+  IntroTl.to(".intro-fondo", { z: "0rem", duration: 2, ease: "power4.out" }, 0);
+  IntroTl.to(
+    [".intro-albero1", ".intro-albero4"],
+    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
+    0
+  );
+  IntroTl.to(
+    [".intro-albero2", ".intro-albero3"],
+    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
+    0
+  );
+  IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
 
-  // Creazione di una timeline per le animazioni mobile
-  let IntroMobileTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".intro-section",
-      start: "top center",
-      end: "bottom center",
-      scrub: true
-    }
-  });
-
-  // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
-  IntroMobileTl.to(".intro-fondo-mobile", { opacity: 1, y: 0, duration: 2, ease: "power4.out" }, 0);
-  IntroMobileTl.to(".intro-alberi-mobile", { opacity: 1, y: 0, scale: 1.2, duration: 2.1, ease: "expo.out" }, 0);
-  IntroMobileTl.to(".intro-neve-mobile", { opacity: 1, y: 0, duration: 2, ease: "expo.out" }, 0.1);
-
-  // Al termine della IntroTl, mostra la sezione caselle e il footer-box
+  // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
   IntroTl.call(function () {
     document.querySelector(".caselle-section").style.display = "block";
     document.querySelector(".footer-box").style.display = "flex";
-  }, [], "+=1");
+  });
 
   // Split text into spans
   let typeSplit = new SplitType("[text-split]", {
@@ -203,4 +194,29 @@ window.addEventListener("load", function () {
 
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
+
+  // GSAP Animazioni per Mobile
+  if (window.innerWidth <= 768) {
+    // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili (versione mobile)
+    gsap.set(
+      [
+        ".intro-fondo-mobile",
+        ".intro-alberi-mobile",
+        ".intro-neve-mobile",
+      ],
+      { y: "100%", autoAlpha: 1 } // Sposta gli elementi inizialmente fuori dallo schermo sull'asse Y e rendili invisibili
+    );
+
+    // Creazione di una timeline per le animazioni mobile
+    let IntroMobileTl = gsap.timeline();
+
+    // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
+    IntroMobileTl.to(".intro-fondo-mobile", { y: "0%", duration: 2, ease: "power4.out" }, 0);
+    IntroMobileTl.to(
+      ".intro-alberi-mobile",
+      { y: "0%", scale: 1.2, duration: 2.1, ease: "expo.out" },
+      0
+    );
+    IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
+  }
 });
