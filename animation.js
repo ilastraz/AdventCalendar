@@ -128,7 +128,7 @@ window.addEventListener("load", function () {
       ".intro-albero3",
       ".intro-neve",
     ],
-    { z: "100rem", autoAlpha: 1 }
+    { transform: "translateZ(100rem)", autoAlpha: 1 }
   );
 
   // Nascondi il testo prima che inizi l'animazione
@@ -138,18 +138,18 @@ window.addEventListener("load", function () {
   let IntroTl = gsap.timeline();
 
   // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
-  IntroTl.to(".intro-fondo", { z: "0rem", duration: 2, ease: "power4.out" }, 0);
+  IntroTl.to(".intro-fondo", { transform: "translateZ(0rem)", duration: 2, ease: "power4.out" }, 0);
   IntroTl.to(
     [".intro-albero1", ".intro-albero4"],
-    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
+    { transform: "translateZ(0rem) scale(1.2)", duration: 2.1, ease: "expo.out" },
     0
   );
   IntroTl.to(
     [".intro-albero2", ".intro-albero3"],
-    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
+    { transform: "translateZ(0rem) scale(1.2)", duration: 2.1, ease: "expo.out" },
     0
   );
-  IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
+  IntroTl.to(".intro-neve", { transform: "translateZ(0rem)", duration: 2, ease: "expo.out" }, 0.1);
 
   // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
   IntroTl.call(function () {
@@ -205,20 +205,19 @@ window.addEventListener("load", function () {
         ".intro-alberi-mobile",
         ".intro-neve-mobile",
       ],
-      { y: "100%", autoAlpha: 1 } // Sposta gli elementi inizialmente fuori dallo schermo sull'asse Y e rendili invisibili
+      { transform: "translateY(100%)", autoAlpha: 1 } // Sposta gli elementi inizialmente fuori dallo schermo sull'asse Y e rendili invisibili
     );
 
     // Creazione di una timeline per le animazioni mobile
     let IntroMobileTl = gsap.timeline();
 
     // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
-    IntroMobileTl.to(".intro-fondo-mobile", { y: "0%", duration: 2, ease: "power4.out" }, 0);
+    IntroMobileTl.to(".intro-fondo-mobile", { transform: "translateY(0%)", duration: 2, ease: "power4.out" }, 0);
     IntroMobileTl.to(
       ".intro-alberi-mobile",
-      { y: "0%", scale: 1.2, duration: 2.1, ease: "expo.out" },
+      { transform: "translateY(0%) scale(1.2)", duration: 2.1, ease: "expo.out" },
       0
     );
-    IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
+    IntroMobileTl.to(".intro-neve-mobile", { transform: "translateY(0%)", duration: 2, ease: "expo.out" }, 0.1);
   }
 });
-
