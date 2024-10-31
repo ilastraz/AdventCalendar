@@ -117,56 +117,108 @@
 
 // INTRO
 // GSAP Animazioni
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
   // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
-  gsap.set([".intro-fondo", ".intro-albero1", ".intro-albero4", ".intro-albero2", ".intro-albero3", ".intro-neve"], { z: "100rem", autoAlpha: 1 });
+  gsap.set(
+    [
+      ".intro-fondo",
+      ".intro-albero1",
+      ".intro-albero4",
+      ".intro-albero2",
+      ".intro-albero3",
+      ".intro-neve",
+    ],
+    { z: "100rem", autoAlpha: 1 }
+  );
+
+  // Nascondi il testo prima che inizi l'animazione
+  gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
 
   // Creazione di una timeline per sincronizzare tutte le animazioni
   let IntroTl = gsap.timeline();
 
-  // Split text into spans a metà dell'animazione principale
-  let typeSplit = new SplitType("[text-split]", {
-      types: "words, chars",
-      tagName: "span"
-  });
-
   // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
   IntroTl.to(".intro-fondo", { z: "0rem", duration: 2, ease: "power4.out" }, 0);
-  IntroTl.to([".intro-albero1", ".intro-albero4"], { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" }, 0);
-  IntroTl.to([".intro-albero2", ".intro-albero3"], { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" }, 0);
+  IntroTl.to(
+    [".intro-albero1", ".intro-albero4"],
+    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
+    0
+  );
+  IntroTl.to(
+    [".intro-albero2", ".intro-albero3"],
+    { z: "0rem", scale: 1.2, duration: 2.1, ease: "expo.out" },
+    0
+  );
   IntroTl.to(".intro-neve", { z: "0rem", duration: 2, ease: "expo.out" }, 0.1);
 
-  // Aggiungi animazione SplitType durante la timeline principale
-  IntroTl.from("[text-split] .char", { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } }, "1.5");
-
-  // Anima parole con scroll
-  $("[scrub-each-word]").each(function (index) {
-      let tl = gsap.timeline({
-          scrollTrigger: {
-              trigger: $(this),
-              start: "top 90%",
-              end: "top center",
-              scrub: true
-          }
-      });
-      tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
+  // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
+  IntroTl.call(function () {
+    document.querySelector(".caselle-section").style.display = "block";
+    document.querySelector(".footer-box").style.display = "flex";
   });
 
-  $("[letters-slide-up]").each(function (index) {
-  let tl = gsap.timeline({ paused: true });
-  tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
-  tl.play(); // Rimuove createScrollTrigger e avvia direttamente l'animazione
-});
+  // Split text into spans
+  let typeSplit = new SplitType("[text-split]", {
+    types: "words, chars",
+    tagName: "span"
+  });
 
-  // Aggiungi animazione letters-slide-up come ultima animazione
-  IntroTl.from("[letters-slide-up] .char", { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } }, "+=0.5");
+  // Anima lettere con slide up dopo 1 secondo
+  setTimeout(function () {
+    $("[letters-slide-up]").each(function (index) {
+      let tl = gsap.timeline({ paused: false });
+      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
+      tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+    });
+  }, 1000);
 
-  // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
-  IntroTl.call(function() {
-      document.querySelector(".caselle-section").style.display = "block";
+  // Anima lettere con slide down poco dopo slide up
+  setTimeout(function () {
+    $("[letters-slide-down]").each(function (index) {
+      let tl = gsap.timeline({ paused: false });
+      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
+      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out" }, 0.1);
+    });
+  }, 1500);
+
+  $("[scrub-each-word]").each(function (index) {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: $(this),
+        start: "top 90%",
+        end: "top center",
+        scrub: true
+      }
+    });
+    tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
   });
 
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
+
+  // GSAP Animazioni per Mobile
+  if (window.innerWidth <= 768) {
+    // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili (versione mobile)
+    gsap.set(
+      [
+        ".intro-fondo-mobile",
+        ".intro-alberi-mobile",
+        ".intro-neve-mobile",
+      ],
+      { y: "100%", autoAlpha: 1 } // Sposta gli elementi inizialmente fuori dallo schermo sull'asse Y e rendili invisibili
+    );
+
+    // Creazione di una timeline per le animazioni mobile
+    let IntroMobileTl = gsap.timeline();
+
+    // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
+    IntroMobileTl.to(".intro-fondo-mobile", { y: "0%", duration: 2, ease: "power4.out" }, 0);
+    IntroMobileTl.to(
+      ".intro-alberi-mobile",
+      { y: "0%", scale: 1.2, duration: 2.1, ease: "expo.out" },
+      0
+    );
+    IntroMobileTl.to(".intro-neve-mobile", { y: "0%", duration: 2, ease: "expo.out" }, 0.1);
+  }
 });
 
