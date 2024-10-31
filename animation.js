@@ -121,7 +121,7 @@ window.addEventListener("load", function () {
   gsap.set(
     [
       ".intro-fondo",
-      ".alberoNew1",
+      ".intro-albero1",
       ".intro-albero4",
       ".intro-albero2",
       ".intro-albero3",
@@ -143,7 +143,7 @@ window.addEventListener("load", function () {
     0
   );
   IntroTl.to(
-    [".alberoNew1", ".intro-albero4"],
+    [".intro-albero1", ".intro-albero4"],
     {
       z: "0px",
       scale: 1.2,
