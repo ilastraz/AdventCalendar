@@ -115,7 +115,6 @@
 
 
 
-// INTRO
 window.addEventListener("load", function () {
   // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
   gsap.set(
@@ -130,7 +129,7 @@ window.addEventListener("load", function () {
       ".intro-alberi-mobile",
       ".intro-neve-mobile"
     ],
-    { transform: "translateZ(100rem)", autoAlpha: 0 }
+    { transform: "translateY(100%)", autoAlpha: 0 }
   );
 
   // Nascondi il testo prima che inizi l'animazione
@@ -147,7 +146,7 @@ window.addEventListener("load", function () {
     ".intro-albero2",
     ".intro-albero3",
     ".intro-neve"
-  ], { transform: "translateZ(0)", duration: 2, ease: "power4.out" }, 0);
+  ], { transform: "translateY(0)", duration: 2, ease: "power4.out" }, 0);
 
   // Creazione di una timeline per le animazioni mobile
   let IntroMobileTl = gsap.timeline();
