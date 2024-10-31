@@ -131,22 +131,22 @@ window.addEventListener("load", function () {
       ".intro-albero3",
       ".intro-neve",
     ],
-    { transform: "translateZ(100rem)", autoAlpha: 0 }
+    { y: "100%", autoAlpha: 0 }
   );
 
   // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
-  IntroTl.to(".intro-fondo", { transform: "translateZ(0rem)", autoAlpha: 1, duration: 2, ease: "power4.out" }, 0);
+  IntroTl.to(".intro-fondo", { y: "0%", autoAlpha: 1, duration: 2, ease: "power4.out" }, 0);
   IntroTl.to(
     [".intro-albero1", ".intro-albero4"],
-    { transform: "translateZ(0rem) scale(1.2)", autoAlpha: 1, duration: 2.1, ease: "expo.out" },
+    { y: "0%", scale: 1.2, autoAlpha: 1, duration: 2.1, ease: "expo.out" },
     0
   );
   IntroTl.to(
     [".intro-albero2", ".intro-albero3"],
-    { transform: "translateZ(0rem) scale(1.2)", autoAlpha: 1, duration: 2.1, ease: "expo.out" },
+    { y: "0%", scale: 1.2, autoAlpha: 1, duration: 2.1, ease: "expo.out" },
     0
   );
-  IntroTl.to(".intro-neve", { transform: "translateZ(0rem)", autoAlpha: 1, duration: 2, ease: "expo.out" }, 0.1);
+  IntroTl.to(".intro-neve", { y: "0%", autoAlpha: 1, duration: 2, ease: "expo.out" }, 0.1);
 
   // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
   IntroTl.call(function () {
@@ -164,8 +164,8 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     $("[letters-slide-up]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
-      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
-      tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+      tl.set($(this), { autoAlpha: 0 });
+      tl.fromTo($(this).find(".char"), { autoAlpha: 0, yPercent: 100 }, { autoAlpha: 1, yPercent: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
     });
   }, 1000);
 
@@ -173,8 +173,8 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     $("[letters-slide-down]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
-      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
-      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out" }, 0.1);
+      tl.set($(this), { autoAlpha: 0 });
+      tl.fromTo($(this).find(".char"), { autoAlpha: 0, yPercent: -120 }, { autoAlpha: 1, yPercent: 0, duration: 0.3, ease: "power1.out" }, 0.1);
     });
   }, 1500);
 
@@ -202,19 +202,21 @@ window.addEventListener("load", function () {
         ".intro-alberi-mobile",
         ".intro-neve-mobile",
       ],
-      { transform: "translateY(100%)", autoAlpha: 0 }
+      { y: "100%", autoAlpha: 0 }
     );
 
     // Creazione di una timeline per le animazioni mobile
     let IntroMobileTl = gsap.timeline();
 
     // Anima intro-fondo-mobile, intro-alberi-mobile, e intro-neve-mobile insieme
-    IntroMobileTl.to(".intro-fondo-mobile", { transform: "translateY(0%)", autoAlpha: 1, duration: 2, ease: "power4.out" }, 0);
+    IntroMobileTl.to(".intro-fondo-mobile", { y: "0%", autoAlpha: 1, duration: 2, ease: "power4.out" }, 0);
     IntroMobileTl.to(
       ".intro-alberi-mobile",
-      { transform: "translateY(0%) scale(1.2)", autoAlpha: 1, duration: 2.1, ease: "expo.out" },
+      { y: "0%", scale: 1.2, autoAlpha: 1, duration: 2.1, ease: "expo.out" },
       0
     );
-    IntroMobileTl.to(".intro-neve-mobile", { transform: "translateY(0%)", autoAlpha: 1, duration: 2, ease: "expo.out" }, 0.1);
+    IntroMobileTl.to(".intro-neve-mobile", { y: "0%", autoAlpha: 1, duration: 2, ease: "expo.out" }, 0.1);
   }
 });
+
+
