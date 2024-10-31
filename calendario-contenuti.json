@@ -2,7 +2,7 @@
   "1": {
     "data": "1 Dicembre",
     "head": "PER I PIÚ CURIOSI...",
-    "descrizione": "La curiosità di sapere come continua la storia tra Esra e Ozan è troppo forte? Un odio-amore a cui è impossibile resistere! Non aspettare, goditi in anteprima i primi minuti dell'episodio 15 di Love, Reason, Get even.",
+    "descrizione": "La curiosità di sapere come continua la storia tra Esra e Ozan è troppo forte? Un odio-amore a cui è impossibile resistere! Non aspettare, goditi in anteprima i primi minuti del prossimo episodio di Love, Reason, Get even.",
     "nota": "",
     "cta1": {
       "testo": "GUARDO L'EPISODIO",
@@ -113,16 +113,16 @@
   },
   "8": {
     "data": "8 Dicembre",
-    "head": "CASA E LAVORO... PER DUE!",
-    "descrizione": "Passare le feste a casa con i parenti, ti sembra complicato? Pensa doverlo fare con uno sconosciuto... Selin e Demir si troveranno costretti a condividere sia la casa che il lavoro. Tra scontri, imprevisti, equivoci e batticuori, riusciranno a convivere? Non ti resta che scoprirlo…",
+    "head": "UN REGALO SPECIALE PER TE",
+    "descrizione": "Vuoi conoscere la storia di Farah? In anteprima per te i primi minuti della nuova serie turca con protagonista Demet Özdemir in esclusiva su Mediaset Infinity dal xx. Cosa aspetti? Vieni a guardarli!",
     "nota": "",
     "cta1": {
-      "testo": "GUARDA LA SERIE COMPLETA",
-      "link": "https://mediasetinfinity.mediaset.it/fiction/everywhereigo-coincidenzedamore_SE000000002214"
+      "testo": "GUARDO L'EPISODIO",
+      "link": "https://mediasetinfinity.mediaset.it/"
     },
     "cta2": {
-      "testo": "",
-      "link": ""
+      "testo": "GUARDO TUTTA LA SERIE",
+      "link": "https://mediasetinfinity.mediaset.it/"
     },
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Mobile.jpg"
@@ -223,22 +223,24 @@
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Mobile.jpg"
   },
+
   "15": {
     "data": "15 Dicembre",
-    "head": "UN REGALO SPECIALE PER TE",
-    "descrizione": "Ti stai già appassionano alla storia di Farah e non vedi l'ora di vedere come continua? In anteprima per te i primi minuti del quarto episodio della nuova serie turca con protagonista Demet Özdemir. Cosa aspetti? Vieni a guardarli!",
+    "head": "CASA E LAVORO... PER DUE!",
+    "descrizione": "Passare le feste a casa con i parenti, ti sembra complicato? Pensa doverlo fare con uno sconosciuto... Selin e Demir si troveranno costretti a condividere sia la casa che il lavoro. Tra scontri, imprevisti, equivoci e batticuori, riusciranno a convivere? Non ti resta che scoprirlo…",
     "nota": "",
     "cta1": {
-      "testo": "GUARDO L'EPISODIO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "testo": "GUARDA LA SERIE COMPLETA",
+      "link": "https://mediasetinfinity.mediaset.it/fiction/everywhereigo-coincidenzedamore_SE000000002214"
     },
     "cta2": {
-      "testo": "GUARDO TUTTA LA SERIE",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "testo": "",
+      "link": ""
     },
     "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Desktop.jpg",
     "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Mobile.jpg"
   },
+
   "16": {
     "data": "16 Dicembre",
     "head": "SI PARTE PER PARIGI!",
@@ -292,7 +294,7 @@
   "19": {
     "data": "19 Dicembre",
     "head": "UN MESSAGGIO PER TE",
-    "descrizione": "Lorem Ipsum",
+    "descrizione": "Per te c’è un videomessaggio esclusivo che arriva da qualcuno che conosce ogni segreto della casa… Chi sarà mai?",
     "nota": "",
     "cta1": {
       "testo": "METTI IN PLAY IL MESSAGGIO",
