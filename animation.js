@@ -118,7 +118,10 @@
 // INTRO
 // GSAP Animazioni
 window.addEventListener("load", function () {
-  // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili
+  // Creazione di una timeline per sincronizzare tutte le animazioni
+  let IntroTl = gsap.timeline();
+
+  // Posiziona inizialmente tutti gli elementi fuori dallo schermo e rendili invisibili
   gsap.set(
     [
       ".intro-fondo",
@@ -130,12 +133,6 @@ window.addEventListener("load", function () {
     ],
     { transform: "translateZ(100rem)", autoAlpha: 0 }
   );
-
-  // Nascondi il testo prima che inizi l'animazione
-  gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
-
-  // Creazione di una timeline per sincronizzare tutte le animazioni
-  let IntroTl = gsap.timeline();
 
   // Anima intro-fondo, intro-albero1, intro-albero4, intro-albero2, intro-albero3, e intro-neve insieme
   IntroTl.to(".intro-fondo", { transform: "translateZ(0rem)", autoAlpha: 1, duration: 2, ease: "power4.out" }, 0);
@@ -167,8 +164,8 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     $("[letters-slide-up]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
-      tl.set($(this), { autoAlpha: 0 });
-      tl.fromTo($(this).find(".char"), { autoAlpha: 0, yPercent: 100 }, { autoAlpha: 1, yPercent: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
+      tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
     });
   }, 1000);
 
@@ -176,8 +173,8 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     $("[letters-slide-down]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
-      tl.set($(this), { autoAlpha: 0 });
-      tl.fromTo($(this).find(".char"), { autoAlpha: 0, yPercent: -120 }, { autoAlpha: 1, yPercent: 0, duration: 0.3, ease: "power1.out" }, 0.1);
+      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
+      tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out" }, 0.1);
     });
   }, 1500);
 
@@ -198,7 +195,7 @@ window.addEventListener("load", function () {
 
   // GSAP Animazioni per Mobile
   if (window.innerWidth <= 768) {
-    // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili (versione mobile)
+    // Posiziona inizialmente tutti gli elementi fuori dallo schermo e rendili invisibili (versione mobile)
     gsap.set(
       [
         ".intro-fondo-mobile",
@@ -221,4 +218,3 @@ window.addEventListener("load", function () {
     IntroMobileTl.to(".intro-neve-mobile", { transform: "translateY(0%)", autoAlpha: 1, duration: 2, ease: "expo.out" }, 0.1);
   }
 });
-
