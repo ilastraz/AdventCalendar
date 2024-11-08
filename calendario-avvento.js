@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
         div.style.display = "block";
         div.style.cursor = "pointer";
         div.addEventListener('click', () => {
-          console.log('Clicked on day:', day);
           openPopup(day);
         });
       } else if (day > currentDay && status === "future") {
@@ -26,33 +25,27 @@ document.addEventListener("DOMContentLoaded", function() {
   function fetchCurrentDay() {
     try {
       const currentDate = new Date();
-      console.log('Data corrente dal browser:', currentDate);
       const currentDay = currentDate.getDate();
       updateCalendar(currentDay);
     } catch (error) {
-      console.error("Errore nel recupero della data:", error);
+      // Gestione dell'errore se necessario
     }
   }
 
   // Funzione per aprire il popup
   function openPopup(day) {
-    console.log('Opening popup for day:', day, 'Type:', typeof day);
     fetch('https://corsproxy.io/?https://gleeful-crepe-005071.netlify.app/calendario-contenuti.json')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        console.log('Fetch response:', response);
         return response.json();
       })
       .then(data => {
-        console.log('Fetched data:', JSON.stringify(data, null, 2));
         const dayData = data[day.toString()];
-        console.log('Day data for', day, ':', dayData);
         if (dayData) {
           const popup = document.querySelector('.popup');
           if (!popup) {
-            console.error('Elemento .popup non trovato');
             return;
           }
 
@@ -80,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
               }
             } else {
-              console.error(`Elemento ${selector} non trovato`);
+              // Gestione se l'elemento non viene trovato
             }
           });
 
@@ -97,8 +90,6 @@ document.addEventListener("DOMContentLoaded", function() {
               imgDesktop.onload = resolve;
               imgDesktop.onerror = resolve; // Risolve comunque per evitare blocchi
             }));
-          } else if (!imgDesktop) {
-            console.error('Elemento .popup-image-desktop non trovato');
           }
 
           if (imgMobile && dayData.imgMobile) {
@@ -109,8 +100,6 @@ document.addEventListener("DOMContentLoaded", function() {
               imgMobile.onload = resolve;
               imgMobile.onerror = resolve; // Risolve comunque per evitare blocchi
             }));
-          } else if (!imgMobile) {
-            console.error('Elemento .popup-image-mobile non trovato');
           }
 
           // Mostra il popup solo quando tutte le immagini sono caricate
@@ -119,20 +108,13 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.style.overflow = 'hidden';
 
             popup.style.display = 'flex';
-            console.log('Popup display style:', popup.style.display);
-            console.log('Computed style:', window.getComputedStyle(popup).display);
           });
         } else {
-          console.log('Available days:', Object.keys(data));
           alert(`Nessun dato disponibile per il giorno ${day}`);
         }
       })
       .catch(error => {
-        console.error('Errore nel caricamento dei dati:', error);
         alert('Si è verificato un errore nel caricamento dei dati. Riprova più tardi.');
-      })
-      .finally(() => {
-        console.log('Tentativo di apertura del popup completato');
       });
   }
 
