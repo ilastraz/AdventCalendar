@@ -86,28 +86,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
           // Aggiorna le immagini popup-image-desktop e popup-image-mobile
           const imgDesktop = document.querySelector('.popup-image-desktop');
-const imgMobile = document.querySelector('.popup-image-mobile');
-if (imgDesktop && dayData.imgDesktop) {
-  imgDesktop.src = dayData.imgDesktop;
-  imgDesktop.removeAttribute('srcset');
-  imgDesktop.removeAttribute('sizes');
-} else if (!imgDesktop) {
-  console.error('Elemento .popup-image-desktop non trovato');
-}
-if (imgMobile && dayData.imgMobile) {
-  imgMobile.src = dayData.imgMobile;
-  imgMobile.removeAttribute('srcset');
-  imgMobile.removeAttribute('sizes');
-} else if (!imgMobile) {
-  console.error('Elemento .popup-image-mobile non trovato');
-}
+          const imgMobile = document.querySelector('.popup-image-mobile');
+          const imagePromises = [];
 
-          // Disattiva lo scroll della pagina
-          document.body.style.overflow = 'hidden';
+          if (imgDesktop && dayData.imgDesktop) {
+            imgDesktop.src = dayData.imgDesktop;
+            imgDesktop.removeAttribute('srcset');
+            imgDesktop.removeAttribute('sizes');
+            imagePromises.push(new Promise((resolve) => {
+              imgDesktop.onload = resolve;
+              imgDesktop.onerror = resolve; // Risolve comunque per evitare blocchi
+            }));
+          } else if (!imgDesktop) {
+            console.error('Elemento .popup-image-desktop non trovato');
+          }
 
-          popup.style.display = 'flex';
-          console.log('Popup display style:', popup.style.display);
-          console.log('Computed style:', window.getComputedStyle(popup).display);
+          if (imgMobile && dayData.imgMobile) {
+            imgMobile.src = dayData.imgMobile;
+            imgMobile.removeAttribute('srcset');
+            imgMobile.removeAttribute('sizes');
+            imagePromises.push(new Promise((resolve) => {
+              imgMobile.onload = resolve;
+              imgMobile.onerror = resolve; // Risolve comunque per evitare blocchi
+            }));
+          } else if (!imgMobile) {
+            console.error('Elemento .popup-image-mobile non trovato');
+          }
+
+          // Mostra il popup solo quando tutte le immagini sono caricate
+          Promise.all(imagePromises).then(() => {
+            // Disattiva lo scroll della pagina
+            document.body.style.overflow = 'hidden';
+
+            popup.style.display = 'flex';
+            console.log('Popup display style:', popup.style.display);
+            console.log('Computed style:', window.getComputedStyle(popup).display);
+          });
         } else {
           console.log('Available days:', Object.keys(data));
           alert(`Nessun dato disponibile per il giorno ${day}`);
