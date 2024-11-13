@@ -126,8 +126,8 @@ window.addEventListener("load", function () {
     );
   }
 
-  // GSAP Animazioni - Desktop
-  if (window.innerWidth > 1024 || (!isTablet() && window.innerWidth > 768)) {
+  // GSAP Animazioni - Desktop e Laptop
+  if (!isTablet() && window.innerWidth > 1024) {
     gsap.set(
       [
         ".intro-fondo",
@@ -265,5 +265,54 @@ window.addEventListener("load", function () {
       0.1
     );
   }
-});
 
+  // Animazioni Testo - Valide per tutte le risoluzioni
+  let typeSplit = new SplitType("[text-split]", {
+    types: "words, chars",
+    tagName: "span",
+  });
+
+  setTimeout(function () {
+    $("[letters-slide-up]").each(function (index) {
+      let tl = gsap.timeline({ paused: false });
+      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
+      tl.from($(this).find(".char"), {
+        yPercent: 100,
+        duration: 0.2,
+        ease: "power1.out",
+        stagger: { amount: 0.6 },
+      });
+    });
+  }, 1000);
+
+  setTimeout(function () {
+    $("[letters-slide-down]").each(function (index) {
+      let tl = gsap.timeline({ paused: false });
+      tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
+      tl.from($(this).find(".char"), {
+        yPercent: -120,
+        duration: 0.3,
+        ease: "power1.out",
+      }, 0.1);
+    });
+  }, 1500);
+
+  $("[scrub-each-word]").each(function (index) {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: $(this),
+        start: "top 90%",
+        end: "top center",
+        scrub: true,
+      },
+    });
+    tl.from($(this).find(".word"), {
+      opacity: 0.2,
+      duration: 0.2,
+      ease: "power1.out",
+      stagger: { each: 0.4 },
+    });
+  });
+
+  gsap.set("[text-split]", { opacity: 1 });
+});
