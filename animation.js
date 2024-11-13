@@ -230,7 +230,7 @@ window.addEventListener("load", function () {
   gsap.set("[text-split]", { opacity: 1 });
 
   // GSAP Animazioni per Mobile
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1024) {
     // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili (versione mobile)
     gsap.set(
       [".intro-fondo-mobile", ".intro-alberi-mobile", ".intro-neve-mobile"],
