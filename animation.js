@@ -115,163 +115,74 @@
 
 
 // INTRO
+// GSAP Animazioni
 window.addEventListener("load", function () {
-  // Funzione per verificare se il dispositivo è un tablet
-  function isTablet() {
-    const userAgent = navigator.userAgent.toLowerCase();
-    return (
-      /ipad|android(?!.*mobile)|tablet|playbook|silk/.test(userAgent) &&
-      window.innerWidth > 768 &&
-      window.innerWidth <= 1024
-    );
-  }
-
-  // GSAP Animazioni - Desktop e Laptop
-  if (!isTablet() && window.innerWidth > 1024) {
-    gsap.set(
-      [
-        ".intro-fondo",
-        ".intro-albero1",
-        ".intro-albero4",
-        ".intro-albero2",
-        ".intro-albero3",
-        ".intro-neve",
-      ],
-      { z: "1000px", autoAlpha: 1 }
-    );
-
-    let IntroTl = gsap.timeline();
-
-    IntroTl.to(
+  // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili, usando pixel invece di rem
+  gsap.set(
+    [
       ".intro-fondo",
-      { z: "0px", duration: 2, ease: "power4.out", force3D: true },
-      0
-    );
-    IntroTl.to(
-      [".intro-albero1", ".intro-albero4"],
-      {
-        z: "0px",
-        scale: 1.2,
-        duration: 2.1,
-        ease: "expo.out",
-        force3D: true,
-      },
-      0
-    );
-    IntroTl.to(
-      [".intro-albero2", ".intro-albero3"],
-      {
-        z: "0px",
-        scale: 1.2,
-        duration: 2.1,
-        ease: "expo.out",
-        force3D: true,
-      },
-      0
-    );
-    IntroTl.to(
+      ".intro-albero1",
+      ".intro-albero4",
+      ".intro-albero2",
+      ".intro-albero3",
       ".intro-neve",
-      { z: "0px", duration: 2, ease: "expo.out", force3D: true },
-      0.1
-    );
+    ],
+    { z: "1000px", autoAlpha: 1 }
+  );
 
-    IntroTl.call(function () {
-      document.querySelector(".caselle-section").style.display = "block";
-      document.querySelector(".footer-box").style.display = "flex";
-    });
-  }
-  // GSAP Animazioni - Tablet
-  else if (isTablet()) {
-    gsap.set(
-      [
-        ".intro-fondo",
-        ".intro-albero1",
-        ".intro-albero4",
-        ".intro-albero2",
-        ".intro-albero3",
-        ".intro-neve",
-      ],
-      { y: "100%", autoAlpha: 1 }
-    );
+  // Nascondi il testo prima che inizi l'animazione (lasciato invariato)
+  gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
 
-    let IntroTabletTl = gsap.timeline();
+  // Creazione di una timeline per sincronizzare tutte le animazioni
+  let IntroTl = gsap.timeline();
 
-    IntroTabletTl.to(
-      ".intro-fondo",
-      { y: "0%", duration: 2, ease: "power4.out", force3D: true },
-      0
-    );
-    IntroTabletTl.to(
-      [".intro-albero1", ".intro-albero4"],
-      {
-        y: "0%",
-        scale: 1.1,
-        duration: 2.1,
-        ease: "expo.out",
-        force3D: true,
-      },
-      0
-    );
-    IntroTabletTl.to(
-      [".intro-albero2", ".intro-albero3"],
-      {
-        y: "0%",
-        scale: 1.1,
-        duration: 2.1,
-        ease: "expo.out",
-        force3D: true,
-      },
-      0
-    );
-    IntroTabletTl.to(
-      ".intro-neve",
-      { y: "0%", duration: 2, ease: "expo.out", force3D: true },
-      0.1
-    );
+  // Anima gli elementi con force3D abilitato e unità in pixel
+  IntroTl.to(
+    ".intro-fondo",
+    { z: "0px", duration: 2, ease: "power4.out", force3D: true },
+    0
+  );
+  IntroTl.to(
+    [".intro-albero1", ".intro-albero4"],
+    {
+      z: "0px",
+      scale: 1.2,
+      duration: 2.1,
+      ease: "expo.out",
+      force3D: true,
+    },
+    0
+  );
+  IntroTl.to(
+    [".intro-albero2", ".intro-albero3"],
+    {
+      z: "0px",
+      scale: 1.2,
+      duration: 2.1,
+      ease: "expo.out",
+      force3D: true,
+    },
+    0
+  );
+  IntroTl.to(
+    ".intro-neve",
+    { z: "0px", duration: 2, ease: "expo.out", force3D: true },
+    0.1
+  );
 
-    IntroTabletTl.call(function () {
-      document.querySelector(".caselle-section").style.display = "block";
-      document.querySelector(".footer-box").style.display = "flex";
-    });
-  }
-  // GSAP Animazioni - Mobile
-  else {
-    gsap.set(
-      [".intro-fondo-mobile", ".intro-alberi-mobile", ".intro-neve-mobile"],
-      { y: "100%", autoAlpha: 1 }
-    );
+  // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
+  IntroTl.call(function () {
+    document.querySelector(".caselle-section").style.display = "block";
+    document.querySelector(".footer-box").style.display = "flex";
+  });
 
-    let IntroMobileTl = gsap.timeline();
-
-    IntroMobileTl.to(
-      ".intro-fondo-mobile",
-      { y: "0%", duration: 2, ease: "power4.out", force3D: true },
-      0
-    );
-    IntroMobileTl.to(
-      ".intro-alberi-mobile",
-      {
-        y: "0%",
-        scale: 1.2,
-        duration: 2.1,
-        ease: "expo.out",
-        force3D: true,
-      },
-      0
-    );
-    IntroMobileTl.to(
-      ".intro-neve-mobile",
-      { y: "0%", duration: 2, ease: "expo.out", force3D: true },
-      0.1
-    );
-  }
-
-  // Animazioni Testo - Valide per tutte le risoluzioni
+  // Split text into spans (lasciato invariato)
   let typeSplit = new SplitType("[text-split]", {
     types: "words, chars",
     tagName: "span",
   });
 
+  // Anima lettere con slide up dopo 1 secondo (lasciato invariato)
   setTimeout(function () {
     $("[letters-slide-up]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
@@ -285,6 +196,7 @@ window.addEventListener("load", function () {
     });
   }, 1000);
 
+  // Anima lettere con slide down poco dopo slide up (lasciato invariato)
   setTimeout(function () {
     $("[letters-slide-down]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
@@ -314,5 +226,41 @@ window.addEventListener("load", function () {
     });
   });
 
+  // Evita il flash di contenuto non stilizzato
   gsap.set("[text-split]", { opacity: 1 });
+
+  // GSAP Animazioni per Mobile
+  if (window.innerWidth <= 768) {
+    // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili (versione mobile)
+    gsap.set(
+      [".intro-fondo-mobile", ".intro-alberi-mobile", ".intro-neve-mobile"],
+      { y: "100%", autoAlpha: 1 }
+    );
+
+    // Creazione di una timeline per le animazioni mobile
+    let IntroMobileTl = gsap.timeline();
+
+    // Anima gli elementi mobile con force3D abilitato
+    IntroMobileTl.to(
+      ".intro-fondo-mobile",
+      { y: "0%", duration: 2, ease: "power4.out", force3D: true },
+      0
+    );
+    IntroMobileTl.to(
+      ".intro-alberi-mobile",
+      {
+        y: "0%",
+        scale: 1.2,
+        duration: 2.1,
+        ease: "expo.out",
+        force3D: true,
+      },
+      0
+    );
+    IntroMobileTl.to(
+      ".intro-neve-mobile",
+      { y: "0%", duration: 2, ease: "expo.out", force3D: true },
+      0.1
+    );
+  }
 });
