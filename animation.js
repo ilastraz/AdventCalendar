@@ -101,19 +101,17 @@
 
     // Evita il "pazzo comportamento" mantenendo proporzioni coerenti e riposizionando i fiocchi senza resettarli completamente
     if (newWidth !== width || newHeight !== height) {
+      // Aggiorna dimensioni canvas
       width = newWidth;
       height = newHeight;
       canvas.width = width;
       canvas.height = height;
 
-      // Ricalcola il numero di fiocchi di neve
-      COUNT = calculateSnowflakeCount();
-
-      // Mantieni i fiocchi di neve, ma aggiusta le loro posizioni per adattarsi alle nuove dimensioni
-      snowflakes = [];
-      for (i = 0; i < COUNT; i++) {
-        snowflakes.push(new Snowflake());
-      }
+      // Mantieni i fiocchi di neve, aggiornando le loro posizioni rispetto alle nuove dimensioni
+      snowflakes.forEach(function (snowflake) {
+        snowflake.x = (snowflake.x / width) * newWidth;
+        snowflake.y = (snowflake.y / height) * newHeight;
+      });
     }
   }
 
