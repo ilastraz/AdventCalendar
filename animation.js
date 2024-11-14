@@ -5,7 +5,7 @@
   var ctx = canvas.getContext("2d");
   var width = window.innerWidth;
   var height = window.innerHeight;
-  var COUNT = width > 1024 ? 100 : (width > 768 ? 30 : 20); // Ridotto ulteriormente per tablet (30 fiocchi)
+  var COUNT = calculateSnowflakeCount(); // Numero di fiocchi di neve calcolato in base all'area del viewport
   var snowflakes = [];
   var i = 0;
   var active = true;
@@ -79,6 +79,21 @@
     );
   })();
 
+  function calculateSnowflakeCount() {
+    // Calcola un numero di fiocchi di neve in base all'area del viewport
+    var area = width * height;
+    var baseCount = Math.floor(area / 15000); // Numero base proporzionale all'area
+
+    // Riduci ulteriormente per tablet e dispositivi mobili
+    if (/iPad|Android/i.test(window.navigator.userAgent) || width <= 1024) {
+      return Math.max(10, Math.floor(baseCount / 3));
+    } else if (width <= 768) {
+      return Math.max(5, Math.floor(baseCount / 5));
+    }
+    
+    return baseCount;
+  }
+
   function onResize() {
     // Aggiorna la larghezza e altezza alla dimensione attuale della finestra
     var newWidth = window.innerWidth;
@@ -91,8 +106,8 @@
       canvas.width = width;
       canvas.height = height;
 
-      // Regola il numero di fiocchi per schermi più piccoli
-      COUNT = width > 1024 ? 100 : (width > 768 ? 30 : 20);
+      // Ricalcola il numero di fiocchi di neve
+      COUNT = calculateSnowflakeCount();
 
       // Mantieni i fiocchi di neve, ma aggiusta le loro posizioni per adattarsi alle nuove dimensioni
       snowflakes = [];
