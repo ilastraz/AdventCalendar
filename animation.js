@@ -123,11 +123,8 @@
 
 
 // INTRO
-// GSAP Animazioni
-window.addEventListener("pageshow", function (event) {
-  // Ferma tutte le animazioni esistenti
-  gsap.killTweensOf("*");
-
+// Funzione per inizializzare le animazioni
+function initAnimations() {
   // Ripristina gli elementi al loro stato iniziale
   gsap.set(
     [
@@ -247,13 +244,6 @@ window.addEventListener("pageshow", function (event) {
 
   // GSAP Animazioni per Mobile
   if (window.innerWidth <= 1024) {
-    // Ferma le animazioni esistenti per la versione mobile
-    gsap.killTweensOf([
-      ".intro-fondo-mobile",
-      ".intro-alberi-mobile",
-      ".intro-neve-mobile",
-    ]);
-
     // Ripristina gli elementi al loro stato iniziale (versione mobile)
     gsap.set(
       [".intro-fondo-mobile", ".intro-alberi-mobile", ".intro-neve-mobile"],
@@ -276,8 +266,7 @@ window.addEventListener("pageshow", function (event) {
         scale: 1.2,
         duration: 2.1,
         ease: "expo.out",
-        force3D: true,
-      },
+        force3D: true },
       0
     );
     IntroMobileTl.to(
@@ -285,5 +274,19 @@ window.addEventListener("pageshow", function (event) {
       { y: "0%", duration: 2, ease: "expo.out", force3D: true },
       0.1
     );
+  }
+}
+
+// Ascolta gli eventi 'load' e 'pageshow'
+window.addEventListener('load', function () {
+  initAnimations();
+});
+
+window.addEventListener('pageshow', function (event) {
+  if (event.persisted) {
+    // Ferma tutte le animazioni esistenti
+    gsap.killTweensOf("*");
+    // Reinizializza le animazioni
+    initAnimations();
   }
 });
