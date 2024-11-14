@@ -123,36 +123,6 @@
 
 
 // INTRO
-// Funzione per rilevare se il browser è Safari o se il dispositivo è iOS
-function isSafariOrIOS() {
-  var ua = navigator.userAgent.toLowerCase();
-  var isSafari = false;
-  var isIOS = false;
-
-  // Controlla se è un dispositivo iOS
-  if (/iphone|ipad|ipod/.test(ua)) {
-    isIOS = true;
-  }
-
-  // Controlla se è Safari
-  if (/safari/.test(ua) && !/chrome/.test(ua)) {
-    isSafari = true;
-  }
-
-  return isSafari || isIOS;
-}
-
-// Elementi coinvolti nelle animazioni introduttive
-const introElements = [
-  ".intro-fondo",
-  ".intro-albero1",
-  ".intro-albero2",
-  ".intro-albero3",
-  ".intro-albero4",
-  ".intro-neve",
-  // Aggiungi altri selettori se necessario
-];
-
 // Funzione per inizializzare le animazioni
 function initAnimations() {
   // Nascondi gli elementi .caselle-section e .footer-box all'inizio
@@ -197,11 +167,10 @@ function initAnimations() {
     );
 
     // Al termine della timeline, mostra le sezioni necessarie
-    IntroMobileAdaptedTl.to(
-      [".caselle-section", ".footer-box"],
-      { autoAlpha: 1, duration: 0.5 },
-      "-=0.5"
-    );
+    IntroMobileAdaptedTl.call(function () {
+      gsap.to(".caselle-section", { autoAlpha: 1, duration: 0.5 });
+      gsap.to(".footer-box", { autoAlpha: 1, duration: 0.5 });
+    });
   } else {
     // Mantieni le animazioni originali per gli altri browser
 
@@ -244,11 +213,10 @@ function initAnimations() {
     );
 
     // Al termine della timeline, mostra le sezioni necessarie
-    IntroTl.to(
-      [".caselle-section", ".footer-box"],
-      { autoAlpha: 1, duration: 0.5 },
-      "-=0.5"
-    );
+    IntroTl.call(function () {
+      gsap.to(".caselle-section", { autoAlpha: 1, duration: 0.5 });
+      gsap.to(".footer-box", { autoAlpha: 1, duration: 0.5 });
+    });
   }
 
   // Nascondi il testo prima che inizi l'animazione
@@ -346,22 +314,3 @@ function initAnimations() {
     );
   }
 }
-
-// Funzione per distruggere le animazioni
-function destroyAnimations() {
-  // Limita l'ambito di killTweensOf agli elementi delle animazioni introduttive
-  gsap.killTweensOf(introElements);
-
-  // Ripristina solo gli elementi coinvolti nelle animazioni introduttive
-  gsap.set(introElements, { clearProps: "all" });
-}
-
-// Ascolta gli eventi 'pageshow' e 'pagehide'
-window.addEventListener("pageshow", function (event) {
-  destroyAnimations();
-  initAnimations();
-});
-
-window.addEventListener("pagehide", function (event) {
-  destroyAnimations();
-});
