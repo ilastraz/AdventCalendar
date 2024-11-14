@@ -10,8 +10,12 @@
   function onResize() {
     width = masthead.clientWidth;
     height = masthead.clientHeight;
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = width;  // Imposta larghezza reale del canvas
+    canvas.height = height; // Imposta altezza reale del canvas
+
+    canvas.style.width = width + 'px';  // Imposta la larghezza visiva
+    canvas.style.height = height + 'px'; // Imposta l'altezza visiva
+    
     COUNT = Math.floor((width * height) / 15000); // Numero di fiocchi di neve proporzionale all'area del canvas  
     ctx.fillStyle = "#FFF";
 
@@ -110,6 +114,7 @@
 })();
 
 // END SNOW
+
 
 
 
