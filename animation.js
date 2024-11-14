@@ -123,66 +123,139 @@
 
 
 // INTRO
+// Funzione per rilevare se il browser è Safari o se il dispositivo è iOS
+function isSafariOrIOS() {
+  var ua = navigator.userAgent.toLowerCase();
+  var isSafari = false;
+  var isIOS = false;
+
+  // Controlla se è un dispositivo iOS
+  if (/iphone|ipad|ipod/.test(ua)) {
+    isIOS = true;
+  }
+
+  // Controlla se è Safari
+  if (/safari/.test(ua) && !/chrome/.test(ua)) {
+    isSafari = true;
+  }
+
+  return isSafari || isIOS;
+}
+
 // Funzione per inizializzare le animazioni
 function initAnimations() {
-  // Ripristina gli elementi al loro stato iniziale
-  gsap.set(
-    [
+  // Verifica se il browser è Safari o se il dispositivo è iOS
+  if (isSafariOrIOS()) {
+    // Applica le animazioni mobili agli elementi desktop
+
+    // Ripristina gli elementi desktop al loro stato iniziale (usando proprietà mobile)
+    gsap.set(
+      [
+        ".intro-fondo",
+        ".intro-albero1",
+        ".intro-albero2",
+        ".intro-albero3",
+        ".intro-albero4",
+        ".intro-neve",
+      ],
+      { y: "100%", autoAlpha: 1 }
+    );
+
+    // Creazione di una timeline per le animazioni (versione mobile adattata)
+    let IntroMobileAdaptedTl = gsap.timeline();
+
+    // Anima gli elementi desktop con le animazioni mobili
+    IntroMobileAdaptedTl.to(
       ".intro-fondo",
-      ".intro-albero1",
-      ".intro-albero4",
-      ".intro-albero2",
-      ".intro-albero3",
+      { y: "0%", duration: 2, ease: "power4.out" },
+      0
+    );
+    IntroMobileAdaptedTl.to(
+      [
+        ".intro-albero1",
+        ".intro-albero2",
+        ".intro-albero3",
+        ".intro-albero4",
+      ],
+      {
+        y: "0%",
+        scale: 1.2,
+        duration: 2.1,
+        ease: "expo.out",
+      },
+      0
+    );
+    IntroMobileAdaptedTl.to(
       ".intro-neve",
-    ],
-    { z: "1000px", autoAlpha: 1 }
-  );
+      { y: "0%", duration: 2, ease: "expo.out" },
+      0.1
+    );
+
+    // Al termine della timeline, mostra le sezioni necessarie
+    IntroMobileAdaptedTl.call(function () {
+      document.querySelector(".caselle-section").style.display = "block";
+      document.querySelector(".footer-box").style.display = "flex";
+    });
+  } else {
+    // Mantieni le animazioni originali per gli altri browser
+
+    // Ripristina gli elementi al loro stato iniziale
+    gsap.set(
+      [
+        ".intro-fondo",
+        ".intro-albero1",
+        ".intro-albero4",
+        ".intro-albero2",
+        ".intro-albero3",
+        ".intro-neve",
+      ],
+      { z: "1000px", autoAlpha: 1 }
+    );
+
+    // Creazione di una timeline per sincronizzare tutte le animazioni
+    let IntroTl = gsap.timeline();
+
+    // Anima gli elementi con le animazioni originali
+    IntroTl.to(
+      ".intro-fondo",
+      { z: "0px", duration: 2, ease: "power4.out" },
+      0
+    );
+    IntroTl.to(
+      [".intro-albero1", ".intro-albero4"],
+      {
+        z: "0px",
+        scale: 1.2,
+        duration: 2.1,
+        ease: "expo.out",
+      },
+      0
+    );
+    IntroTl.to(
+      [".intro-albero2", ".intro-albero3"],
+      {
+        z: "0px",
+        scale: 1.2,
+        duration: 2.1,
+        ease: "expo.out",
+      },
+      0
+    );
+    IntroTl.to(
+      ".intro-neve",
+      { z: "0px", duration: 2, ease: "expo.out" },
+      0.1
+    );
+
+    // Al termine della timeline, mostra le sezioni necessarie
+    IntroTl.call(function () {
+      document.querySelector(".caselle-section").style.display = "block";
+      document.querySelector(".footer-box").style.display = "flex";
+    });
+  }
 
   // Nascondi il testo prima che inizi l'animazione
   gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
-
-  // Creazione di una timeline per sincronizzare tutte le animazioni
-  let IntroTl = gsap.timeline();
-
-  // Anima gli elementi con force3D abilitato e unità in pixel
-  IntroTl.to(
-    ".intro-fondo",
-    { z: "0px", duration: 2, ease: "power4.out", force3D: true },
-    0
-  );
-  IntroTl.to(
-    [".intro-albero1", ".intro-albero4"],
-    {
-      z: "0px",
-      scale: 1.2,
-      duration: 2.1,
-      ease: "expo.out",
-      force3D: true,
-    },
-    0
-  );
-  IntroTl.to(
-    [".intro-albero2", ".intro-albero3"],
-    {
-      z: "0px",
-      scale: 1.2,
-      duration: 2.1,
-      ease: "expo.out",
-      force3D: true,
-    },
-    0
-  );
-  IntroTl.to(
-    ".intro-neve",
-    { z: "0px", duration: 2, ease: "expo.out", force3D: true },
-    0.1
-  );
-
-  // Al termine della IntroTl, mostra la sezione caselle dopo 1 secondo
-  IntroTl.call(function () {
-    document.querySelector(".caselle-section").style.display = "block";
-    document.querySelector(".footer-box").style.display = "flex";
-  });
 
   // Split text into spans
   let typeSplit = new SplitType("[text-split]", {
@@ -253,10 +326,10 @@ function initAnimations() {
     // Creazione di una timeline per le animazioni mobile
     let IntroMobileTl = gsap.timeline();
 
-    // Anima gli elementi mobile con force3D abilitato
+    // Anima gli elementi mobile
     IntroMobileTl.to(
       ".intro-fondo-mobile",
-      { y: "0%", duration: 2, ease: "power4.out", force3D: true },
+      { y: "0%", duration: 2, ease: "power4.out" },
       0
     );
     IntroMobileTl.to(
@@ -266,27 +339,29 @@ function initAnimations() {
         scale: 1.2,
         duration: 2.1,
         ease: "expo.out",
-        force3D: true },
+      },
       0
     );
     IntroMobileTl.to(
       ".intro-neve-mobile",
-      { y: "0%", duration: 2, ease: "expo.out", force3D: true },
+      { y: "0%", duration: 2, ease: "expo.out" },
       0.1
     );
   }
 }
 
-// Ascolta gli eventi 'load' e 'pageshow'
-window.addEventListener('load', function () {
+// Funzione per distruggere le animazioni
+function destroyAnimations() {
+  gsap.killTweensOf("*");
+  gsap.set("*", { clearProps: "all" });
+}
+
+// Ascolta gli eventi 'pageshow' e 'pagehide'
+window.addEventListener("pageshow", function (event) {
+  destroyAnimations();
   initAnimations();
 });
 
-window.addEventListener('pageshow', function (event) {
-  if (event.persisted) {
-    // Ferma tutte le animazioni esistenti
-    gsap.killTweensOf("*");
-    // Reinizializza le animazioni
-    initAnimations();
-  }
+window.addEventListener("pagehide", function (event) {
+  destroyAnimations();
 });
