@@ -5,7 +5,8 @@
   var ctx = canvas.getContext("2d");
   var width = window.innerWidth;
   var height = window.innerHeight;
-  var COUNT = width > 768 ? 100 : 40; // Numero di fiocchi di neve ridotto per dispositivi mobili
+  var COUNT = width > 1024 ? 100 : (width > 768 ? 50 : 20); // Numero di fiocchi di neve ridotto per tablet e dispositivi mobili
+  var snowflakes = [];
   var i = 0;
   var active = true;
 
@@ -17,17 +18,17 @@
   canvas.style.zIndex = "10000";
   canvas.style.pointerEvents = "none"; // Permette il click sugli elementi sottostanti
 
-  var snowflakes = [];
-
+  // Funzione costruttrice per il fiocco di neve
   var Snowflake = function () {
     this.x = Math.random() * width;
     this.y = Math.random() * height;
-    this.vy = 1 + Math.random() * 2; // Velocità verticale
+    this.vy = width > 768 ? (1 + Math.random() * 2) : (0.5 + Math.random() * 1); // Velocità verticale ridotta per dispositivi mobili e tablet
     this.vx = 0.5 - Math.random(); // Velocità orizzontale
     this.r = 1 + Math.random() * 3; // Dimensione del fiocco di neve
     this.o = 0.5 + Math.random() * 0.5; // Opacità del fiocco di neve
   };
 
+  // Inizializzazione dei fiocchi di neve
   for (i = 0; i < COUNT; i++) {
     snowflakes.push(new Snowflake());
   }
@@ -49,9 +50,10 @@
         snowflake.x = width;
       }
 
-      // Se il fiocco di neve raggiunge il fondo, riposizionalo in alto
+      // Se il fiocco di neve raggiunge il fondo, riposizionalo in alto in modo casuale
       if (snowflake.y > height) {
         snowflake.y = 0;
+        snowflake.x = Math.random() * width;
       }
 
       ctx.fillStyle = "#FFF"; // Imposta il colore bianco per ogni fiocco di neve
@@ -79,21 +81,22 @@
 
   function onResize() {
     // Aggiorna la larghezza e altezza alla dimensione attuale della finestra
-    width = window.innerWidth;
-    height = window.innerHeight;
+    var newWidth = window.innerWidth;
+    var newHeight = window.innerHeight;
 
-    // Aggiorna la dimensione reale del canvas senza alterare lo stile
-    canvas.width = width;
-    canvas.height = height;
+    // Evita il "pazzo comportamento" mantenendo proporzioni coerenti e riposizionando i fiocchi senza resettarli completamente
+    if (newWidth !== width || newHeight !== height) {
+      width = newWidth;
+      height = newHeight;
+      canvas.width = width;
+      canvas.height = height;
 
-    // Regola il numero di fiocchi per schermi più piccoli
-    COUNT = width > 768 ? 100 : 40;
-
-    // Mantieni i fiocchi esistenti ma aggiornane la posizione in modo che siano distribuiti correttamente
-    snowflakes.forEach(function (snowflake) {
-      snowflake.x = Math.random() * width;
-      snowflake.y = Math.random() * height;
-    });
+      // Mantieni i fiocchi di neve, ma aggiusta le loro posizioni per adattarsi alle nuove dimensioni
+      snowflakes.forEach(function (snowflake) {
+        snowflake.x = (snowflake.x / width) * newWidth;
+        snowflake.y = (snowflake.y / height) * newHeight;
+      });
+    }
   }
 
   window.addEventListener("resize", onResize, false);
@@ -101,12 +104,6 @@
   update();
 
 })();
-// END SNOW
-
-
-
-
-
 
 
 
