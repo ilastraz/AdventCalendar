@@ -77,10 +77,19 @@
   })();
 
   function onResize() {
+    // Aggiorna la larghezza e altezza alla dimensione attuale della finestra
     width = window.innerWidth;
     height = window.innerHeight;
+
+    // Aggiorna la dimensione reale del canvas senza alterare lo stile
     canvas.width = width;
     canvas.height = height;
+
+    // Mantieni il comportamento dei fiocchi di neve già creati
+    for (i = 0; i < COUNT; i++) {
+      if (snowflakes[i].x > width) snowflakes[i].x = Math.random() * width;
+      if (snowflakes[i].y > height) snowflakes[i].y = Math.random() * height;
+    }
   }
 
   window.addEventListener("resize", onResize, false);
@@ -89,6 +98,7 @@
 
 })();
 // END SNOW
+
 
 
 
