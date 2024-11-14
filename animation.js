@@ -123,65 +123,131 @@
 
 
 // INTRO
+// Funzione per rilevare se il browser è Safari o se il dispositivo è iOS
+function isSafariOrIOS() {
+  var ua = navigator.userAgent.toLowerCase();
+  var isSafari = false;
+  var isIOS = false;
+
+  // Controlla se è un dispositivo iOS
+  if (/iphone|ipad|ipod/.test(ua)) {
+    isIOS = true;
+  }
+
+  // Controlla se è Safari
+  if (/safari/.test(ua) && !/chrome/.test(ua)) {
+    isSafari = true;
+  }
+
+  return isSafari || isIOS;
+}
+
+// Elementi coinvolti nelle animazioni introduttive
+const introElements = [
+  ".intro-fondo",
+  ".intro-albero1",
+  ".intro-albero2",
+  ".intro-albero3",
+  ".intro-albero4",
+  ".intro-neve",
+  // Aggiungi altri selettori se necessario
+];
+
 // Funzione per inizializzare le animazioni
 function initAnimations() {
-  // Ripristina gli elementi al loro stato iniziale
-  gsap.set(
-    [
-      ".intro-fondo",
-      ".intro-albero1",
-      ".intro-albero4",
-      ".intro-albero2",
-      ".intro-albero3",
-      ".intro-neve",
-    ],
-    { z: "1000px", autoAlpha: 1 }
-  );
-
   // Nascondi gli elementi .caselle-section e .footer-box all'inizio
   gsap.set(".caselle-section", { display: "none" });
   gsap.set(".footer-box", { display: "none" });
 
-  // Creazione di una timeline per sincronizzare tutte le animazioni
-  let IntroTl = gsap.timeline();
+  // Verifica se il browser è Safari o se il dispositivo è iOS
+  if (isSafariOrIOS()) {
+    // Applica le animazioni mobili agli elementi desktop
 
-  // Anima gli elementi con le animazioni originali
-  IntroTl.to(
-    ".intro-fondo",
-    { z: "0px", duration: 2, ease: "power4.out" },
-    0
-  );
-  IntroTl.to(
-    [".intro-albero1", ".intro-albero4"],
-    {
-      z: "0px",
-      scale: 1.2,
-      duration: 2.1,
-      ease: "expo.out",
-    },
-    0
-  );
-  IntroTl.to(
-    [".intro-albero2", ".intro-albero3"],
-    {
-      z: "0px",
-      scale: 1.2,
-      duration: 2.1,
-      ease: "expo.out",
-    },
-    0
-  );
-  IntroTl.to(
-    ".intro-neve",
-    { z: "0px", duration: 2, ease: "expo.out" },
-    0.1
-  );
+    // Ripristina gli elementi desktop al loro stato iniziale (usando proprietà mobile)
+    gsap.set(introElements, { y: "100%", autoAlpha: 1 });
 
-  // Al termine della timeline, mostra le sezioni necessarie
-  IntroTl.call(function () {
-    document.querySelector(".caselle-section").style.display = "block";
-    document.querySelector(".footer-box").style.display = "flex";
-  });
+    // Creazione di una timeline per le animazioni (versione mobile adattata)
+    let IntroMobileAdaptedTl = gsap.timeline();
+
+    // Anima gli elementi desktop con le animazioni mobili
+    IntroMobileAdaptedTl.to(
+      ".intro-fondo",
+      { y: "0%", duration: 2, ease: "power4.out" },
+      0
+    );
+    IntroMobileAdaptedTl.to(
+      [
+        ".intro-albero1",
+        ".intro-albero2",
+        ".intro-albero3",
+        ".intro-albero4",
+      ],
+      {
+        y: "0%",
+        scale: 1.2,
+        duration: 2.1,
+        ease: "expo.out",
+      },
+      0
+    );
+    IntroMobileAdaptedTl.to(
+      ".intro-neve",
+      { y: "0%", duration: 2, ease: "expo.out" },
+      0.1
+    );
+
+    // Al termine della timeline, mostra le sezioni necessarie
+    IntroMobileAdaptedTl.call(function () {
+      document.querySelector(".caselle-section").style.display = "block";
+      document.querySelector(".footer-box").style.display = "flex";
+    });
+  } else {
+    // Mantieni le animazioni originali per gli altri browser
+
+    // Ripristina gli elementi al loro stato iniziale
+    gsap.set(introElements, { z: "1000px", autoAlpha: 1 });
+
+    // Creazione di una timeline per sincronizzare tutte le animazioni
+    let IntroTl = gsap.timeline();
+
+    // Anima gli elementi con le animazioni originali
+    IntroTl.to(
+      ".intro-fondo",
+      { z: "0px", duration: 2, ease: "power4.out" },
+      0
+    );
+    IntroTl.to(
+      [".intro-albero1", ".intro-albero4"],
+      {
+        z: "0px",
+        scale: 1.2,
+        duration: 2.1,
+        ease: "expo.out",
+      },
+      0
+    );
+    IntroTl.to(
+      [".intro-albero2", ".intro-albero3"],
+      {
+        z: "0px",
+        scale: 1.2,
+        duration: 2.1,
+        ease: "expo.out",
+      },
+      0
+    );
+    IntroTl.to(
+      ".intro-neve",
+      { z: "0px", duration: 2, ease: "expo.out" },
+      0.1
+    );
+
+    // Al termine della timeline, mostra le sezioni necessarie
+    IntroTl.call(function () {
+      document.querySelector(".caselle-section").style.display = "block";
+      document.querySelector(".footer-box").style.display = "flex";
+    });
+  }
 
   // Nascondi il testo prima che inizi l'animazione
   gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
@@ -289,7 +355,21 @@ function initAnimations() {
   }
 }
 
-// Ascolta l'evento 'load' per iniziare le animazioni
-window.addEventListener('load', function () {
+// Funzione per distruggere le animazioni
+function destroyAnimations() {
+  // Limita l'ambito di killTweensOf agli elementi delle animazioni introduttive
+  gsap.killTweensOf(introElements);
+
+  // Ripristina solo gli elementi coinvolti nelle animazioni introduttive
+  gsap.set(introElements, { clearProps: "all" });
+}
+
+// Ascolta gli eventi 'pageshow' e 'pagehide'
+window.addEventListener("pageshow", function (event) {
+  destroyAnimations();
   initAnimations();
+});
+
+window.addEventListener("pagehide", function (event) {
+  destroyAnimations();
 });
