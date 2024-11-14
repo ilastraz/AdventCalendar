@@ -3,65 +3,34 @@
   var masthead = document.querySelector("body");
   var canvas = document.createElement("canvas");
   var ctx = canvas.getContext("2d");
-  var width, height, COUNT;
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  var COUNT = 100; // Numero fisso di fiocchi di neve
   var i = 0;
-  var active = false;
+  var active = true;
 
-  function onResize() {
-    width = masthead.clientWidth;
-    height = masthead.clientHeight;
-    canvas.width = width;  // Imposta larghezza reale del canvas
-    canvas.height = height; // Imposta altezza reale del canvas
-
-    canvas.style.width = width + 'px';  // Imposta la larghezza visiva
-    canvas.style.height = height + 'px'; // Imposta l'altezza visiva
-    
-    COUNT = Math.floor((width * height) / 15000); // Numero di fiocchi di neve proporzionale all'area del canvas  
-    ctx.fillStyle = "#FFF";
-
-    var wasActive = active;
-    active = width > 600;
-
-    if (!wasActive && active) {
-      requestAnimFrame(update);
-    }
-
-    // Ripopola la neve con il numero corretto di fiocchi
-    snowflakes = [];
-    for (i = 0; i < COUNT; i++) {
-      var snowflake = new Snowflake();
-      snowflake.reset();
-      snowflakes.push(snowflake);
-    }
-  }
-
-  var Snowflake = function () {
-    this.x = 0;
-    this.y = 0;
-    this.vy = 0.3 + Math.random() * (width > 768 ? 1.5 : 1.0); // Riduci la velocità per schermi piccoli
-    this.vx = 0;
-    this.r = 0;
-
-    this.reset();
-  };
-
-  Snowflake.prototype.reset = function () {
-    this.x = Math.random() * width;
-    this.y = Math.random() * height;
-    this.vy = 1 + Math.random() * 2; // Riduci la velocità verticale per renderla più omogenea
-    this.vx = 0.5 - Math.random();
-    this.r = 1 + Math.random() * 3;
-    this.o = 0.5 + Math.random() * 0.5;
-  };
-
+  canvas.width = width;
+  canvas.height = height;
   canvas.style.position = "fixed";
   canvas.style.left = "0";
   canvas.style.top = "0";
   canvas.style.zIndex = "10000";
   canvas.style.pointerEvents = "none"; // Permette il click sugli elementi sottostanti
 
-  var snowflakes = [],
-    snowflake;
+  var snowflakes = [];
+
+  var Snowflake = function () {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.vy = 1 + Math.random() * 2; // Velocità verticale
+    this.vx = 0.5 - Math.random(); // Velocità orizzontale
+    this.r = 1 + Math.random() * 3; // Dimensione del fiocco di neve
+    this.o = 0.5 + Math.random() * 0.5; // Opacità del fiocco di neve
+  };
+
+  for (i = 0; i < COUNT; i++) {
+    snowflakes.push(new Snowflake());
+  }
 
   function update() {
     ctx.clearRect(0, 0, width, height);
@@ -69,7 +38,7 @@
     if (!active) return;
 
     for (i = 0; i < COUNT; i++) {
-      snowflake = snowflakes[i];
+      var snowflake = snowflakes[i];
       snowflake.y += snowflake.vy;
       snowflake.x += snowflake.vx;
 
@@ -80,16 +49,16 @@
         snowflake.x = width;
       }
 
+      // Se il fiocco di neve raggiunge il fondo, riposizionalo in alto
+      if (snowflake.y > height) {
+        snowflake.y = 0;
+      }
+
       ctx.globalAlpha = snowflake.o;
       ctx.beginPath();
       ctx.arc(snowflake.x, snowflake.y, snowflake.r, 0, Math.PI * 2, false);
       ctx.closePath();
       ctx.fill();
-
-      if (snowflake.y > height) {
-        snowflake.reset();
-        snowflake.y = 0; // Riposiziona il fiocco di neve in cima quando raggiunge il fondo
-      }
     }
 
     requestAnimFrame(update);
@@ -107,12 +76,18 @@
     );
   })();
 
-  onResize();
+  function onResize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  }
+
   window.addEventListener("resize", onResize, false);
-
   masthead.appendChild(canvas);
-})();
+  update();
 
+})();
 // END SNOW
 
 
