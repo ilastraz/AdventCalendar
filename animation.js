@@ -5,7 +5,7 @@
   var ctx = canvas.getContext("2d");
   var width = window.innerWidth;
   var height = window.innerHeight;
-  var COUNT = width > 1024 ? 100 : (width > 768 ? 50 : 20); // Numero di fiocchi di neve ridotto per tablet e dispositivi mobili
+  var COUNT = width > 1024 ? 100 : (width > 768 ? 30 : 20); // Ridotto ulteriormente per tablet (30 fiocchi)
   var snowflakes = [];
   var i = 0;
   var active = true;
@@ -91,11 +91,14 @@
       canvas.width = width;
       canvas.height = height;
 
+      // Regola il numero di fiocchi per schermi più piccoli
+      COUNT = width > 1024 ? 100 : (width > 768 ? 30 : 20);
+
       // Mantieni i fiocchi di neve, ma aggiusta le loro posizioni per adattarsi alle nuove dimensioni
-      snowflakes.forEach(function (snowflake) {
-        snowflake.x = (snowflake.x / width) * newWidth;
-        snowflake.y = (snowflake.y / height) * newHeight;
-      });
+      snowflakes = [];
+      for (i = 0; i < COUNT; i++) {
+        snowflakes.push(new Snowflake());
+      }
     }
   }
 
@@ -104,8 +107,6 @@
   update();
 
 })();
-
-
 
 // INTRO
 // GSAP Animazioni
