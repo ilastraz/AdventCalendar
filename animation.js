@@ -124,8 +124,11 @@
 
 // INTRO
 // GSAP Animazioni
-window.addEventListener("load", function () {
-  // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili, usando pixel invece di rem
+window.addEventListener("pageshow", function (event) {
+  // Ferma tutte le animazioni esistenti
+  gsap.killTweensOf("*");
+
+  // Ripristina gli elementi al loro stato iniziale
   gsap.set(
     [
       ".intro-fondo",
@@ -138,7 +141,7 @@ window.addEventListener("load", function () {
     { z: "1000px", autoAlpha: 1 }
   );
 
-  // Nascondi il testo prima che inizi l'animazione (lasciato invariato)
+  // Nascondi il testo prima che inizi l'animazione
   gsap.set("[letters-slide-up], [letters-slide-down]", { autoAlpha: 0 });
 
   // Creazione di una timeline per sincronizzare tutte le animazioni
@@ -184,13 +187,13 @@ window.addEventListener("load", function () {
     document.querySelector(".footer-box").style.display = "flex";
   });
 
-  // Split text into spans (lasciato invariato)
+  // Split text into spans
   let typeSplit = new SplitType("[text-split]", {
     types: "words, chars",
     tagName: "span",
   });
 
-  // Anima lettere con slide up dopo 1 secondo (lasciato invariato)
+  // Anima lettere con slide up dopo 1 secondo
   setTimeout(function () {
     $("[letters-slide-up]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
@@ -204,19 +207,24 @@ window.addEventListener("load", function () {
     });
   }, 1000);
 
-  // Anima lettere con slide down poco dopo slide up (lasciato invariato)
+  // Anima lettere con slide down poco dopo slide up
   setTimeout(function () {
     $("[letters-slide-down]").each(function (index) {
       let tl = gsap.timeline({ paused: false });
       tl.set($(this), { autoAlpha: 1 }); // Rendi visibile il testo
-      tl.from($(this).find(".char"), {
-        yPercent: -120,
-        duration: 0.3,
-        ease: "power1.out",
-      }, 0.1);
+      tl.from(
+        $(this).find(".char"),
+        {
+          yPercent: -120,
+          duration: 0.3,
+          ease: "power1.out",
+        },
+        0.1
+      );
     });
   }, 1500);
 
+  // Animazioni con ScrollTrigger
   $("[scrub-each-word]").each(function (index) {
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -239,7 +247,14 @@ window.addEventListener("load", function () {
 
   // GSAP Animazioni per Mobile
   if (window.innerWidth <= 1024) {
-    // Posiziona inizialmente tutti gli elementi animati fuori dallo schermo e rendili invisibili (versione mobile)
+    // Ferma le animazioni esistenti per la versione mobile
+    gsap.killTweensOf([
+      ".intro-fondo-mobile",
+      ".intro-alberi-mobile",
+      ".intro-neve-mobile",
+    ]);
+
+    // Ripristina gli elementi al loro stato iniziale (versione mobile)
     gsap.set(
       [".intro-fondo-mobile", ".intro-alberi-mobile", ".intro-neve-mobile"],
       { y: "100%", autoAlpha: 1 }
