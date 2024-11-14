@@ -54,6 +54,8 @@
         snowflake.y = 0;
       }
 
+      // Imposta il colore bianco per la neve
+      ctx.fillStyle = "#FFF";
       ctx.globalAlpha = snowflake.o;
       ctx.beginPath();
       ctx.arc(snowflake.x, snowflake.y, snowflake.r, 0, Math.PI * 2, false);
@@ -98,6 +100,7 @@
 
 })();
 // END SNOW
+
 
 
 
