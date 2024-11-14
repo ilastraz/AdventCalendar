@@ -1,14 +1,9 @@
 // SNOW
 (function () {
   var masthead = document.querySelector("body");
-  var width = masthead.clientWidth;
-  var height = masthead.clientHeight;
-  var COUNT = Math.floor((width * height) / 15000); // Numero di fiocchi di neve proporzionale all'area del canvas  
-  var masthead = document.querySelector("body");
   var canvas = document.createElement("canvas");
   var ctx = canvas.getContext("2d");
-  var width = masthead.clientWidth;
-  var height = masthead.clientHeight;
+  var width, height, COUNT;
   var i = 0;
   var active = false;
 
@@ -17,12 +12,23 @@
     height = masthead.clientHeight;
     canvas.width = width;
     canvas.height = height;
+    COUNT = Math.floor((width * height) / 15000); // Numero di fiocchi di neve proporzionale all'area del canvas  
     ctx.fillStyle = "#FFF";
 
     var wasActive = active;
     active = width > 600;
 
-    if (!wasActive && active) requestAnimFrame(update);
+    if (!wasActive && active) {
+      requestAnimFrame(update);
+    }
+
+    // Ripopola la neve con il numero corretto di fiocchi
+    snowflakes = [];
+    for (i = 0; i < COUNT; i++) {
+      var snowflake = new Snowflake();
+      snowflake.reset();
+      snowflakes.push(snowflake);
+    }
   }
 
   var Snowflake = function () {
@@ -47,18 +53,11 @@
   canvas.style.position = "fixed";
   canvas.style.left = "0";
   canvas.style.top = "0";
-  canvas.style.width = width + 'px';
-  canvas.style.height = height + 'px';
   canvas.style.zIndex = "10000";
   canvas.style.pointerEvents = "none"; // Permette il click sugli elementi sottostanti
 
   var snowflakes = [],
     snowflake;
-  for (i = 0; i < COUNT; i++) {
-    snowflake = new Snowflake();
-    snowflake.reset();
-    snowflakes.push(snowflake);
-  }
 
   function update() {
     ctx.clearRect(0, 0, width, height);
