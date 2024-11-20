@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Configura Supabase
-  const supabaseUrl = "https://ofsgnkwqwaigpvkjthxl.supabase.co";
-  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mc2dua3dxd2FpZ3B2a2p0aHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMzY1NDUsImV4cCI6MjA0NzcxMjU0NX0.BbWNgnvdTWXs_2kpFDooT9KNPAPnfPRH5rH7FiRH9Zo";
-  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+  const workerUrl = "https://little-fog-e164.ila-strazzullo.workers.dev/"; // URL del tuo Worker
 
-  console.log("Supabase configurato correttamente!");
+  console.log("Worker configurato correttamente!");
 
   // Funzione per aggiornare il calendario
   function updateCalendar(currentDay) {
@@ -41,18 +38,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Funzione per tracciare i clic su Supabase
+  // Funzione per tracciare i clic tramite il Worker
   async function trackClick(day, action) {
     try {
-      const { data, error } = await supabase
-        .from("clicks")
-        .insert([{ day: day, action: action, timestamp: new Date().toISOString() }]);
+      const response = await fetch(workerUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          day: day,
+          action: action,
+        }),
+      });
 
-      if (error) {
-        console.error("Errore nel tracciamento:", error);
-      } else {
-        console.log("Tracciamento registrato:", data);
+      if (!response.ok) {
+        throw new Error("Errore nel tracciamento");
       }
+
+      console.log("Tracciamento registrato con successo");
     } catch (error) {
       console.error("Errore durante il tracciamento:", error);
     }
