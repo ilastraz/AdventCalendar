@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // Configura Supabase
+  const supabaseUrl = "https://ofsgnkwqwaigpvkjthxl.supabase.co"; // Sostituisci con il tuo URL Supabase
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mc2dua3dxd2FpZ3B2a2p0aHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMzY1NDUsImV4cCI6MjA0NzcxMjU0NX0.BbWNgnvdTWXs_2kpFDooT9KNPAPnfPRH5rH7FiRH9Zo"; // Sostituisci con la tua anon key
+  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
   function updateCalendar(currentDay) {
     const divs = document.querySelectorAll("div[data-day]");
 
@@ -29,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const currentDay = currentDate.getDate();
       updateCalendar(currentDay);
     } catch (error) {
-      // Gestione dell'errore se necessario
+      console.error('Errore durante il calcolo della data:', error);
     }
   }
 
@@ -74,8 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
                   trackClick(day, selector === '.popup-cta1' ? 'cta1' : 'cta2'); // Traccia il click sulle CTA
                 });
               }
-            } else {
-              // Gestione se l'elemento non viene trovato
             }
           });
 
@@ -86,8 +89,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
           if (imgDesktop && dayData.imgDesktop) {
             imgDesktop.src = dayData.imgDesktop;
-            imgDesktop.removeAttribute('srcset');
-            imgDesktop.removeAttribute('sizes');
             imagePromises.push(new Promise((resolve) => {
               imgDesktop.onload = resolve;
               imgDesktop.onerror = resolve; // Risolve comunque per evitare blocchi
@@ -96,8 +97,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
           if (imgMobile && dayData.imgMobile) {
             imgMobile.src = dayData.imgMobile;
-            imgMobile.removeAttribute('srcset');
-            imgMobile.removeAttribute('sizes');
             imagePromises.push(new Promise((resolve) => {
               imgMobile.onload = resolve;
               imgMobile.onerror = resolve; // Risolve comunque per evitare blocchi
@@ -106,9 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
           // Mostra il popup solo quando tutte le immagini sono caricate
           Promise.all(imagePromises).then(() => {
-            // Disattiva lo scroll della pagina
-            document.body.style.overflow = 'hidden';
-
+            document.body.style.overflow = 'hidden'; // Disattiva lo scroll della pagina
             popup.style.display = 'flex';
           });
         } else {
@@ -117,34 +114,33 @@ document.addEventListener("DOMContentLoaded", function() {
       })
       .catch(error => {
         alert('Si è verificato un errore nel caricamento dei dati. Riprova più tardi.');
+        console.error('Errore nel caricamento del popup:', error);
       });
   }
 
   // Funzione per chiudere il popup
   function closePopup() {
     document.querySelector('.popup').style.display = 'none';
-    // Riattiva lo scroll della pagina
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto'; // Riattiva lo scroll della pagina
   }
 
-  function trackClick(day, action) {
-    fetch('https://corsproxy.io/?https://script.google.com/macros/s/AKfycbz8Ipk3TGZ7Ega1rEe0VkwKdU4as_WQtKn2AtMNoHnHP__kyEUZsD4UmijqGTVu0AgtDg/exec', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        id: day,
-        action: action,
-        timestamp: new Date().toISOString()
-      })
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Errore nella richiesta');
+  // Funzione per tracciare i clic su Supabase
+  async function trackClick(day, action) {
+    try {
+      const { data, error } = await supabase
+        .from('clicks')
+        .insert([
+          { day: day, action: action, timestamp: new Date().toISOString() }
+        ]);
+
+      if (error) {
+        console.error('Errore nel tracciamento:', error);
+      } else {
+        console.log('Tracciamento registrato:', data);
       }
-      return response.json();
-    })
-    .then(data => console.log('Tracciamento registrato:', data))
-    .catch(error => console.error('Errore nel tracciamento:', error));
+    } catch (error) {
+      console.error('Errore durante il tracciamento:', error);
+    }
   }
 
   // Esegui l'aggiornamento all'avvio
