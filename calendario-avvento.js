@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per aprire il popup
   function openPopup(day) {
-    fetch('./json/calendario-contenuti.json')
+    fetch('https://corsproxy.io/?https://gleeful-crepe-005071.netlify.app/calendario-contenuti.json')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
