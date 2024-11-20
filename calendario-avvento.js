@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Funzione per tracciare i clic
   function trackClick(day, action) {
-    fetch('https://script.google.com/macros/s/AKfycbz8Ipk3TGZ7Ega1rEe0VkwKdU4as_WQtKn2AtMNoHnHP__kyEUZsD4UmijqGTVu0AgtDg/exec', {
+    fetch('https://corsproxy.io/?https://script.google.com/macros/s/AKfycbz8Ipk3TGZ7Ega1rEe0VkwKdU4as_WQtKn2AtMNoHnHP__kyEUZsD4UmijqGTVu0AgtDg/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
