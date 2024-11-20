@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         throw new Error("Errore nel tracciamento");
       }
 
-      console.log("Tracciamento registrato con successo");
+      console.log(`Tracciamento registrato: ${action} per il giorno ${day}`);
     } catch (error) {
       console.error("Errore durante il tracciamento:", error);
     }
@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
           }
 
+          // Aggiorna i contenuti del popup
           const elements = [
             { selector: '.popup-date', property: 'textContent', value: dayData.data },
             { selector: '.popup-head', property: 'textContent', value: dayData.head },
@@ -96,15 +97,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.style.display = 'none';
               } else if (selector === '.popup-cta1' || selector === '.popup-cta2') {
                 element.setAttribute('target', '_blank');
-                element.addEventListener('click', event => {
-                  event.stopPropagation(); // Evita che il click si propaghi e interferisca
-                  trackClick(day, selector === '.popup-cta1' ? 'cta1' : 'cta2'); // Traccia il click sulle CTA
+                element.replaceWith(element.cloneNode(true)); // Rimuove listener duplicati
+                const newElement = document.querySelector(selector);
+                newElement.addEventListener('click', event => {
+                  event.stopPropagation(); // Evita propagazione dell'evento
+                  trackClick(day, selector === '.popup-cta1' ? 'cta1' : 'cta2'); // Traccia CTA
                 });
               }
             }
           });
 
-          // Aggiorna le immagini popup-image-desktop e popup-image-mobile
+          // Caricamento immagini
           const imgDesktop = document.querySelector('.popup-image-desktop');
           const imgMobile = document.querySelector('.popup-image-mobile');
           const imagePromises = [];
@@ -113,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
             imgDesktop.src = dayData.imgDesktop;
             imagePromises.push(new Promise((resolve) => {
               imgDesktop.onload = resolve;
-              imgDesktop.onerror = resolve; // Risolve comunque per evitare blocchi
+              imgDesktop.onerror = resolve;
             }));
           }
 
@@ -121,13 +124,12 @@ document.addEventListener("DOMContentLoaded", function () {
             imgMobile.src = dayData.imgMobile;
             imagePromises.push(new Promise((resolve) => {
               imgMobile.onload = resolve;
-              imgMobile.onerror = resolve; // Risolve comunque per evitare blocchi
+              imgMobile.onerror = resolve;
             }));
           }
 
-          // Mostra il popup solo quando tutte le immagini sono caricate
           Promise.all(imagePromises).then(() => {
-            document.body.style.overflow = 'hidden'; // Disattiva lo scroll della pagina
+            document.body.style.overflow = 'hidden'; // Disattiva lo scroll
             popup.style.display = 'flex';
           });
         } else {
@@ -143,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Funzione per chiudere il popup
   function closePopup() {
     document.querySelector('.popup').style.display = 'none';
-    document.body.style.overflow = 'auto'; // Riattiva lo scroll della pagina
+    document.body.style.overflow = 'auto'; // Riattiva lo scroll
   }
 
   // Avvia il caricamento iniziale
