@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         div.style.cursor = "pointer";
         div.addEventListener('click', () => {
           openPopup(day);
+          trackClick(day, 'box'); // Traccia il click sulla casella
         });
       } else if (day > currentDay && status === "future") {
         div.style.display = "block";
@@ -70,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 element.setAttribute('target', '_blank');
                 element.addEventListener('click', event => {
                   event.stopPropagation(); // Evita che il click si propaghi e interferisca
+                  trackClick(day, selector === '.popup-cta1' ? 'cta1' : 'cta2'); // Traccia il click sulle CTA
                 });
               }
             } else {
@@ -123,6 +125,22 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.popup').style.display = 'none';
     // Riattiva lo scroll della pagina
     document.body.style.overflow = 'auto';
+  }
+
+  // Funzione per tracciare i clic
+  function trackClick(day, action) {
+    fetch('https://script.google.com/macros/s/AKfycbz8Ipk3TGZ7Ega1rEe0VkwKdU4as_WQtKn2AtMNoHnHP__kyEUZsD4UmijqGTVu0AgtDg/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: day,
+        action: action,
+        timestamp: new Date().toISOString()
+      })
+    })
+    .then(response => response.json())
+    .then(data => console.log('Tracciamento registrato:', data))
+    .catch(error => console.error('Errore nel tracciamento:', error));
   }
 
   // Esegui l'aggiornamento all'avvio
