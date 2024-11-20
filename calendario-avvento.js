@@ -1,8 +1,18 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function () {
+  // Aspetta che la libreria Supabase sia pronta
+  while (typeof supabase === "undefined") {
+    console.log("Aspettando che Supabase sia caricato...");
+    await new Promise(resolve => setTimeout(resolve, 50)); // Aspetta 50ms
+  }
+
+  console.log("Supabase è pronto!");
+
   // Configura Supabase
-  const supabaseUrl = "https://ofsgnkwqwaigpvkjthxl.supabase.co"; // Sostituisci con il tuo URL Supabase
-  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mc2dua3dxd2FpZ3B2a2p0aHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMzY1NDUsImV4cCI6MjA0NzcxMjU0NX0.BbWNgnvdTWXs_2kpFDooT9KNPAPnfPRH5rH7FiRH9Zo"; // Sostituisci con la tua anon key
+  const supabaseUrl = "https://ofsgnkwqwaigpvkjthxl.supabase.co";
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mc2dua3dxd2FpZ3B2a2p0aHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMzY1NDUsImV4cCI6MjA0NzcxMjU0NX0.BbWNgnvdTWXs_2kpFDooT9KNPAPnfPRH5rH7FiRH9Zo";
   const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+  console.log("Supabase configurato correttamente!");
 
   function updateCalendar(currentDay) {
     const divs = document.querySelectorAll("div[data-day]");
