@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Funzione per aggiornare il calendario
   function updateCalendar(currentDay) {
     const divs = document.querySelectorAll("div[data-day]");
+
     divs.forEach(div => {
       const day = parseInt(div.getAttribute("data-day"));
       const status = div.getAttribute("data-status");
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
           trackClick(day, 'box'); // Traccia il click sulla casella
         });
       } else if (day > currentDay && status === "future") {
-        div.style.display = "none"; // Nascondi caselle future
+        div.style.display = "block";
       } else {
         div.style.display = "none";
       }
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per aprire il popup
   function openPopup(day) {
-    fetch('https://corsproxy.io/?https://gleeful-crepe-005071.netlify.app/calendario-contenuti.json')
+    fetch('./json/calendario-contenuti.json')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -77,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
           }
 
-          // Aggiorna i contenuti del popup
           const elements = [
             { selector: '.popup-date', property: 'textContent', value: dayData.data },
             { selector: '.popup-head', property: 'textContent', value: dayData.head },
@@ -100,21 +100,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.replaceWith(element.cloneNode(true)); // Rimuove listener duplicati
                 const newElement = document.querySelector(selector);
                 newElement.addEventListener('click', event => {
-                  event.stopPropagation(); // Evita propagazione dell'evento
+                  event.stopPropagation(); // Evita propagazione
                   trackClick(day, selector === '.popup-cta1' ? 'cta1' : 'cta2'); // Traccia CTA
                 });
               }
             }
           });
 
-          // Caricamento immagini
           const imgDesktop = document.querySelector('.popup-image-desktop');
           const imgMobile = document.querySelector('.popup-image-mobile');
           const imagePromises = [];
 
           if (imgDesktop && dayData.imgDesktop) {
             imgDesktop.src = dayData.imgDesktop;
-            imagePromises.push(new Promise((resolve) => {
+            imgDesktop.removeAttribute('srcset');
+            imgDesktop.removeAttribute('sizes');
+            imagePromises.push(new Promise(resolve => {
               imgDesktop.onload = resolve;
               imgDesktop.onerror = resolve;
             }));
@@ -122,14 +123,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (imgMobile && dayData.imgMobile) {
             imgMobile.src = dayData.imgMobile;
-            imagePromises.push(new Promise((resolve) => {
+            imgMobile.removeAttribute('srcset');
+            imgMobile.removeAttribute('sizes');
+            imagePromises.push(new Promise(resolve => {
               imgMobile.onload = resolve;
               imgMobile.onerror = resolve;
             }));
           }
 
           Promise.all(imagePromises).then(() => {
-            document.body.style.overflow = 'hidden'; // Disattiva lo scroll
+            document.body.style.overflow = 'hidden'; // Disattiva scroll
             popup.style.display = 'flex';
           });
         } else {
@@ -144,13 +147,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per chiudere il popup
   function closePopup() {
-    document.querySelector('.popup').style.display = 'none';
-    document.body.style.overflow = 'auto'; // Riattiva lo scroll
+    const popup = document.querySelector('.popup');
+    if (popup) {
+      popup.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Riattiva scroll
+    }
   }
 
   // Avvia il caricamento iniziale
   fetchCurrentDay();
 
-  // Aggiungi un event listener per chiudere il popup
-  document.querySelector(".popup-close").addEventListener("click", closePopup);
+  // Imposta un timer per eseguire l'aggiornamento ogni giorno
+  setInterval(fetchCurrentDay, 24 * 60 * 60 * 1000);
+
+  // Aggiungi l'event listener per chiudere il popup
+  document.querySelector('.popup-close').addEventListener('click', closePopup);
 });
