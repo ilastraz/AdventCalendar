@@ -127,7 +127,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.style.overflow = 'auto';
   }
 
-  // Funzione per tracciare i clic
   function trackClick(day, action) {
     fetch('https://corsproxy.io/?https://script.google.com/macros/s/AKfycbz8Ipk3TGZ7Ega1rEe0VkwKdU4as_WQtKn2AtMNoHnHP__kyEUZsD4UmijqGTVu0AgtDg/exec', {
       method: 'POST',
@@ -138,7 +137,12 @@ document.addEventListener("DOMContentLoaded", function() {
         timestamp: new Date().toISOString()
       })
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Errore nella richiesta');
+      }
+      return response.json();
+    })
     .then(data => console.log('Tracciamento registrato:', data))
     .catch(error => console.error('Errore nel tracciamento:', error));
   }
