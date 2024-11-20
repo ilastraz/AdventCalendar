@@ -1,12 +1,4 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  // Aspetta che la libreria Supabase sia pronta
-  while (typeof supabase === "undefined") {
-    console.log("Aspettando che Supabase sia caricato...");
-    await new Promise(resolve => setTimeout(resolve, 50)); // Aspetta 50ms
-  }
-
-  console.log("Supabase è pronto!");
-
+document.addEventListener("DOMContentLoaded", function () {
   // Configura Supabase
   const supabaseUrl = "https://ofsgnkwqwaigpvkjthxl.supabase.co";
   const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mc2dua3dxd2FpZ3B2a2p0aHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMzY1NDUsImV4cCI6MjA0NzcxMjU0NX0.BbWNgnvdTWXs_2kpFDooT9KNPAPnfPRH5rH7FiRH9Zo";
@@ -14,9 +6,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   console.log("Supabase configurato correttamente!");
 
+  // Funzione per aggiornare il calendario
   function updateCalendar(currentDay) {
     const divs = document.querySelectorAll("div[data-day]");
-
     divs.forEach(div => {
       const day = parseInt(div.getAttribute("data-day"));
       const status = div.getAttribute("data-status");
@@ -31,20 +23,38 @@ document.addEventListener("DOMContentLoaded", async function () {
           trackClick(day, 'box'); // Traccia il click sulla casella
         });
       } else if (day > currentDay && status === "future") {
-        div.style.display = "block";
+        div.style.display = "none"; // Nascondi caselle future
       } else {
         div.style.display = "none";
       }
     });
   }
 
+  // Funzione per ottenere il giorno corrente
   function fetchCurrentDay() {
     try {
       const currentDate = new Date();
       const currentDay = currentDate.getDate();
       updateCalendar(currentDay);
     } catch (error) {
-      console.error('Errore durante il calcolo della data:', error);
+      console.error("Errore durante il calcolo della data:", error);
+    }
+  }
+
+  // Funzione per tracciare i clic su Supabase
+  async function trackClick(day, action) {
+    try {
+      const { data, error } = await supabase
+        .from("clicks")
+        .insert([{ day: day, action: action, timestamp: new Date().toISOString() }]);
+
+      if (error) {
+        console.error("Errore nel tracciamento:", error);
+      } else {
+        console.log("Tracciamento registrato:", data);
+      }
+    } catch (error) {
+      console.error("Errore durante il tracciamento:", error);
     }
   }
 
@@ -66,17 +76,17 @@ document.addEventListener("DOMContentLoaded", async function () {
           }
 
           const elements = [
-            {selector: '.popup-date', property: 'textContent', value: dayData.data},
-            {selector: '.popup-head', property: 'textContent', value: dayData.head},
-            {selector: '.popup-description', property: 'textContent', value: dayData.descrizione},
-            {selector: '.popup-cta1', property: 'href', value: dayData.cta1.link},
-            {selector: '.popup-cta1', property: 'textContent', value: dayData.cta1.testo},
-            {selector: '.popup-cta2', property: 'href', value: dayData.cta2.link},
-            {selector: '.popup-cta2', property: 'textContent', value: dayData.cta2.testo},
-            {selector: '.popup-nota', property: 'textContent', value: dayData.nota}
+            { selector: '.popup-date', property: 'textContent', value: dayData.data },
+            { selector: '.popup-head', property: 'textContent', value: dayData.head },
+            { selector: '.popup-description', property: 'textContent', value: dayData.descrizione },
+            { selector: '.popup-cta1', property: 'href', value: dayData.cta1.link },
+            { selector: '.popup-cta1', property: 'textContent', value: dayData.cta1.testo },
+            { selector: '.popup-cta2', property: 'href', value: dayData.cta2.link },
+            { selector: '.popup-cta2', property: 'textContent', value: dayData.cta2.testo },
+            { selector: '.popup-nota', property: 'textContent', value: dayData.nota }
           ];
 
-          elements.forEach(({selector, property, value}) => {
+          elements.forEach(({ selector, property, value }) => {
             const element = document.querySelector(selector);
             if (element) {
               element[property] = value;
@@ -134,31 +144,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.body.style.overflow = 'auto'; // Riattiva lo scroll della pagina
   }
 
-  // Funzione per tracciare i clic su Supabase
-  async function trackClick(day, action) {
-    try {
-      const { data, error } = await supabase
-        .from('clicks')
-        .insert([
-          { day: day, action: action, timestamp: new Date().toISOString() }
-        ]);
-
-      if (error) {
-        console.error('Errore nel tracciamento:', error);
-      } else {
-        console.log('Tracciamento registrato:', data);
-      }
-    } catch (error) {
-      console.error('Errore durante il tracciamento:', error);
-    }
-  }
-
-  // Esegui l'aggiornamento all'avvio
+  // Avvia il caricamento iniziale
   fetchCurrentDay();
 
-  // Imposta un timer per eseguire l'aggiornamento ogni giorno
-  setInterval(fetchCurrentDay, 24 * 60 * 60 * 1000);
-
-  // Aggiungi l'event listener per chiudere il popup
-  document.querySelector('.popup-close').addEventListener('click', closePopup);
+  // Aggiungi un event listener per chiudere il popup
+  document.querySelector(".popup-close").addEventListener("click", closePopup);
 });
