@@ -30,6 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           div.style.display = "none";
         }
+      } else if (currentMonth === 0) { // Gennaio
+        // Mostra tutte le caselle nello stato "past"
+        if (status === "past") {
+          div.style.display = "block";
+          div.style.cursor = "pointer";
+          div.addEventListener('click', () => {
+            openPopup(day);
+          });
+        } else {
+          div.style.display = "none";
+        }
       } else {
         // Nascondi tutte le caselle negli altri mesi
         div.style.display = "none";
@@ -41,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       const currentDate = new Date();
       const currentDay = currentDate.getDate();
-      const currentMonth = currentDate.getMonth(); // Novembre = 10, Dicembre = 11
+      const currentMonth = currentDate.getMonth(); // Gennaio = 0, Novembre = 10, Dicembre = 11
       console.log(`Data corrente: Giorno ${currentDay}, Mese ${currentMonth}`);
 
       updateCalendar(currentDay, currentMonth);
