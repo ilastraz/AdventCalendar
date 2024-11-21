@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Calendario avvento caricato!");
-
   const workerUrl = "https://little-fog-e164.ila-strazzullo.workers.dev/"; // URL del tuo Worker
 
   // Funzione per tracciare i clic tramite il Worker
@@ -18,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!response.ok) {
         throw new Error("Errore nel tracciamento");
       }
-
-      console.log(`Tracciamento registrato: ${action} per il giorno ${day}`);
     } catch (error) {
       console.error("Errore durante il tracciamento:", error);
     }
@@ -79,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentDate = new Date();
       const currentDay = currentDate.getDate();
       const currentMonth = currentDate.getMonth(); // Gennaio = 0, Novembre = 10, Dicembre = 11
-      console.log(`Data corrente: Giorno ${currentDay}, Mese ${currentMonth}`);
 
       updateCalendar(currentDay, currentMonth);
     } catch (error) {
@@ -106,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const elements = [
             { selector: '.popup-date', property: 'textContent', value: dayData.data },
             { selector: '.popup-head', property: 'textContent', value: dayData.head },
-            { selector: '.popup-description', property: dayData.descrizione },
+            { selector: '.popup-description', property: 'textContent', value: dayData.descrizione }, // Correzione effettuata qui
             { selector: '.popup-cta1', property: 'href', value: dayData.cta1.link },
             { selector: '.popup-cta1', property: 'textContent', value: dayData.cta1.testo },
             { selector: '.popup-cta2', property: 'href', value: dayData.cta2.link },
