@@ -1,52 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const workerUrl = "https://little-fog-e164.ila-strazzullo.workers.dev/"; // URL del tuo Worker
-
-  console.log("Worker configurato correttamente!");
+  console.log("Calendario avvento caricato!");
 
   function updateCalendar(currentDay, currentMonth) {
-    console.log(`Aggiornamento calendario per il giorno ${currentDay} e mese ${currentMonth}`);
     const divs = document.querySelectorAll("div[data-day]");
 
     divs.forEach(div => {
       const day = parseInt(div.getAttribute("data-day"));
-      console.log(`Valutazione casella giorno ${day}`);
-      
-      // Nascondi tutte le caselle per impostazione predefinita
-      div.style.display = "none";
+      const status = div.getAttribute("data-status");
 
-      // Logica per novembre o mesi precedenti
-      if (currentMonth < 11) {
-        console.log(`Mese corrente: ${currentMonth}. Imposto tutte le caselle a "future"`);
+      if (day < currentDay && status === "past") {
         div.style.display = "block";
-        div.setAttribute("data-status", "future");
-      } 
-      // Logica per dicembre
-      else if (currentMonth === 11) {
-        if (day < currentDay) {
-          console.log(`Casella ${day}: Stato impostato a "past"`);
-          div.style.display = "block";
-          div.setAttribute("data-status", "past");
-        } else if (day === currentDay) {
-          console.log(`Casella ${day}: Stato impostato a "today"`);
-          div.style.display = "block";
-          div.setAttribute("data-status", "today");
-          div.style.cursor = "pointer";
-          div.addEventListener('click', () => {
-            console.log(`Cliccata casella giorno ${day}`);
-            openPopup(day);
-            trackClick(day, 'box'); // Traccia il click sulla casella
-          });
-        } else {
-          console.log(`Casella ${day}: Stato impostato a "future"`);
-          div.style.display = "block";
-          div.setAttribute("data-status", "future");
-        }
-      } 
-      // Logica per gennaio o mesi successivi
-      else {
-        console.log(`Mese corrente: ${currentMonth}. Imposto tutte le caselle a "past"`);
+      } else if (day === currentDay && status === "today") {
         div.style.display = "block";
-        div.setAttribute("data-status", "past");
+        div.style.cursor = "pointer";
+        div.addEventListener('click', () => {
+          openPopup(day);
+        });
+      } else if (day > currentDay && status === "future") {
+        div.style.display = "block";
+      } else {
+        div.style.display = "none";
       }
     });
   }
@@ -63,33 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Funzione per tracciare i clic tramite il Worker
-  async function trackClick(day, action) {
-    console.log(`Tracciamento in corso: Giorno ${day}, Azione ${action}`);
-    try {
-      const response = await fetch(workerUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          day: day,
-          action: action,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Errore nel tracciamento");
-      }
-
-      console.log(`Tracciamento registrato: ${action} per il giorno ${day}`);
-    } catch (error) {
-      console.error("Errore durante il tracciamento:", error);
-    }
-  }
-
-  // Funzione per aprire il popup
   function openPopup(day) {
-    console.log(`Apertura popup per il giorno ${day}`);
-    fetch('https://corsproxy.io/?https://gleeful-crepe-005071.netlify.app/calendario-contenuti.json')
+    fetch('./json/calendario-contenuti.json')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -99,10 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(data => {
         const dayData = data[day.toString()];
         if (dayData) {
-          console.log(`Dati caricati per il giorno ${day}:`, dayData);
           const popup = document.querySelector('.popup');
           if (!popup) {
-            console.error("Elemento popup non trovato");
             return;
           }
 
@@ -121,17 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const element = document.querySelector(selector);
             if (element) {
               element[property] = value;
-              console.log(`Elemento ${selector} aggiornato`);
               if (value === "" && (selector === '.popup-cta1' || selector === '.popup-cta2')) {
                 element.style.display = 'none';
               } else if (selector === '.popup-cta1' || selector === '.popup-cta2') {
                 element.setAttribute('target', '_blank');
-                element.replaceWith(element.cloneNode(true)); // Rimuove listener duplicati
-                const newElement = document.querySelector(selector);
-                newElement.addEventListener('click', event => {
-                  event.stopPropagation(); // Evita propagazione
-                  trackClick(day, selector === '.popup-cta1' ? 'cta1' : 'cta2'); // Traccia CTA
-                });
               }
             }
           });
@@ -141,56 +80,45 @@ document.addEventListener("DOMContentLoaded", function () {
           const imagePromises = [];
 
           if (imgDesktop && dayData.imgDesktop) {
-            console.log("Caricamento immagine desktop");
             imgDesktop.src = dayData.imgDesktop;
-            imgDesktop.removeAttribute('srcset');
-            imgDesktop.removeAttribute('sizes');
             imagePromises.push(new Promise(resolve => {
               imgDesktop.onload = resolve;
-              imgDesktop.onerror = resolve;
+              imgDesktop.onerror = resolve; // Risolve comunque per evitare blocchi
             }));
           }
 
           if (imgMobile && dayData.imgMobile) {
-            console.log("Caricamento immagine mobile");
             imgMobile.src = dayData.imgMobile;
-            imgMobile.removeAttribute('srcset');
-            imgMobile.removeAttribute('sizes');
             imagePromises.push(new Promise(resolve => {
               imgMobile.onload = resolve;
-              imgMobile.onerror = resolve;
+              imgMobile.onerror = resolve; // Risolve comunque per evitare blocchi
             }));
           }
 
           Promise.all(imagePromises).then(() => {
-            console.log("Tutte le immagini sono state caricate. Mostro il popup.");
-            document.body.style.overflow = 'hidden'; // Disattiva scroll
+            document.body.style.overflow = 'hidden'; // Disattiva lo scroll della pagina
             popup.style.display = 'flex';
           });
         } else {
-          console.warn(`Nessun dato disponibile per il giorno ${day}`);
+          alert(`Nessun dato disponibile per il giorno ${day}`);
         }
       })
       .catch(error => {
         alert('Si è verificato un errore nel caricamento dei dati. Riprova più tardi.');
-        console.error('Errore nel caricamento del popup:', error);
       });
   }
 
-  // Funzione per chiudere il popup
   function closePopup() {
-    console.log("Chiusura popup");
     const popup = document.querySelector('.popup');
     if (popup) {
       popup.style.display = 'none';
-      document.body.style.overflow = 'auto'; // Riattiva scroll
+      document.body.style.overflow = 'auto'; // Riattiva lo scroll della pagina
     }
   }
 
-  // Avvia il caricamento iniziale
-  console.log("Inizio aggiornamento del calendario");
+  // Inizio del caricamento iniziale
   fetchCurrentDate();
 
-  // Aggiungi l'event listener per chiudere il popup
+  // Event listener per chiudere il popup
   document.querySelector('.popup-close').addEventListener('click', closePopup);
 });
