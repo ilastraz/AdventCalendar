@@ -4,39 +4,47 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Worker configurato correttamente!");
 
   function updateCalendar(currentDay, currentMonth) {
+    console.log(`Aggiornamento calendario per il giorno ${currentDay} e mese ${currentMonth}`);
     const divs = document.querySelectorAll("div[data-day]");
 
     divs.forEach(div => {
       const day = parseInt(div.getAttribute("data-day"));
-
+      console.log(`Valutazione casella giorno ${day}`);
+      
       // Nascondi tutte le caselle per impostazione predefinita
       div.style.display = "none";
 
       // Logica per novembre o mesi precedenti
       if (currentMonth < 11) {
+        console.log(`Mese corrente: ${currentMonth}. Imposto tutte le caselle a "future"`);
         div.style.display = "block";
         div.setAttribute("data-status", "future");
       } 
       // Logica per dicembre
       else if (currentMonth === 11) {
         if (day < currentDay) {
+          console.log(`Casella ${day}: Stato impostato a "past"`);
           div.style.display = "block";
           div.setAttribute("data-status", "past");
         } else if (day === currentDay) {
+          console.log(`Casella ${day}: Stato impostato a "today"`);
           div.style.display = "block";
           div.setAttribute("data-status", "today");
           div.style.cursor = "pointer";
           div.addEventListener('click', () => {
+            console.log(`Cliccata casella giorno ${day}`);
             openPopup(day);
             trackClick(day, 'box'); // Traccia il click sulla casella
           });
         } else {
+          console.log(`Casella ${day}: Stato impostato a "future"`);
           div.style.display = "block";
           div.setAttribute("data-status", "future");
         }
       } 
       // Logica per gennaio o mesi successivi
       else {
+        console.log(`Mese corrente: ${currentMonth}. Imposto tutte le caselle a "past"`);
         div.style.display = "block";
         div.setAttribute("data-status", "past");
       }
@@ -48,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentDate = new Date();
       const currentDay = currentDate.getDate();
       const currentMonth = currentDate.getMonth(); // Novembre = 10, Dicembre = 11
+      console.log(`Data corrente: Giorno ${currentDay}, Mese ${currentMonth}`);
       updateCalendar(currentDay, currentMonth);
     } catch (error) {
       console.error("Errore durante il calcolo della data:", error);
@@ -56,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per tracciare i clic tramite il Worker
   async function trackClick(day, action) {
+    console.log(`Tracciamento in corso: Giorno ${day}, Azione ${action}`);
     try {
       const response = await fetch(workerUrl, {
         method: "POST",
@@ -78,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per aprire il popup
   function openPopup(day) {
+    console.log(`Apertura popup per il giorno ${day}`);
     fetch('https://corsproxy.io/?https://gleeful-crepe-005071.netlify.app/calendario-contenuti.json')
       .then(response => {
         if (!response.ok) {
@@ -88,8 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(data => {
         const dayData = data[day.toString()];
         if (dayData) {
+          console.log(`Dati caricati per il giorno ${day}:`, dayData);
           const popup = document.querySelector('.popup');
           if (!popup) {
+            console.error("Elemento popup non trovato");
             return;
           }
 
@@ -108,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const element = document.querySelector(selector);
             if (element) {
               element[property] = value;
+              console.log(`Elemento ${selector} aggiornato`);
               if (value === "" && (selector === '.popup-cta1' || selector === '.popup-cta2')) {
                 element.style.display = 'none';
               } else if (selector === '.popup-cta1' || selector === '.popup-cta2') {
@@ -127,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const imagePromises = [];
 
           if (imgDesktop && dayData.imgDesktop) {
+            console.log("Caricamento immagine desktop");
             imgDesktop.src = dayData.imgDesktop;
             imgDesktop.removeAttribute('srcset');
             imgDesktop.removeAttribute('sizes');
@@ -137,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
           if (imgMobile && dayData.imgMobile) {
+            console.log("Caricamento immagine mobile");
             imgMobile.src = dayData.imgMobile;
             imgMobile.removeAttribute('srcset');
             imgMobile.removeAttribute('sizes');
@@ -147,11 +163,12 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
           Promise.all(imagePromises).then(() => {
+            console.log("Tutte le immagini sono state caricate. Mostro il popup.");
             document.body.style.overflow = 'hidden'; // Disattiva scroll
             popup.style.display = 'flex';
           });
         } else {
-          alert(`Nessun dato disponibile per il giorno ${day}`);
+          console.warn(`Nessun dato disponibile per il giorno ${day}`);
         }
       })
       .catch(error => {
@@ -162,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per chiudere il popup
   function closePopup() {
+    console.log("Chiusura popup");
     const popup = document.querySelector('.popup');
     if (popup) {
       popup.style.display = 'none';
@@ -170,6 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Avvia il caricamento iniziale
+  console.log("Inizio aggiornamento del calendario");
   fetchCurrentDate();
 
   // Aggiungi l'event listener per chiudere il popup
