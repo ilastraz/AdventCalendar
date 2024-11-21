@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const day = parseInt(div.getAttribute("data-day"));
       const status = div.getAttribute("data-status");
   
+      // Nascondi tutte le caselle per impostazione predefinita
+      div.style.display = "none";
+  
       // Logica per novembre
       if (currentMonth < 11) {
         div.style.display = "block";
@@ -40,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
   // Funzione per ottenere il giorno e il mese correnti
   function fetchCurrentDate() {
     try {
