@@ -4,36 +4,50 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Worker configurato correttamente!");
 
   // Funzione per aggiornare il calendario
-  function updateCalendar(currentDay) {
+  function updateCalendar(currentDay, currentMonth) {
     const divs = document.querySelectorAll("div[data-day]");
 
     divs.forEach(div => {
       const day = parseInt(div.getAttribute("data-day"));
       const status = div.getAttribute("data-status");
 
-      if (day < currentDay && status === "past") {
+      // Logica per novembre
+      if (currentMonth < 11) {
         div.style.display = "block";
-      } else if (day === currentDay && status === "today") {
+        div.setAttribute("data-status", "future");
+      } 
+      // Logica per dicembre
+      else if (currentMonth === 11) {
+        if (day < currentDay && status === "past") {
+          div.style.display = "block";
+        } else if (day === currentDay && status === "today") {
+          div.style.display = "block";
+          div.style.cursor = "pointer";
+          div.addEventListener('click', () => {
+            openPopup(day);
+            trackClick(day, 'box'); // Traccia il click sulla casella
+          });
+        } else if (day > currentDay && status === "future") {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      } 
+      // Logica per gennaio o mesi successivi
+      else {
         div.style.display = "block";
-        div.style.cursor = "pointer";
-        div.addEventListener('click', () => {
-          openPopup(day);
-          trackClick(day, 'box'); // Traccia il click sulla casella
-        });
-      } else if (day > currentDay && status === "future") {
-        div.style.display = "block";
-      } else {
-        div.style.display = "none";
+        div.setAttribute("data-status", "past");
       }
     });
   }
 
-  // Funzione per ottenere il giorno corrente
-  function fetchCurrentDay() {
+  // Funzione per ottenere il giorno e il mese correnti
+  function fetchCurrentDate() {
     try {
       const currentDate = new Date();
       const currentDay = currentDate.getDate();
-      updateCalendar(currentDay);
+      const currentMonth = currentDate.getMonth(); // Novembre = 10, Dicembre = 11
+      updateCalendar(currentDay, currentMonth);
     } catch (error) {
       console.error("Errore durante il calcolo della data:", error);
     }
@@ -155,10 +169,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Avvia il caricamento iniziale
-  fetchCurrentDay();
+  fetchCurrentDate();
 
   // Imposta un timer per eseguire l'aggiornamento ogni giorno
-  setInterval(fetchCurrentDay, 24 * 60 * 60 * 1000);
+  setInterval(fetchCurrentDate, 24 * 60 * 60 * 1000);
 
   // Aggiungi l'event listener per chiudere il popup
   document.querySelector('.popup-close').addEventListener('click', closePopup);
