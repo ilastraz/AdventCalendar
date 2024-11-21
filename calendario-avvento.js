@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Worker configurato correttamente!");
 
-  // Funzione per aggiornare il calendario
   function updateCalendar(currentDay, currentMonth) {
     const divs = document.querySelectorAll("div[data-day]");
-
+  
     divs.forEach(div => {
       const day = parseInt(div.getAttribute("data-day"));
       const status = div.getAttribute("data-status");
-
+  
       // Logica per novembre
       if (currentMonth < 11) {
         div.style.display = "block";
@@ -18,19 +17,20 @@ document.addEventListener("DOMContentLoaded", function () {
       } 
       // Logica per dicembre
       else if (currentMonth === 11) {
-        if (day < currentDay && status === "past") {
+        if (day < currentDay) {
           div.style.display = "block";
-        } else if (day === currentDay && status === "today") {
+          div.setAttribute("data-status", "past");
+        } else if (day === currentDay) {
           div.style.display = "block";
+          div.setAttribute("data-status", "today");
           div.style.cursor = "pointer";
           div.addEventListener('click', () => {
             openPopup(day);
             trackClick(day, 'box'); // Traccia il click sulla casella
           });
-        } else if (day > currentDay && status === "future") {
-          div.style.display = "block";
         } else {
-          div.style.display = "none";
+          div.style.display = "block";
+          div.setAttribute("data-status", "future");
         }
       } 
       // Logica per gennaio o mesi successivi
