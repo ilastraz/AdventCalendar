@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const elements = [
             { selector: '.popup-date', property: 'textContent', value: dayData.data },
             { selector: '.popup-head', property: 'textContent', value: dayData.head },
-            { selector: '.popup-description', property: 'textContent', value: dayData.descrizione }, // Correzione effettuata qui
+            { selector: '.popup-description', property: 'textContent', value: dayData.descrizione },
             { selector: '.popup-cta1', property: 'href', value: dayData.cta1.link },
             { selector: '.popup-cta1', property: 'textContent', value: dayData.cta1.testo },
             { selector: '.popup-cta2', property: 'href', value: dayData.cta2.link },
@@ -139,6 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (imgDesktop && dayData.imgDesktop) {
             imgDesktop.src = dayData.imgDesktop;
+            imgDesktop.removeAttribute('srcset');
+            imgDesktop.removeAttribute('sizes');
             imagePromises.push(new Promise(resolve => {
               imgDesktop.onload = resolve;
               imgDesktop.onerror = resolve; // Risolve comunque per evitare blocchi
@@ -147,6 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (imgMobile && dayData.imgMobile) {
             imgMobile.src = dayData.imgMobile;
+            imgMobile.removeAttribute('srcset');
+            imgMobile.removeAttribute('sizes');
             imagePromises.push(new Promise(resolve => {
               imgMobile.onload = resolve;
               imgMobile.onerror = resolve; // Risolve comunque per evitare blocchi
