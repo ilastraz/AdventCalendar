@@ -1,6 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Calendario avvento caricato!");
 
+  const workerUrl = "https://little-fog-e164.ila-strazzullo.workers.dev/"; // URL del tuo Worker
+
+  // Funzione per tracciare i clic tramite il Worker
+  async function trackClick(day, action) {
+    try {
+      const response = await fetch(workerUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          day: day,
+          action: action,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Errore nel tracciamento");
+      }
+
+      console.log(`Tracciamento registrato: ${action} per il giorno ${day}`);
+    } catch (error) {
+      console.error("Errore durante il tracciamento:", error);
+    }
+  }
+
   function updateCalendar(currentDay, currentMonth) {
     const divs = document.querySelectorAll("div[data-day]");
 
@@ -17,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
           div.style.cursor = "pointer";
           div.addEventListener('click', () => {
             openPopup(day);
+            trackClick(day, 'box'); // Traccia il click sulla casella
           });
         } else if (day > currentDay && status === "future") {
           div.style.display = "block";
@@ -37,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
           div.style.cursor = "pointer";
           div.addEventListener('click', () => {
             openPopup(day);
+            trackClick(day, 'box'); // Traccia il click sulla casella
           });
         } else {
           div.style.display = "none";
@@ -80,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const elements = [
             { selector: '.popup-date', property: 'textContent', value: dayData.data },
             { selector: '.popup-head', property: 'textContent', value: dayData.head },
-            { selector: '.popup-description', property: 'textContent', value: dayData.descrizione },
+            { selector: '.popup-description', property: dayData.descrizione },
             { selector: '.popup-cta1', property: 'href', value: dayData.cta1.link },
             { selector: '.popup-cta1', property: 'textContent', value: dayData.cta1.testo },
             { selector: '.popup-cta2', property: 'href', value: dayData.cta2.link },
@@ -91,11 +117,23 @@ document.addEventListener("DOMContentLoaded", function () {
           elements.forEach(({ selector, property, value }) => {
             const element = document.querySelector(selector);
             if (element) {
-              element[property] = value;
+              if (property === 'textContent') {
+                element.textContent = value;
+              } else {
+                element[property] = value;
+              }
               if (value === "" && (selector === '.popup-cta1' || selector === '.popup-cta2')) {
                 element.style.display = 'none';
               } else if (selector === '.popup-cta1' || selector === '.popup-cta2') {
+                element.style.display = 'block'; // Assicura che il CTA sia visibile
                 element.setAttribute('target', '_blank');
+                // Rimuove eventuali listener precedenti
+                element.replaceWith(element.cloneNode(true));
+                const newElement = document.querySelector(selector);
+                newElement.addEventListener('click', event => {
+                  event.stopPropagation(); // Evita propagazione
+                  trackClick(day, selector === '.popup-cta1' ? 'cta1' : 'cta2'); // Traccia CTA
+                });
               }
             }
           });
