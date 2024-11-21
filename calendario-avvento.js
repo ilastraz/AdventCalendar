@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const day = parseInt(div.getAttribute("data-day"));
       const status = div.getAttribute("data-status");
 
-      if (currentMonth === 11) { // Controlla se il mese è dicembre (11)
+      if (currentMonth === 11) { // Dicembre
+        // Comportamento normale in dicembre
         if (day < currentDay && status === "past") {
           div.style.display = "block";
         } else if (day === currentDay && status === "today") {
@@ -22,8 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           div.style.display = "none";
         }
+      } else if (currentMonth === 10) { // Novembre
+        // Mostra tutte le caselle nello stato "future"
+        if (status === "future") {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
       } else {
-        // Nascondi tutti i giorni se non è dicembre
+        // Nascondi tutte le caselle negli altri mesi
         div.style.display = "none";
       }
     });
