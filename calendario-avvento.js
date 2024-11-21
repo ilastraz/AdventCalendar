@@ -5,15 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateCalendar(currentDay, currentMonth) {
     const divs = document.querySelectorAll("div[data-day]");
-  
+
     divs.forEach(div => {
       const day = parseInt(div.getAttribute("data-day"));
-      const status = div.getAttribute("data-status");
-  
+
       // Nascondi tutte le caselle per impostazione predefinita
       div.style.display = "none";
-  
-      // Logica per novembre
+
+      // Logica per novembre o mesi precedenti
       if (currentMonth < 11) {
         div.style.display = "block";
         div.setAttribute("data-status", "future");
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  // Funzione per ottenere il giorno e il mese correnti
+
   function fetchCurrentDate() {
     try {
       const currentDate = new Date();
@@ -172,9 +171,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Avvia il caricamento iniziale
   fetchCurrentDate();
-
-  // Imposta un timer per eseguire l'aggiornamento ogni giorno
-  setInterval(fetchCurrentDate, 24 * 60 * 60 * 1000);
 
   // Aggiungi l'event listener per chiudere il popup
   document.querySelector('.popup-close').addEventListener('click', closePopup);
