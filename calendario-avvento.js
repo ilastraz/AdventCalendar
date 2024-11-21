@@ -8,17 +8,22 @@ document.addEventListener("DOMContentLoaded", function () {
       const day = parseInt(div.getAttribute("data-day"));
       const status = div.getAttribute("data-status");
 
-      if (day < currentDay && status === "past") {
-        div.style.display = "block";
-      } else if (day === currentDay && status === "today") {
-        div.style.display = "block";
-        div.style.cursor = "pointer";
-        div.addEventListener('click', () => {
-          openPopup(day);
-        });
-      } else if (day > currentDay && status === "future") {
-        div.style.display = "block";
+      if (currentMonth === 11) { // Controlla se il mese è dicembre (11)
+        if (day < currentDay && status === "past") {
+          div.style.display = "block";
+        } else if (day === currentDay && status === "today") {
+          div.style.display = "block";
+          div.style.cursor = "pointer";
+          div.addEventListener('click', () => {
+            openPopup(day);
+          });
+        } else if (day > currentDay && status === "future") {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
       } else {
+        // Nascondi tutti i giorni se non è dicembre
         div.style.display = "none";
       }
     });
@@ -30,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentDay = currentDate.getDate();
       const currentMonth = currentDate.getMonth(); // Novembre = 10, Dicembre = 11
       console.log(`Data corrente: Giorno ${currentDay}, Mese ${currentMonth}`);
+
       updateCalendar(currentDay, currentMonth);
     } catch (error) {
       console.error("Errore durante il calcolo della data:", error);
@@ -37,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function openPopup(day) {
-    fetch('./json/calendario-contenuti.json')
+    fetch('https://corsproxy.io/?https://gleeful-crepe-005071.netlify.app/calendario-contenuti.json')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
