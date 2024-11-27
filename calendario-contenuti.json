@@ -12,8 +12,8 @@
       "testo": "GUARDA TUTTA LA SOAP",
       "link": "https://mediasetinfinity.mediaset.it/fiction/lovereasongeteven_SE000000002332 "
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-1-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-1-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-1-Desktop.webp",
+    "imgMobile": "./popup/Popup-1-Mobile.webp"
   },
   "2": {
     "data": "2 Dicembre",
@@ -22,14 +22,14 @@
     "nota": "",
     "cta1": {
       "testo": "METTI IN PLAY IL MESSAGGIO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/un-messaggio-per-te_FD00000000454689"
     },
     "cta2": {
       "testo": "",
       "link": ""
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-2-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-2-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-2-Desktop.webp",
+    "imgMobile": "./popup/Popup-2-Mobile.webp"
   },
   "3": {
     "data": "3 Dicembre",
@@ -44,8 +44,8 @@
       "testo": "GUARDA LE PRIME PUNTATE",
       "link": "https://mediasetinfinity.mediaset.it/serie-tv/unpasoadelantenext_SE000000002344"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-3-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-3-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-3-Desktop.webp",
+    "imgMobile": "./popup/Popup-3-Mobile.webp"
   },
   "4": {
     "data": "4 Dicembre",
@@ -54,14 +54,14 @@
     "nota": "",
     "cta1": {
       "testo": "APRI LA PORTA ROSSA",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/vieni-in-confessionale_FD00000000454690"
     },
     "cta2": {
       "testo": "",
       "link": ""
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-4-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-4-Desktop.webp",
+    "imgMobile": "./popup/Popup-4-Mobile.webp"
   },
   "5": {
     "data": "5 Dicembre",
@@ -70,14 +70,14 @@
     "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 7,99€ al mese. Disdici quando vuoi.",
     "cta1": {
       "testo": "SCOPRI IL VIDEO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/prepara-i-pop-corn_FD00000000454716"
     },
     "cta2": {
       "testo": "ATTIVA IL CHANNEL",
       "link": "https://mediasetinfinity.mediaset.it/infinity-plus"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-5-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-5-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-5-Desktop.webp",
+    "imgMobile": "./popup/Popup-5-Mobile.webp"
   },
   "6": {
     "data": "6 Dicembre",
@@ -92,8 +92,8 @@
       "testo": "GUARDA IL VIDEO INEDITO",
       "link": "https://mediasetinfinity.mediaset.it/"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-6-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-6-Desktop.webp",
+    "imgMobile": "./popup/Popup-6-Mobile.webp"
   },
   "7": {
     "data": "7 Dicembre",
@@ -102,14 +102,14 @@
     "nota": "",
     "cta1": {
       "testo": "GUARDA IL TRAILER",
-      "link": "https://mediasetinfinity.mediaset.it/video/kungfupanda4/trailer-kung-fu-panda-4_F313211401003701"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/a-lezione-di-kung-fu_FD00000000454717"
     },
     "cta2": {
       "testo": "NOLEGGIA IL FILM",
       "link": "https://mediasetinfinity.mediaset.it/movie/kungfupanda4/kung-fu-panda-4_F313004801000103"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-7-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-7-Desktop.webp",
+    "imgMobile": "./popup/Popup-7-Mobile.webp"
   },
   "8": {
     "data": "8 Dicembre",
@@ -124,8 +124,8 @@
       "testo": "",
       "link": ""
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-8-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-8-Desktop.webp",
+    "imgMobile": "./popup/Popup-8-Mobile.webp"
   },
   "9": {
     "data": "9 Dicembre",
@@ -134,14 +134,14 @@
     "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
     "cta1": {
       "testo": "SCOPRI IL VIDEO",
-      "link": ""
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/ci-mettiamo-la-firma_FD00000000454691"
     },
     "cta2": {
       "testo": "ATTIVA IL CHANNEL",
       "link": "https://mediasetinfinity.mediaset.it/cineautore"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-9-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-9-Desktop.webp",
+    "imgMobile": "./popup/Popup-9-Mobile.webp"
   },
   "10": {
     "data": "10 Dicembre",
@@ -154,10 +154,10 @@
     },
     "cta2": {
       "testo": "GUARDA GLI AUGURI",
-      "link": "https://mediasetinfinity.mediaset.it"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/in-tanti-si-sta-bene_FD00000000454693"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-10-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-10-Desktop.webp",
+    "imgMobile": "./popup/Popup-10-Mobile.webp"
   },
   "11": {
     "data": "11 Dicembre",
@@ -172,8 +172,8 @@
       "testo": "ZAINO IN SPALLA!",
       "link": "https://mediasetinfinity.mediaset.it/documentari/naturafantasticaedovetrovarla_SE000000002199"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-11-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-11-Desktop.webp",
+    "imgMobile": "./popup/Popup-11-Mobile.webp"
   },
   "12": {
     "data": "12 Dicembre",
@@ -188,8 +188,8 @@
       "testo": "GUARDA TUTTI I CONTENUTI",
       "link": "https://mediasetinfinity.mediaset.it/programmi-tv/leiene_SE000000000061"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-12-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-12-Desktop.webp",
+    "imgMobile": "./popup/Popup-12-Mobile.webp"
   },
   "13": {
     "data": "13 Dicembre",
@@ -198,14 +198,14 @@
     "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
     "cta1": {
       "testo": "SCOPRI IL VIDEO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/due-mesi-di-passione_FD00000000454726"
     },
     "cta2": {
       "testo": "ATTIVA IL CHANNEL",
       "link": "https://mediasetinfinity.mediaset.it/dreamers-love"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-13-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-13-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-13-Desktop.webp",
+    "imgMobile": "./popup/Popup-13-Mobile.webp"
   },
   "14": {
     "data": "14 Dicembre",
@@ -220,8 +220,8 @@
       "testo": "NOLEGGIA IL FILM",
       "link": "https://mediasetinfinity.mediaset.it/movie/ghostbustersminacciaglaciale/ghostbusters-minaccia-glaciale_F313004901000103"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-14-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-14-Desktop.webp",
+    "imgMobile": "./popup/Popup-14-Mobile.webp"
   },
 
   "15": {
@@ -237,8 +237,8 @@
       "testo": "GUARDA LA SERIE COMPLETA",
       "link": "https://mediasetinfinity.mediaset.it/fiction/everywhereigo-coincidenzedamore_SE000000002214"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-15-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-15-Desktop.webp",
+    "imgMobile": "./popup/Popup-15-Mobile.webp"
   },
 
   "16": {
@@ -254,8 +254,8 @@
       "testo": "ATTIVA GOLD",
       "link": "https://mediasetinfinity.mediaset.it/account/purchase/option/MediasetPlay_SVOD"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-16-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-16-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-16-Desktop.webp",
+    "imgMobile": "./popup/Popup-16-Mobile.webp"
   },
   "17": {
     "data": "17 Dicembre",
@@ -270,8 +270,8 @@
       "testo": "GUARDA VERISSIMO",
       "link": "https://mediasetinfinity.mediaset.it/programmi-tv/verissimo"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-17-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-17-Desktop.webp",
+    "imgMobile": "./popup/Popup-17-Mobile.webp"
   },
 
   "18": {
@@ -287,8 +287,8 @@
       "testo": "ATTIVA IL CHANNEL",
       "link": "https://mediasetinfinity.mediaset.it/cinecomico"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-18-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-18-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-18-Desktop.webp",
+    "imgMobile": "./popup/Popup-18-Mobile.webp"
   },
 
   "19": {
@@ -304,8 +304,8 @@
       "testo": "",
       "link": ""
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-19-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-19-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-19-Desktop.webp",
+    "imgMobile": "./popup/Popup-19-Mobile.webp"
   },
 
   "20": {
@@ -321,8 +321,8 @@
       "testo": "NOLEGGIA IL FILM",
       "link": "https://mediasetinfinity.mediaset.it/movie/itendswithussiamonoiadirebasta/it-ends-with-us-siamo-noi-a-dire-basta_F313319601000103"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-20-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-20-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-20-Desktop.webp",
+    "imgMobile": "./popup/Popup-20-Mobile.webp"
   },
 
   "21": {
@@ -338,8 +338,8 @@
       "testo": "",
       "link": ""
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-21-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-21-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-21-Desktop.webp",
+    "imgMobile": "./popup/Popup-21-Mobile.webp"
   },
 
   "22": {
@@ -355,8 +355,8 @@
       "testo": "QUI LA SERIE COMPLETA",
       "link": "https://mediasetinfinity.mediaset.it/fiction/parisetc_SE000000002275"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-22-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-22-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-22-Desktop.webp",
+    "imgMobile": "./popup/Popup-22-Mobile.webp"
   },
 
   "23": {
@@ -372,8 +372,8 @@
       "testo": "NOLEGGIA IL FILM",
       "link": "https://mediasetinfinity.mediaset.it/movie/matrimonioconsorpresa/matrimonio-con-sorpresa_F313369901000101"
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-23-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-23-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-23-Desktop.webp",
+    "imgMobile": "./popup/Popup-23-Mobile.webp"
   },
 
   "24": {
@@ -389,8 +389,8 @@
       "testo": "",
       "link": ""
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-24-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-24-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-24-Desktop.webp",
+    "imgMobile": "./popup/Popup-24-Mobile.webp"
   },
 
   "25": {
@@ -406,8 +406,8 @@
       "testo": "",
       "link": ""
     },
-    "imgDesktop": "https://infinity.gmgstatic.eu/Calendario/Popup-25-Desktop.jpg",
-    "imgMobile": "https://infinity.gmgstatic.eu/Calendario/Popup-25-Mobile.jpg"
+    "imgDesktop": "./popup/Popup-25-Desktop.webp",
+    "imgMobile": "./popup/Popup-25-Mobile.webp"
   }
 
 }
