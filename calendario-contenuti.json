@@ -6,7 +6,7 @@
     "nota": "",
     "cta1": {
       "testo": "GUARDA L'ANTEPRIMA",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/per-i-piu-curiosi_FD00000000454908"
     },
     "cta2": {
       "testo": "GUARDA TUTTA LA SOAP",
@@ -67,14 +67,14 @@
     "data": "5 Dicembre",
     "head": "PREPARA I POP CORN",
     "descrizione": "Oggi per te 2 mesi gratis di Infinity+ con migliaia di film, serie tv e cartoni animati e ogni venerdì una grande Premiere. In più, solo con Infinity+ hai inclusa gratuitamente la GOLD Experience.",
-    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 7,99€ al mese. Disdici quando vuoi.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 7,99€ al mese. L'offerta non è attivabile tramite acquisti in-app Apple e/o Amazon. Disdici quando vuoi.",
     "cta1": {
       "testo": "SCOPRI IL VIDEO",
       "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/prepara-i-pop-corn_FD00000000454716"
     },
     "cta2": {
       "testo": "ATTIVA IL CHANNEL",
-      "link": "https://mediasetinfinity.mediaset.it/infinity-plus"
+      "link": "https://mediasetinfinity.mediaset.it/account/purchase/option/Infinity_SVOD"
     },
     "imgDesktop": "./popup/Popup-5-Desktop.webp",
     "imgMobile": "./popup/Popup-5-Mobile.webp"
@@ -131,14 +131,14 @@
     "data": "9 Dicembre",
     "head": "CI METTIAMO LA FIRMA",
     "descrizione": " Complimenti, sei appena entrato nella casa del grande cinema italiano! Per te 2 mesi gratis di CineAutore, il channel dedicato ai film d'essai e ai capolavori dei migliori registi della storia.",
-    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi gratuiti il prezzo sarà di 4,99€ al mese.L'offerta non è attivabile tramite acquisti in-app Apple e/o Amazon. Disdici quando vuoi.",
     "cta1": {
       "testo": "SCOPRI IL VIDEO",
       "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/ci-mettiamo-la-firma_FD00000000454691"
     },
     "cta2": {
       "testo": "ATTIVA IL CHANNEL",
-      "link": "https://mediasetinfinity.mediaset.it/cineautore"
+      "link": "https://mediasetinfinity.mediaset.it/account/purchase/option/InfAutore_SVOD"
     },
     "imgDesktop": "./popup/Popup-9-Desktop.webp",
     "imgMobile": "./popup/Popup-9-Mobile.webp"
@@ -182,7 +182,7 @@
     "nota": "",
     "cta1": {
       "testo": "METTI IN PLAY IL MESSAGGIO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/messaggio-in-arrivo_FD00000000454899 "
     },
     "cta2": {
       "testo": "GUARDA TUTTI I CONTENUTI",
@@ -195,14 +195,14 @@
     "data": "13 Dicembre",
     "head": "DUE MESI DI PASSIONE",
     "descrizione": "Dreamers and Love è il Channel per chi ama le commedie rosa, i drammi sentimentali e le appassionanti storie d'amore. Nel suo catalogo troverai anche tutto il meglio delle amatissime serie Turche.",
-    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese. Disdici quando vuoi.",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese. L'offerta non è attivabile tramite acquisti in-app Apple e/o Amazon. Disdici quando vuoi.",
     "cta1": {
       "testo": "SCOPRI IL VIDEO",
       "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/due-mesi-di-passione_FD00000000454726"
     },
     "cta2": {
       "testo": "ATTIVA IL CHANNEL",
-      "link": "https://mediasetinfinity.mediaset.it/dreamers-love"
+      "link": "https://mediasetinfinity.mediaset.it/account/purchase/option/TVLove_SVOD"
     },
     "imgDesktop": "./popup/Popup-13-Desktop.webp",
     "imgMobile": "./popup/Popup-13-Mobile.webp"
@@ -214,7 +214,7 @@
     "nota": "",
     "cta1": {
       "testo": "GUARDA IL TRAILER",
-      "link": "https://mediasetinfinity.mediaset.it/video/ghostbustersminacciaglaciale/trailer-ghostbusters-minaccia-glaciale_F313211401004901"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/credi-ancora-ai-fantasmi_FD00000000454901"
     },
     "cta2": {
       "testo": "NOLEGGIA IL FILM",
@@ -231,7 +231,7 @@
     "nota": "",
     "cta1": {
       "testo": "GUARDA IL RIASSUNTO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/casa-e-lavoro-per-due_FD00000000454902"
     },
     "cta2": {
       "testo": "GUARDA LA SERIE COMPLETA",
@@ -244,11 +244,11 @@
   "16": {
     "data": "16 Dicembre",
     "head": "PER TE CHE VUOI DI PIÚ",
-    "descrizione": "Con la GOLD Experience puoi fruire dei contenuti gratuiti di Mediaset Infinity con tanti vantaggi in più: download, smart ADV, super restart e massima qualità video. Solo per oggi tutto questo per un anno intero a soli 19,90€ anziché 39,99€",
-    "nota": "*Offerta valida solo per utenti che non hanno mai attivato la GOLD experience. Al termine del primo anno il prezzo sarà di 39,99€ all'anno. Disdici quando vuoi.",
+    "descrizione": "Con la GOLD experience puoi fruire dei contenuti gratuiti di Mediaset Infinity con tanti vantaggi in più: download, smart ADV, super restart e massima qualità video. Solo per oggi tutto questo per un anno intero a soli 19,90€ anziché 39,99€",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato la GOLD experience. Al termine del primo anno il prezzo sarà di 39,99€ all'anno. L'offerta non è attivabile tramite acquisti in-app Apple e/o Amazon. Disdici quando vuoi.",
     "cta1": {
       "testo": "SCOPRI IL VIDEO",
-      "link": "https://mediasetinfinity.mediaset.it/fiction/parisetc_SE000000002275"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/per-te-che-vuoi-di-piu_FD00000000454896 "
     },
     "cta2": {
       "testo": "ATTIVA GOLD",
@@ -264,7 +264,7 @@
     "nota": "",
     "cta1": {
       "testo": "LA NOSTRA SELEZIONE",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/intervista-a-sorpresa_FD00000000454971"
     },
     "cta2": {
       "testo": "GUARDA VERISSIMO",
@@ -278,14 +278,14 @@
     "data": "18 Dicembre",
     "head": "TI VERRÀ DA RIDERE",
     "descrizione": "CineComico è il Channel che ti offre titoli indimenticabili del grande cinema dei Maestri della risata: Alberto Sordi, Totò, Paolo Villaggio, Renato Pozzetto, Diego Abatantuono e tanti altri. Questo Natale riscopri i film comici che hanno fatto la storia!",
-    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese",
+    "nota": "*Offerta valida solo per utenti che non hanno mai attivato il channel. Al termine dei 2 mesi il prezzo sarà di 4,99€ al mese. L'offerta non è attivabile tramite acquisti in-app Apple e/o Amazon. Disdici quando vuoi. ",
     "cta1": {
       "testo": "SCOPRI IL VIDEO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/ti-verra-da-ridere_FD00000000454907"
     },
     "cta2": {
       "testo": "ATTIVA IL CHANNEL",
-      "link": "https://mediasetinfinity.mediaset.it/cinecomico"
+      "link": "https://mediasetinfinity.mediaset.it/account/purchase/option/InfComico_SVOD"
     },
     "imgDesktop": "./popup/Popup-18-Desktop.webp",
     "imgMobile": "./popup/Popup-18-Mobile.webp"
@@ -298,7 +298,7 @@
     "nota": "",
     "cta1": {
       "testo": "METTI IN PLAY IL MESSAGGIO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/un-messaggio-per-te_FD00000000454906"
     },
     "cta2": {
       "testo": "",
@@ -311,11 +311,11 @@
   "20": {
     "data": "20 Dicembre",
     "head": "TI PIACCIONO I ROMANZI?",
-    "descrizione": "Lily, arrivata a Boston per aprire un negozio di fiori, s'innamora del neurochirurgo Ryle. Ma qual è il limite non accettabile in una relazione? Guarda il trailer del nuovo appassionante It Ends With Us. Oggi per te il film a noleggio è a soli 0,99€!",
+    "descrizione": "Lily, arrivata a Boston per aprire un negozio di fiori, s'innamora del neurochirurgo Ryle. Ma qual è il limite non accettabile in una relazione? Guarda il trailer del nuovo appassionante film 'It Ends With Us - Siamo noi a dire basta'. Oggi per te il film a noleggio è a soli 0,99€!",
     "nota": "",
     "cta1": {
       "testo": "GUARDA IL TRAILER",
-      "link": "https://mediasetinfinity.mediaset.it/video/itendswithussiamonoiadirebasta/trailer-it-ends-with-us-siamo-noi-a-dire-basta_F313211401019801"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/ti-piacciono-i-romanzi_FD00000000454903"
     },
     "cta2": {
       "testo": "NOLEGGIA IL FILM",
@@ -332,7 +332,7 @@
     "nota": "",
     "cta1": {
       "testo": "GUARDA IL RIASSUNTO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/contenuto-top-secret_FD00000000454937"
     },
     "cta2": {
       "testo": "",
@@ -349,7 +349,7 @@
     "nota": "",
     "cta1": {
       "testo": "GUARDA IL RIASSUNTO",
-      "link": "https://mediasetinfinity.mediaset.it/"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/si-parte-per-parigi_FD00000000454904"
     },
     "cta2": {
       "testo": "QUI LA SERIE COMPLETA",
@@ -366,7 +366,7 @@
     "nota": "",
     "cta1": {
       "testo": "GUARDA IL TRAILER",
-      "link": "https://mediasetinfinity.mediaset.it/video/matrimonioconsorpresa/trailer-matrimonio-con-sorpresa_F313211401020301"
+      "link": "https://mediasetinfinity.mediaset.it/video/nataleasorpresaconmediasetinfinity/ti-invitiamo-a-nozze_FD00000000454905"
     },
     "cta2": {
       "testo": "NOLEGGIA IL FILM",
